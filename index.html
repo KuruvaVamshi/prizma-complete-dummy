@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prizmabrixx  Virtual Simulation | VR, AR & 3D Experts</title>
+  <meta name="description"
+    content="Prizmabrixx is a Hyderabad-based virtual simulation company specializing in VR walkthroughs, AR experiences, 3D printing, drone shoots, and immersive technology since 2018." />
+  <meta name="keywords"
+    content="virtual reality, augmented reality, 3D printing, VR walkthrough, AR experience, simulation company, Hyderabad, Prizmabrixx" />
+  <meta property="og:title" content="Prizmabrixx  Virtual Simulation Company" />
+  <meta property="og:description" content="Bringing imagination to life with VR, AR, and immersive technology." />
+  <meta property="og:type" content="website" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages/home.css" />
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230EA5E9'/><text y='22' x='6' font-size='18' font-family='Arial' font-weight='900' fill='white'>P</text></svg>" />
+</head>
+
+<body class="loading">
+  <!-- ── PRELOADER ── -->
+  <div id="preloader">
+      <canvas id="preloader-canvas"></canvas>
+      <div class="preloader-content">
+          <img src="assets/images/logo.png" class="preloader-logo-img" alt="prizmaBrixx">
+          <div class="preloader-tagline">Building Visual Experiences Beyond Imagination</div>
+          <div class="preloader-progress-bar">
+              <div class="preloader-progress-fill"></div>
+          </div>
+          <div class="preloader-counter">0%</div>
+      </div>
+  </div>
+
+  <div class="mesh-bg"></div>
+
+  <!-- ============================
+       NAVIGATION
+  ============================= -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo.png" alt="PrizmaBrixx" class="nav-logo-img">
+        <span class="nav-logo-text">Prizma<span>Brixx</span></span>
+    </a>
+    <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
+        <li><a href="about.html" class="nav-link" id="nav-about">About Us</a></li>
+        <li><a href="services.html" class="nav-link" id="nav-services">Services</a></li>
+        <li><a href="Portfolio-page/index.html" class="nav-link" id="nav-portfolio">Portfolio</a></li>
+        <li><a href="clients.html" class="nav-link" id="nav-clients">Clients</a></li>
+        <li><a href="award.html" class="nav-link" id="nav-award">Achievements</a></li>
+        <li><a href="blog.html" class="nav-link" id="nav-blog">Blog</a></li>
+        <li><a href="testimonials.html" class="nav-link" id="nav-testimonials">Testimonials</a></li>
+        <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+        <a href="contact.html" class="nav-cta">Get a Quote</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+  </nav>
+
+  <!-- ============================
+       HERO SECTION
+  ============================= -->
+  <section class="hero-section" id="hero" aria-label="Hero">
+    <!-- Hero Video -->
+    <div class="hero-bg-video-wrapper">
+      <video class="hero-bg-video" autoplay loop muted playsinline
+        src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
+      <div class="hero-video-overlay"></div>
+      <canvas id="particleCanvas" style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:2;"></canvas>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="container">
+      <div class="hero-content">
+        <div class="reveal" id="hero-label">
+          <span class="pill-label pill-label--cyan">
+            <span class="dot"></span>
+            ✦ 3D Virtual Simulation Excellence Award
+          </span>
+        </div>
+
+        <h1 class="display-heading reveal reveal-delay-1" id="hero-heading">
+          Virtual simulation studio,<br />
+          from concept to <span class="gradient-text">walkthrough</span>
+        </h1>
+
+        <p class="body-lg text-muted-dark reveal reveal-delay-2" id="hero-subtext">
+          We craft VR walkthroughs, AR experiences, 3D simulations and beyond <br class="hide-mobile" />
+          transforming how businesses and people experience the world.
+        </p>
+
+        <div class="hero-actions reveal reveal-delay-3" id="hero-actions">
+          <a href="Portfolio-page/index.html" class="btn btn-primary btn-lg" id="hero-explore-btn">View Our Work</a>
+          <a href="contact.html" class="btn btn-outline-light btn-lg" id="hero-contact-btn">Get In Touch</a>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="hero-stats reveal reveal-delay-4" id="hero-stats" role="list">
+          <div class="stat-item" role="listitem">
+            <div class="stat-number" id="stat-years">8+</div>
+            <div class="stat-label">Years of Excellence</div>
+          </div>
+          <div class="stat-item" role="listitem">
+            <div class="stat-number" id="stat-projects">500+</div>
+            <div class="stat-label">Projects Delivered</div>
+          </div>
+          <div class="stat-item" role="listitem">
+            <div class="stat-number" id="stat-clients">50+</div>
+            <div class="stat-label">Happy Clients</div>
+          </div>
+          <div class="stat-item" role="listitem">
+            <div class="stat-number" id="stat-services">9</div>
+            <div class="stat-label">Service Fields</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ============================
+       SERVICES STRIP
+  ============================= -->
+  <section class="services-strip section--dark" id="services-strip" aria-label="Services overview">
+    <div class="strip-label">Our Expertise</div>
+    <div class="marquee-wrapper" style="--fade-bg: var(--bg-dark)">
+      <div class="marquee-track" id="marqueeTrack" aria-label="Services list">
+        <!-- duplicated for seamless loop -->
+        <div class="service-tag"><span class="icon">🥽</span> VR Walkthrough</div>
+        <div class="service-tag"><span class="icon">📱</span> Augmented Reality</div>
+        <div class="service-tag"><span class="icon">🖨️</span> 3D Printing</div>
+        <div class="service-tag"><span class="icon">✦</span> Drone Shoots</div>
+        <div class="service-tag"><span class="icon">✦</span> Web Development</div>
+        <div class="service-tag"><span class="icon">🎨</span> Branding</div>
+        <div class="service-tag"><span class="icon">📊</span> Marketing</div>
+        <div class="service-tag"><span class="icon">✦</span> Experience Center</div>
+        <div class="service-tag"><span class="icon">✦</span> Availability Tool</div>
+        <!-- Duplicate set for infinite loop -->
+        <div class="service-tag"><span class="icon">🥽</span> VR Walkthrough</div>
+        <div class="service-tag"><span class="icon">📱</span> Augmented Reality</div>
+        <div class="service-tag"><span class="icon">🖨️</span> 3D Printing</div>
+        <div class="service-tag"><span class="icon">✦</span> Drone Shoots</div>
+        <div class="service-tag"><span class="icon">✦</span> Web Development</div>
+        <div class="service-tag"><span class="icon">🎨</span> Branding</div>
+        <div class="service-tag"><span class="icon">📊</span> Marketing</div>
+        <div class="service-tag"><span class="icon">✦</span> Experience Center</div>
+        <div class="service-tag"><span class="icon">✦</span> Availability Tool</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       ABOUT TEASER
+  ============================= -->
+  <section class="section section--light about-teaser" id="about-teaser" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Text -->
+        <div class="about-text reveal" id="about-text-block">
+          <span class="section-badge section-badge--light">About Prizmabrixx</span>
+          <h2 class="section-heading" id="about-heading">
+            Redefining Reality Since <span class="gradient-text">2018</span>
+          </h2>
+          <div class="divider divider--left"></div>
+          <p class="body-lg text-muted-light">
+            Prizmabrixx is a Hyderabad-based virtual simulation powerhouse. We combine cutting-edge VR, AR, and 3D
+            technologies with bold creative thinking to deliver immersive experiences that captivate, convert, and
+            inspire.
+          </p>
+          <p class="body-base text-muted-light" style="margin-top: 16px;">
+            From real estate developers to enterprise brands, we help clients visualize the future before it's built.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item" id="highlight-1">
+              <div class="highlight-icon">✦</div>
+              <div>
+                <div class="highlight-title">Award-Winning</div>
+                <div class="highlight-desc">Recognized for innovation in immersive tech</div>
+              </div>
+            </div>
+            <div class="highlight-item" id="highlight-2">
+              <div class="highlight-icon">✦</div>
+              <div>
+                <div class="highlight-title">Pan-India Reach</div>
+                <div class="highlight-desc">Serving clients across India & internationally</div>
+              </div>
+            </div>
+          </div>
+          <a href="about.html" class="btn btn-outline-dark" id="about-learn-more-btn">
+            Learn More About Us
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- 3D Visual -->
+        <div class="about-visual reveal reveal-delay-2" id="about-visual" aria-hidden="true">
+          <div class="cube-scene">
+            <div class="cube">
+              <div class="cube-face front">VR</div>
+              <div class="cube-face back">AR</div>
+              <div class="cube-face left">3D</div>
+              <div class="cube-face right">XR</div>
+              <div class="cube-face top">AI</div>
+              <div class="cube-face bottom">WEB</div>
+            </div>
+          </div>
+          <div class="orbit-ring ring-1"></div>
+          <div class="orbit-ring ring-2"></div>
+          <div class="about-badge-1">🥽 VR Ready</div>
+          <div class="about-badge-2">⚡ Real-time</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       FEATURED SERVICES
+  ============================= -->
+  <section class="section section--dark featured-services" id="featured-services" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 60px;">
+        <span class="section-badge reveal" id="services-badge">What We Do</span>
+        <h2 class="section-heading reveal reveal-delay-1" id="services-heading">
+          9 Fields of <span class="gradient-text">Innovation</span>
+        </h2>
+        <p class="body-lg text-muted-dark reveal reveal-delay-2" style="max-width: 560px; margin: 16px auto 0;"
+          id="services-subtext">
+          From virtual reality to drone cinematography, we cover the full spectrum of immersive digital experiences.
+        </p>
+      </div>
+
+      <div class="services-grid" id="services-grid">
+        <div class="service-card glass-card reveal" id="service-card-1">
+          <div class="service-card-icon">🥽</div>
+          <h3 class="service-card-title">VR Walkthrough</h3>
+          <p class="service-card-desc">Immersive virtual tours for real estate, architecture and enterprise spaces.</p>
+          <a href="services.html#vr" class="service-card-link" id="service-link-vr">Explore <span>→</span></a>
+        </div>
+        <div class="service-card glass-card reveal reveal-delay-1" id="service-card-2">
+          <div class="service-card-icon">📱</div>
+          <h3 class="service-card-title">Augmented Reality</h3>
+          <p class="service-card-desc">Layer digital content onto the real world for stunning product and brand
+            experiences.</p>
+          <a href="services.html#ar" class="service-card-link" id="service-link-ar">Explore <span>→</span></a>
+        </div>
+        <div class="service-card glass-card reveal reveal-delay-2" id="service-card-3">
+          <div class="service-card-icon">🖨️</div>
+          <h3 class="service-card-title">3D Printing</h3>
+          <p class="service-card-desc">Physical prototypes, architectural models, and custom 3D-printed solutions.</p>
+          <a href="services.html#3d" class="service-card-link" id="service-link-3d">Explore <span>→</span></a>
+        </div>
+        <div class="service-card glass-card reveal reveal-delay-3" id="service-card-4">
+          <div class="service-card-icon">✦</div>
+          <h3 class="service-card-title">Drone Shoots</h3>
+          <p class="service-card-desc">Cinematic aerial photography and videography for properties and events.</p>
+          <a href="services.html#drone" class="service-card-link" id="service-link-drone">Explore <span>→</span></a>
+        </div>
+        <div class="service-card glass-card reveal" id="service-card-5">
+          <div class="service-card-icon">✦</div>
+          <h3 class="service-card-title">Web & App Development</h3>
+          <p class="service-card-desc">Modern websites and mobile apps engineered for performance and scale.</p>
+          <a href="services.html#web" class="service-card-link" id="service-link-web">Explore <span>→</span></a>
+        </div>
+        <div class="service-card glass-card reveal reveal-delay-1" id="service-card-6">
+          <div class="service-card-icon">🎨</div>
+          <h3 class="service-card-title">Branding</h3>
+          <p class="service-card-desc">Strategic brand identity, logo design, and visual systems that resonate.</p>
+          <a href="services.html#branding" class="service-card-link" id="service-link-branding">Explore
+            <span>→</span></a>
+        </div>
+        <div class="service-card glass-card reveal reveal-delay-2" id="service-card-7">
+          <div class="service-card-icon">📊</div>
+          <h3 class="service-card-title">Digital Marketing</h3>
+          <p class="service-card-desc">Data-driven campaigns that grow your brand and convert leads to customers.</p>
+          <a href="services.html#marketing" class="service-card-link" id="service-link-marketing">Explore
+            <span>→</span></a>
+        </div>
+        <div class="service-card glass-card reveal reveal-delay-3" id="service-card-8">
+          <div class="service-card-icon">✦</div>
+          <h3 class="service-card-title">Experience Center</h3>
+          <p class="service-card-desc">Design and build captivating beyond-reality experience centres for your brand.
+          </p>
+          <a href="services.html#bec" class="service-card-link" id="service-link-bec">Explore <span>→</span></a>
+        </div>
+        <div class="service-card glass-card reveal reveal-delay-1" id="service-card-9">
+          <div class="service-card-icon">✦</div>
+          <h3 class="service-card-title">Availability Tool</h3>
+          <p class="service-card-desc">Interactive unit selection tools for real estate projects and property showcases.
+          </p>
+          <a href="services.html#tool" class="service-card-link" id="service-link-tool">Explore <span>→</span></a>
+        </div>
+      </div>
+
+      <div class="text-center" style="margin-top: 48px;">
+        <a href="services.html" class="btn btn-outline-light" id="all-services-btn">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       FEATURED WORK (with real images)
+  ============================= -->
+  <section class="section section--dark featured-work" id="featured-work" aria-labelledby="work-heading">
+    <div class="container">
+      <div class="section-header reveal" id="work-header">
+        <div>
+          <span class="section-badge">Our Portfolio</span>
+          <h2 class="section-heading" id="work-heading">Featured <span class="gradient-text">Projects</span></h2>
+          <div class="divider divider--left"></div>
+        </div>
+        <a href="Portfolio-page/index.html" class="btn btn-outline-light" id="view-all-work-btn">View All Projects</a>
+      </div>
+
+      <div class="work-grid" id="work-grid">
+        <div class="work-card work-card--large reveal" id="work-card-1">
+          <div class="work-card-bg" style="--card-color-1:#0EA5E9;--card-color-2:#7C3AED;"></div>
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Luxury Township VR Tour" class="work-card-img" loading="lazy" />
+          <div class="work-card-content">
+            <div class="work-card-tag">VR Walkthrough</div>
+            <h3 class="work-card-title">Luxury Township<br />Virtual Tour</h3>
+            <p class="work-card-desc">360 immersive walkthrough for a 500-unit residential project</p>
+            <a href="Portfolio-page/index.html" class="work-card-link" id="work-card-link-1">View Project →</a>
+          </div>
+        </div>
+        <div class="work-card reveal reveal-delay-1" id="work-card-2">
+          <div class="work-card-bg" style="--card-color-1:#F59E0B;--card-color-2:#EF4444;"></div>
+          <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&q=80" alt="AR Product Showcase" class="work-card-img" loading="lazy" />
+          <div class="work-card-content">
+            <div class="work-card-tag">Augmented Reality</div>
+            <h3 class="work-card-title">AR Product Showcase</h3>
+            <p class="work-card-desc">Interactive AR catalog for furniture brand</p>
+            <a href="Portfolio-page/index.html" class="work-card-link" id="work-card-link-2">View Project →</a>
+          </div>
+        </div>
+        <div class="work-card reveal reveal-delay-2" id="work-card-3">
+          <div class="work-card-bg" style="--card-color-1:#10B981;--card-color-2:#0EA5E9;"></div>
+          <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80" alt="3D Architectural Model" class="work-card-img" loading="lazy" />
+          <div class="work-card-content">
+            <div class="work-card-tag">3D Printing</div>
+            <h3 class="work-card-title">Architectural Scale Model</h3>
+            <p class="work-card-desc">Detailed 1:100 scale model for township project</p>
+            <a href="Portfolio-page/index.html" class="work-card-link" id="work-card-link-3">View Project →</a>
+          </div>
+        </div>
+        <div class="work-card reveal reveal-delay-3" id="work-card-4">
+          <div class="work-card-bg" style="--card-color-1:#8B5CF6;--card-color-2:#EC4899;"></div>
+          <img src="https://images.unsplash.com/photo-1506947411487-a56738267384?w=600&q=80" alt="Aerial Drone Shot" class="work-card-img" loading="lazy" />
+          <div class="work-card-content">
+            <div class="work-card-tag">Drone Shoot</div>
+            <h3 class="work-card-title">Aerial Property Film</h3>
+            <p class="work-card-desc">Cinematic aerial for 200-acre commercial campus</p>
+            <a href="Portfolio-page/index.html" class="work-card-link" id="work-card-link-4">View Project →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       HORIZONTAL SCROLL SHOWCASE
+  ============================= -->
+  <section class="horizontal-showcase" id="horizontal-showcase">
+    <div class="horizontal-showcase-header">
+      <div class="container">
+        <span class="section-badge reveal">Immersive Gallery</span>
+        <h2 class="section-heading reveal reveal-delay-1">Experience Our <span class="gradient-text">Work</span></h2>
+      </div>
+    </div>
+    <div class="horizontal-track">
+      <div class="horizontal-item">
+        <div class="horizontal-card">
+          <div class="parallax-img-wrap">
+            <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=800&q=80" alt="VR Headset Experience" loading="lazy" />
+          </div>
+          <div class="horizontal-card-info">
+            <span class="horizontal-tag">VR Experience</span>
+            <h3>Immersive VR Walkthrough</h3>
+            <p>Step inside your future home before a single brick is laid.</p>
+          </div>
+        </div>
+      </div>
+      <div class="horizontal-item">
+        <div class="horizontal-card">
+          <div class="parallax-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Luxury Interior" loading="lazy" />
+          </div>
+          <div class="horizontal-card-info">
+            <span class="horizontal-tag">Interior Design</span>
+            <h3>Photorealistic Renders</h3>
+            <p>Every texture, every light ray  crafted to perfection.</p>
+          </div>
+        </div>
+      </div>
+      <div class="horizontal-item">
+        <div class="horizontal-card">
+          <div class="parallax-img-wrap">
+            <img src="https://images.unsplash.com/photo-1506947411487-a56738267384?w=800&q=80" alt="Aerial Drone Shot" loading="lazy" />
+          </div>
+          <div class="horizontal-card-info">
+            <span class="horizontal-tag">Drone Cinema</span>
+            <h3>Cinematic Aerial Film</h3>
+            <p>4K footage that captures the full scale of your vision.</p>
+          </div>
+        </div>
+      </div>
+      <div class="horizontal-item">
+        <div class="horizontal-card">
+          <div class="parallax-img-wrap">
+            <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=800&q=80" alt="AR Visualization" loading="lazy" />
+          </div>
+          <div class="horizontal-card-info">
+            <span class="horizontal-tag">Augmented Reality</span>
+            <h3>AR Product Placement</h3>
+            <p>Place any product in any space, instantly, through your phone.</p>
+          </div>
+        </div>
+      </div>
+      <div class="horizontal-item">
+        <div class="horizontal-card">
+          <div class="parallax-img-wrap">
+            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80" alt="3D Print Model" loading="lazy" />
+          </div>
+          <div class="horizontal-card-info">
+            <span class="horizontal-tag">3D Printing</span>
+            <h3>Physical Prototypes</h3>
+            <p>From screen to hands  tangible models for stakeholders.</p>
+          </div>
+        </div>
+      </div>
+      <div class="horizontal-item">
+        <div class="horizontal-card">
+          <div class="parallax-img-wrap">
+            <img src="https://images.unsplash.com/photo-1531297172867-4f54ee216962?w=800&q=80" alt="Experience Center" loading="lazy" />
+          </div>
+          <div class="horizontal-card-info">
+            <span class="horizontal-tag">Experience Center</span>
+            <h3>Beyond Experience</h3>
+            <p>Walk-in showrooms powered by mixed reality technology.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       WHY CHOOSE US (with parallax images)
+  ============================= -->
+  <section class="section section--dark why-section" id="why-section" aria-labelledby="why-heading">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 60px;">
+        <span class="section-badge reveal">Why Us</span>
+        <h2 class="section-heading reveal reveal-delay-1" id="why-heading">
+          Why Brands Choose <span class="gradient-text">Prizmabrixx</span>
+        </h2>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card reveal" id="why-1">
+          <div class="why-card-img img-reveal">
+            <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600&q=80" alt="VR Innovation" loading="lazy" />
+            <div class="img-reveal-overlay"></div>
+          </div>
+          <div class="why-card-body">
+            <div class="why-number">01</div>
+            <h3>Cutting-Edge Technology</h3>
+            <p>We use the latest Unreal Engine, Unity, and WebXR tools to deliver experiences that set industry benchmarks.</p>
+          </div>
+        </div>
+        <div class="why-card reveal reveal-delay-1" id="why-2">
+          <div class="why-card-img img-reveal">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80" alt="Team collaboration" loading="lazy" />
+            <div class="img-reveal-overlay"></div>
+          </div>
+          <div class="why-card-body">
+            <div class="why-number">02</div>
+            <h3>Human-Centered Design</h3>
+            <p>Every pixel, every interaction is designed with real humans in mind. No gimmicks  just experiences that feel natural.</p>
+          </div>
+        </div>
+        <div class="why-card reveal reveal-delay-2" id="why-3">
+          <div class="why-card-img img-reveal">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80" alt="Fast delivery" loading="lazy" />
+            <div class="img-reveal-overlay"></div>
+          </div>
+          <div class="why-card-body">
+            <div class="why-number">03</div>
+            <h3>Lightning-Fast Delivery</h3>
+            <p>From concept to deployment in weeks, not months. We move fast without cutting corners on quality.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       OUR PROCESS
+  ============================= -->
+  <section class="section section--dark-2 process-section" id="process-section" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 60px;">
+        <span class="section-badge reveal">How We Work</span>
+        <h2 class="section-heading reveal reveal-delay-1" id="process-heading">
+          Our Proven <span class="gradient-text">Process</span>
+        </h2>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step reveal" id="process-1">
+          <div class="process-step-number float-element">01</div>
+          <div class="process-step-line"></div>
+          <h3>Discovery</h3>
+          <p>We listen, research, and map your goals to understand the perfect immersive solution for your business.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-1" id="process-2">
+          <div class="process-step-number float-element">02</div>
+          <div class="process-step-line"></div>
+          <h3>Design</h3>
+          <p>Our creative team crafts wireframes, storyboards, and 3D blueprints that bring your vision to life on screen.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2" id="process-3">
+          <div class="process-step-number float-element">03</div>
+          <div class="process-step-line"></div>
+          <h3>Develop</h3>
+          <p>Engineers and artists collaborate to build, texture, light, and optimize your immersive experience.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-3" id="process-4">
+          <div class="process-step-number float-element">04</div>
+          <div class="process-step-line"></div>
+          <h3>Deliver</h3>
+          <p>We deploy across VR headsets, web browsers, mobile AR, and physical spaces  wherever your audience lives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       TESTIMONIALS
+  ============================= -->
+  <section class="section section--dark testimonials-section" id="testimonials-section"
+    aria-labelledby="testimonials-heading">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 60px;">
+        <span class="section-badge reveal" id="testimonials-badge">Client Stories</span>
+        <h2 class="section-heading reveal reveal-delay-1" id="testimonials-heading">
+          What Our Clients <span class="gradient-text">Say</span>
+        </h2>
+      </div>
+
+      <div class="grid-3" id="testimonials-grid">
+        <div class="testimonial-card reveal" id="testimonial-1">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Prizmabrixx completely transformed how we present our properties. The VR
+            walkthroughs they built helped us close deals 3x faster. Absolutely world-class team."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">RK</div>
+            <div>
+              <div class="author-name">Rajesh Kumar</div>
+              <div class="author-company">Director, Skyline Developers</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-1" id="testimonial-2">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"The AR experience they created for our product launch was jaw-dropping. Customers
+            couldn't stop engaging with it. Prizmabrixx truly understands immersive storytelling."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">PM</div>
+            <div>
+              <div class="author-name">Priya Mehra</div>
+              <div class="author-company">Marketing Head, FutureLiving Co.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-2" id="testimonial-3">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"From drone shoots to 3D-printed architectural models, Prizmabrixx delivered
+            everything on time and beyond expectations. Our go-to partner for all things immersive."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AS</div>
+            <div>
+              <div class="author-name">Arun Sharma</div>
+              <div class="author-company">CEO, BuildVision Architects</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center" style="margin-top: 40px;">
+        <a href="testimonials.html" class="btn btn-outline-light" id="all-testimonials-btn">Read More Stories</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       CLIENT MARQUEE
+  ============================= -->
+  <section class="section section--dark-2 clients-marquee-section" id="clients-section" aria-label="Our clients">
+    <div class="container" style="margin-bottom: 32px;">
+      <div class="text-center">
+        <span class="section-badge reveal" id="clients-badge">Trusted By</span>
+        <h2 class="section-heading reveal reveal-delay-1" id="clients-heading">
+          Brands That <span class="gradient-text">Trust Us</span>
+        </h2>
+      </div>
+    </div>
+    <div class="marquee-wrapper clients-marquee" id="clients-marquee">
+      <div class="marquee-track" id="clientsMarqueeTrack">
+        <!-- Client names as text (logos can be added later) -->
+        <div class="client-logo-item"><span class="client-name-text">Incor Group</span></div>
+        <div class="client-logo-item"><span class="client-name-text">Ashoka Builders</span></div>
+        <div class="client-logo-item"><span class="client-name-text">Ramky Group</span></div>
+        <div class="client-logo-item"><span class="client-name-text">NCC Urban</span></div>
+        <div class="client-logo-item"><span class="client-name-text">Vasavi Group</span></div>
+        <div class="client-logo-item"><span class="client-name-text">Navanaami</span></div>
+        <div class="client-logo-item"><span class="client-name-text">Hallmark</span></div>
+        <div class="client-logo-item"><span class="client-name-text">SLV Group</span></div>
+        <!-- Duplicate -->
+        <div class="client-logo-item"><span class="client-name-text">Incor Group</span></div>
+        <div class="client-logo-item"><span class="client-name-text">Ashoka Builders</span></div>
+        <div class="client-logo-item"><span class="client-name-text">Ramky Group</span></div>
+        <div class="client-logo-item"><span class="client-name-text">NCC Urban</span></div>
+        <div class="client-logo-item"><span class="client-name-text">Vasavi Group</span></div>
+        <div class="client-logo-item"><span class="client-name-text">Navanaami</span></div>
+        <div class="client-logo-item"><span class="client-name-text">Hallmark</span></div>
+        <div class="client-logo-item"><span class="client-name-text">SLV Group</span></div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top: 40px;">
+      <a href="clients.html" class="btn btn-outline-light" id="all-clients-btn">Meet All Our Clients</a>
+    </div>
+  </section>
+
+  <!-- ============================
+       CTA BANNER
+  ============================= -->
+  <section class="cta-banner" id="cta-banner" aria-labelledby="cta-heading">
+    <div class="cta-banner-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="cta-content reveal" id="cta-content">
+        <span class="pill-label pill-label--cyan" style="margin-bottom: 24px;">
+          <span class="dot"></span>
+          Let's Work Together
+        </span>
+        <h2 class="display-heading" id="cta-heading">
+          Ready to Build Something<br />
+          <span class="gradient-text">Extraordinary?</span>
+        </h2>
+        <p class="body-lg text-muted-dark" style="max-width: 520px; margin: 20px auto 40px;" id="cta-subtext">
+          Tell us your vision and we'll bring it to life with the power of immersive technology.
+        </p>
+        <div class="cta-actions" id="cta-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg" id="cta-start-btn">Start a Project</a>
+          <a href="Portfolio-page/index.html" class="btn btn-outline-light btn-lg" id="cta-portfolio-btn">See Our Work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       FOOTER
+  ============================= -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="navbar-logo" id="footer-logo">
+            <img src="assets/images/logo.png" alt="Prizmabrixx" class="navbar-logo-img" />
+          </a>
+          <p>A leading virtual simulation company based in Hyderabad, India. Crafting immersive VR, AR, and 3D
+            experiences since 2018.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" id="footer-instagram" aria-label="Instagram" title="Instagram">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="#" class="social-link" id="footer-linkedin" aria-label="LinkedIn" title="LinkedIn">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+            <a href="#" class="social-link" id="footer-youtube" aria-label="YouTube" title="YouTube">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
+              </svg>
+            </a>
+            <a href="#" class="social-link" id="footer-facebook" aria-label="Facebook" title="Facebook">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html" id="footer-link-about">About Us</a></li>
+            <li><a href="services.html" id="footer-link-services">Our Services</a></li>
+            <li><a href="award.html" id="footer-link-award">Our Achievements</a></li>
+            <li><a href="Portfolio-page/index.html" id="footer-link-portfolio">Portfolio</a></li>
+            <li><a href="clients.html" id="footer-link-clients">Our Clients</a></li>
+            <li><a href="blog.html" id="footer-link-blog">Blog</a></li>
+            <li><a href="testimonials.html" id="footer-link-testimonials">Testimonials</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-links">
+            <li><a href="services.html#vr" id="footer-link-vr">VR Walkthrough</a></li>
+            <li><a href="services.html#ar" id="footer-link-ar">Augmented Reality</a></li>
+            <li><a href="services.html#3d" id="footer-link-3d">3D Printing</a></li>
+            <li><a href="services.html#drone" id="footer-link-drone">Drone Shoots</a></li>
+            <li><a href="services.html#web" id="footer-link-web">Web &amp; App Development</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links">
+            <li><a href="mailto:info@prizmabrixx.com" id="footer-link-email">info@prizmabrixx.com</a></li>
+            <li><a href="contact.html" id="footer-link-contact">Hyderabad, India</a></li>
+            <li><a href="contact.html" id="footer-link-quote">Get a Quote</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p>© 2026 Prizmabrixx. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="contact.html" id="footer-privacy">Privacy Policy</a>
+          <a href="contact.html" id="footer-terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Award Badge -->
+  <a href="award.html" class="floating-award-pill" aria-label="View our achievements">
+    <div class="award-pill-img">
+      <img src="assets/images/award.jpg" alt="Excellence Award" />
+    </div>
+    <div class="award-pill-content">
+      <span class="award-pill-title">3D Virtual Simulation</span>
+      <span class="award-pill-subtitle">Excellence Award</span>
+    </div>
+    <div class="award-pill-sparkle">✨</div>
+  </a>
+
+  <!-- ============================
+       JAVASCRIPT
+  ============================= -->
+  <script src="js/particles.js"></script>
+  <!-- Animation Libraries -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Custom Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
