@@ -2,7 +2,7 @@
 
 **Prizmabrixx** is a premier virtual simulation company based in Hyderabad, India, specializing in Virtual Reality (VR) walkthroughs, Augmented Reality (AR) experiences, 3D scale printing, drone cinematography, and custom web/app development since 2018.
 
-Live Website Demo: [https://kuruvavamshi.github.io/prizma/](https://kuruvavamshi.github.io/prizma/)
+https://kuruvavamshi.github.io/prizma-complete-dummy/
 
 ---
 
