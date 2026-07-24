@@ -131,7 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         statsObserver.disconnect();
       }
+<<<<<<< HEAD
     }, { threshold: 0.1 });
+=======
+    }, { threshold: 0.5 });
+>>>>>>> 25d6b8d1b997359068c352e7836b4a48fe66eb8f
     statsObserver.observe(statsSection);
   }
 

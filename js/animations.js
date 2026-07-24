@@ -7,6 +7,7 @@
 // ——— PRELOADER DRIFTING PARTICLES CANVAS ———
 (function() {
     const loaderCanvas = document.getElementById('preloader-canvas');
+<<<<<<< HEAD
     const preloaderElement = document.getElementById('preloader');
     if (!loaderCanvas || !preloaderElement) return;
 
@@ -17,6 +18,9 @@
         preloaderElement.style.display = 'none';
         return;
     }
+=======
+    if (!loaderCanvas) return;
+>>>>>>> 25d6b8d1b997359068c352e7836b4a48fe66eb8f
 
     const loaderCtx = loaderCanvas.getContext('2d');
     let loaderParticles = [];
@@ -105,7 +109,10 @@
                         document.querySelector('.preloader-progress-fill').style.width = percentageCount.val + '%';
                     },
                     onComplete: () => {
+<<<<<<< HEAD
                         sessionStorage.setItem('prizmabrixx_preloader_shown', 'true');
+=======
+>>>>>>> 25d6b8d1b997359068c352e7836b4a48fe66eb8f
                         document.body.classList.remove('loading');
                         document.body.classList.add('loaded');
                         gsap.to('#preloader', {
@@ -194,12 +201,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+<<<<<<< HEAD
   // ---- SPLIT TEXT BY WORDS (PRESERVING HTML TAGS & BRs) ----
+=======
+  // ---- SPLIT TEXT BY WORDS ----
+>>>>>>> 25d6b8d1b997359068c352e7836b4a48fe66eb8f
   function splitTextForReveal(selector) {
     const elements = document.querySelectorAll(selector);
     elements.forEach(el => {
       if (el.dataset.wordSplit) return;
       el.dataset.wordSplit = 'true';
+<<<<<<< HEAD
 
       const originalNodes = Array.from(el.childNodes);
       el.innerHTML = '';
@@ -238,6 +250,24 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       originalNodes.forEach(node => processNode(node, el));
+=======
+      const text = el.innerText;
+      const words = text.split(' ');
+      el.innerHTML = '';
+      words.forEach(word => {
+        const span = document.createElement('span');
+        span.style.display = 'inline-block';
+        span.style.overflow = 'hidden';
+        span.style.verticalAlign = 'top';
+        const innerSpan = document.createElement('span');
+        innerSpan.style.display = 'inline-block';
+        innerSpan.style.transform = 'translateY(100%)';
+        innerSpan.innerText = word + '\u00A0';
+        innerSpan.classList.add('reveal-word');
+        span.appendChild(innerSpan);
+        el.appendChild(span);
+      });
+>>>>>>> 25d6b8d1b997359068c352e7836b4a48fe66eb8f
     });
   }
 
@@ -277,6 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, "-=0.8");
   }
 
+<<<<<<< HEAD
   // ---- AWARD SHOWCASE FRAME ----
   const awardFrame = document.getElementById('award-frame');
   if (awardFrame) {
@@ -322,6 +353,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+=======
+>>>>>>> 25d6b8d1b997359068c352e7836b4a48fe66eb8f
   // ---- SECTION HEADINGS ----
   const sectionHeadings = document.querySelectorAll('.section-heading');
   sectionHeadings.forEach(heading => {
