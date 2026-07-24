@@ -7,7 +7,6 @@
 // ——— PRELOADER DRIFTING PARTICLES CANVAS ———
 (function() {
     const loaderCanvas = document.getElementById('preloader-canvas');
-<<<<<<< HEAD
     const preloaderElement = document.getElementById('preloader');
     if (!loaderCanvas || !preloaderElement) return;
 
@@ -18,9 +17,6 @@
         preloaderElement.style.display = 'none';
         return;
     }
-=======
-    if (!loaderCanvas) return;
->>>>>>> 25d6b8d1b997359068c352e7836b4a48fe66eb8f
 
     const loaderCtx = loaderCanvas.getContext('2d');
     let loaderParticles = [];
@@ -109,109 +105,12 @@
                         document.querySelector('.preloader-progress-fill').style.width = percentageCount.val + '%';
                     },
                     onComplete: () => {
-<<<<<<< HEAD
                         sessionStorage.setItem('prizmabrixx_preloader_shown', 'true');
-=======
->>>>>>> 25d6b8d1b997359068c352e7836b4a48fe66eb8f
-                        document.body.classList.remove('loading');
-                        document.body.classList.add('loaded');
-                        gsap.to('#preloader', {
-                            opacity: 0,
-                            duration: 1,
-                            ease: 'power3.inOut',
-                            onComplete: () => {
-                                document.getElementById('preloader').style.display = 'none';
-                            }
-                        });
-                    }
-                });
-            }
-        }
-    });
-})();
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  // ==========================================
-  // 1. LENIS SMOOTH SCROLLING
-  // ==========================================
-  const lenis = new Lenis({
-    duration: 1.4,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    direction: 'vertical',
-    gestureDirection: 'vertical',
-    smooth: true,
-    mouseMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 2,
-    infinite: false,
-  });
-
-  lenis.on('scroll', ScrollTrigger.update);
-  gsap.ticker.add((time) => { lenis.raf(time * 1000); });
-  gsap.ticker.lagSmoothing(0);
-
-  // ==========================================
-  // 2. MAGNETIC ELEMENTS
-  // ==========================================
-  if (window.matchMedia("(hover: hover)").matches) {
-    const magneticElements = document.querySelectorAll('.btn');
-    magneticElements.forEach(btn => {
-      btn.addEventListener('mousemove', (e) => {
-        const rect = btn.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        gsap.to(btn, { x: x * 0.3, y: y * 0.3, duration: 0.6, ease: "power3.out" });
-      });
-      btn.addEventListener('mouseleave', () => {
-        gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: "elastic.out(1, 0.3)" });
-      });
-    });
-  }
-
-  // ==========================================
-  // 3. GSAP SCROLLTRIGGER ANIMATIONS
-  // ==========================================
-  gsap.registerPlugin(ScrollTrigger);
-
-  // ---- SPLIT TEXT BY CHARS (for extreme text reveals) ----
-  function splitTextByChars(selector) {
-    const elements = document.querySelectorAll(selector);
-    elements.forEach(el => {
-      if (el.dataset.charSplit) return; // avoid double-splitting
-      el.dataset.charSplit = 'true';
-      const text = el.innerText;
-      el.innerHTML = '';
-      text.split('').forEach(char => {
-        const span = document.createElement('span');
-        span.style.display = 'inline-block';
-        span.style.overflow = 'hidden';
-        span.style.verticalAlign = 'top';
-        if (char === ' ') { span.innerHTML = '&nbsp;'; }
-        else {
-          const inner = document.createElement('span');
-          inner.style.display = 'inline-block';
-          inner.style.transform = 'translateY(110%)';
-          inner.innerText = char;
-          inner.classList.add('reveal-char');
-          span.appendChild(inner);
-        }
-        el.appendChild(span);
-      });
-    });
-  }
-
-<<<<<<< HEAD
-  // ---- SPLIT TEXT BY WORDS (PRESERVING HTML TAGS & BRs) ----
-=======
-  // ---- SPLIT TEXT BY WORDS ----
->>>>>>> 25d6b8d1b997359068c352e7836b4a48fe66eb8f
   function splitTextForReveal(selector) {
     const elements = document.querySelectorAll(selector);
     elements.forEach(el => {
       if (el.dataset.wordSplit) return;
       el.dataset.wordSplit = 'true';
-<<<<<<< HEAD
 
       const originalNodes = Array.from(el.childNodes);
       el.innerHTML = '';
@@ -250,24 +149,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       originalNodes.forEach(node => processNode(node, el));
-=======
-      const text = el.innerText;
-      const words = text.split(' ');
-      el.innerHTML = '';
-      words.forEach(word => {
-        const span = document.createElement('span');
-        span.style.display = 'inline-block';
-        span.style.overflow = 'hidden';
-        span.style.verticalAlign = 'top';
-        const innerSpan = document.createElement('span');
-        innerSpan.style.display = 'inline-block';
-        innerSpan.style.transform = 'translateY(100%)';
-        innerSpan.innerText = word + '\u00A0';
-        innerSpan.classList.add('reveal-word');
-        span.appendChild(innerSpan);
-        el.appendChild(span);
-      });
->>>>>>> 25d6b8d1b997359068c352e7836b4a48fe66eb8f
     });
   }
 
