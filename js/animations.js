@@ -106,6 +106,27 @@
                     },
                     onComplete: () => {
                         sessionStorage.setItem('prizmabrixx_preloader_shown', 'true');
+                        gsap.to('#preloader', {
+                            opacity: 0,
+                            duration: 0.8,
+                            ease: 'power2.inOut',
+                            onComplete: () => {
+                                document.getElementById('preloader').style.display = 'none';
+                                document.body.classList.remove('loading');
+                                document.body.classList.add('loaded');
+                                ScrollTrigger.refresh();
+                            }
+                        });
+                    }
+                });
+            }
+        }
+    });
+})();
+
+// ——— GSAP & LENIS SETUP ———
+document.addEventListener('DOMContentLoaded', () => {
+  // ---- TEXT SPLIT FOR REVEAL ANIMATIONS ----
   function splitTextForReveal(selector) {
     const elements = document.querySelectorAll(selector);
     elements.forEach(el => {
@@ -188,7 +209,6 @@
     }, "-=0.8");
   }
 
-<<<<<<< HEAD
   // ---- AWARD SHOWCASE FRAME ----
   const awardFrame = document.getElementById('award-frame');
   if (awardFrame) {
@@ -234,8 +254,6 @@
     });
   }
 
-=======
->>>>>>> 25d6b8d1b997359068c352e7836b4a48fe66eb8f
   // ---- SECTION HEADINGS ----
   const sectionHeadings = document.querySelectorAll('.section-heading');
   sectionHeadings.forEach(heading => {
