@@ -19,9 +19,9 @@
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/pages/home.css" />
 
-  <!-- Favicon placeholder -->
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230EA5E9'/><text y='22' x='6' font-size='18' font-family='Arial' font-weight='900' fill='white'>P</text></svg>" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="apple-touch-icon" href="assets/images/logo.png" />
 </head>
 
 <body class="loading">
@@ -53,8 +53,6 @@
         <li><a href="about.html" class="nav-link" id="nav-about">About Us</a></li>
 
         <li><a href="Portfolio-page/index.html" class="nav-link" id="nav-portfolio">Portfolio</a></li>
-
-        <li><a href="award.html" class="nav-link" id="nav-award">Achievements</a></li>
         <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -180,70 +178,87 @@
             <div class="award-chip"><span class="chip-icon">🎨</span> Complete Brand Experiences</div>
           </div>
 
-          <div style="margin-top: 28px;">
-            <a href="https://www.linkedin.com/posts/thecconnects_congratulations-to-mr-thotla-vineel-chief-ugcPost-7186254050676375552-HYye?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener" class="btn btn-primary btn-lg" id="award-linkedin-btn">
-              View Announcement on LinkedIn
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="margin-left:8px;">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
         </div>
       </div>
 
-      <!-- Award Ceremony Event Photo Gallery Grid -->
-      <div class="award-gallery-strip reveal reveal-delay-3" id="award-gallery-block">
-        <div class="gallery-strip-header">
-          <span class="gallery-title">Award Ceremony Highlights</span>
+      <!-- Humanized Event Photo Gallery Section -->
+      <div class="award-gallery-strip reveal reveal-delay-3" id="award-gallery-block" style="margin-top: 60px;">
+        <div class="text-center" style="margin-bottom:36px;">
+          <span class="pill-label pill-label--cyan" style="margin-bottom: 12px; background: rgba(245, 145, 40, 0.1); border-color: rgba(245, 145, 40, 0.28); color: #e07820;">
+            <span class="dot" style="background:#f59128;"></span>
+            Event Gallery &amp; Moments
+          </span>
+          <h2 style="font-size: clamp(2rem, 3.8vw, 2.8rem); font-weight: 800; font-family: 'Outfit', sans-serif; color: var(--text-dark); margin: 10px 0 8px; letter-spacing: -0.02em;">
+            Glimpses of <span class="gradient-text">Excellence</span>
+          </h2>
+          <p style="font-size: 15px; color: var(--text-dark-sub); max-width: 520px; margin: 0 auto; line-height: 1.6;">
+            Snapshots from our award night, industry keynotes, and celebrations with leadership.
+          </p>
         </div>
-        <div class="gallery-cards-grid">
-          <div class="gallery-card img-reveal">
+        
+        <div class="gallery-grid" id="lightbox-gallery-home">
+          <a href="assets/images/a1.jpg" class="human-gallery-card reveal img-reveal">
+            <span class="card-location-tag">📍 Award Ceremony Gala</span>
             <img src="assets/images/a1.jpg" alt="Award Ceremony Event" loading="lazy" />
-            <div class="gallery-card-overlay"><span>Award Ceremony</span></div>
-          </div>
-          <div class="gallery-card img-reveal">
+            <div class="card-caption-overlay">
+              <div class="card-caption-title">3D Simulation Honors</div>
+              <div class="card-caption-sub">Prizmabrixx Team &amp; Leadership</div>
+            </div>
+            <div class="img-reveal-overlay"></div>
+          </a>
+          <a href="assets/images/a2.jpg" class="human-gallery-card reveal reveal-delay-1 img-reveal">
+            <span class="card-location-tag">🎙️ Industry Keynote</span>
             <img src="assets/images/a2.jpg" alt="Tech Conference Presentation" loading="lazy" />
-            <div class="gallery-card-overlay"><span>Tech Conference</span></div>
-          </div>
-          <div class="gallery-card img-reveal">
+            <div class="card-caption-overlay">
+              <div class="card-caption-title">Global C-Suite Summit</div>
+              <div class="card-caption-sub">Presentation &amp; Technology Showcase</div>
+            </div>
+            <div class="img-reveal-overlay"></div>
+          </a>
+          <a href="assets/images/a3.jpg" class="human-gallery-card reveal reveal-delay-2 img-reveal">
+            <span class="card-location-tag">🏆 CEO Award Night</span>
             <img src="assets/images/a3.jpg" alt="Award Winner Celebration" loading="lazy" />
-            <div class="gallery-card-overlay"><span>Winner Recognition</span></div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- EXPERTISE / SERVICES STRIP -->
-      <div class="services-strip reveal reveal-delay-4" style="margin-top: 60px;">
-        <div class="strip-label">OUR EXPERTISE</div>
-        <div class="marquee-wrapper" style="--fade-bg: var(--bg-light)">
-          <div class="marquee-track" id="marqueeTrack" aria-label="Services list">
-            <!-- duplicated for seamless loop -->
-            <div class="service-tag"><span class="icon">🥽</span> VR Walkthrough</div>
-            <div class="service-tag"><span class="icon">📱</span> Augmented Reality</div>
-            <div class="service-tag"><span class="icon">🖨️</span> 3D Printing</div>
-            <div class="service-tag"><span class="icon">✦</span> Drone Shoots</div>
-            <div class="service-tag"><span class="icon">✦</span> Web Development</div>
-            <div class="service-tag"><span class="icon">🎨</span> Branding</div>
-            <div class="service-tag"><span class="icon">📊</span> Marketing</div>
-            <div class="service-tag"><span class="icon">✦</span> Experience Center</div>
-            <div class="service-tag"><span class="icon">✦</span> Availability Tool</div>
-            <div class="service-tag"><span class="icon">🏆</span> Award Winner</div>
-            <!-- Duplicate set for infinite loop -->
-            <div class="service-tag"><span class="icon">🥽</span> VR Walkthrough</div>
-            <div class="service-tag"><span class="icon">📱</span> Augmented Reality</div>
-            <div class="service-tag"><span class="icon">🖨️</span> 3D Printing</div>
-            <div class="service-tag"><span class="icon">✦</span> Drone Shoots</div>
-            <div class="service-tag"><span class="icon">✦</span> Web Development</div>
-            <div class="service-tag"><span class="icon">🎨</span> Branding</div>
-            <div class="service-tag"><span class="icon">📊</span> Marketing</div>
-            <div class="service-tag"><span class="icon">✦</span> Experience Center</div>
-            <div class="service-tag"><span class="icon">✦</span> Availability Tool</div>
-            <div class="service-tag"><span class="icon">🏆</span> Award Winner</div>
-          </div>
+            <div class="card-caption-overlay">
+              <div class="card-caption-title">Excellence Trophy Presentation</div>
+              <div class="card-caption-sub">CEO Mr. Thotla Vineel</div>
+            </div>
+            <div class="img-reveal-overlay"></div>
+          </a>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- EXPERTISE / SERVICES STRIP (Full Width) -->
+  <div class="services-strip reveal reveal-delay-4" style="margin: 40px 0;">
+    <div class="strip-label">OUR EXPERTISE</div>
+    <div class="marquee-wrapper" style="--fade-bg: var(--bg-light)">
+      <div class="marquee-track" id="marqueeTrack" aria-label="Services list">
+        <!-- duplicated for seamless loop -->
+        <div class="service-tag"><span class="icon">🥽</span> VR Walkthrough</div>
+        <div class="service-tag"><span class="icon">📱</span> Augmented Reality</div>
+        <div class="service-tag"><span class="icon">🖨️</span> 3D Printing</div>
+        <div class="service-tag"><span class="icon">✦</span> Drone Shoots</div>
+        <div class="service-tag"><span class="icon">✦</span> Web Development</div>
+        <div class="service-tag"><span class="icon">🎨</span> Branding</div>
+        <div class="service-tag"><span class="icon">📊</span> Marketing</div>
+        <div class="service-tag"><span class="icon">✦</span> Experience Center</div>
+        <div class="service-tag"><span class="icon">✦</span> Availability Tool</div>
+        <div class="service-tag"><span class="icon">🏆</span> Award Winner</div>
+        <!-- Duplicate set for infinite loop -->
+        <div class="service-tag"><span class="icon">🥽</span> VR Walkthrough</div>
+        <div class="service-tag"><span class="icon">📱</span> Augmented Reality</div>
+        <div class="service-tag"><span class="icon">🖨️</span> 3D Printing</div>
+        <div class="service-tag"><span class="icon">✦</span> Drone Shoots</div>
+        <div class="service-tag"><span class="icon">✦</span> Web Development</div>
+        <div class="service-tag"><span class="icon">🎨</span> Branding</div>
+        <div class="service-tag"><span class="icon">📊</span> Marketing</div>
+        <div class="service-tag"><span class="icon">✦</span> Experience Center</div>
+        <div class="service-tag"><span class="icon">✦</span> Availability Tool</div>
+        <div class="service-tag"><span class="icon">🏆</span> Award Winner</div>
+      </div>
+    </div>
+  </div>
 
   <!-- ============================
        ABOUT TEASER
@@ -333,45 +348,45 @@
           <div class="service-card-icon">🥽</div>
           <h3 class="service-card-title">VR Walkthrough</h3>
           <p class="service-card-desc">Immersive virtual tours for real estate, architecture and enterprise spaces.</p>
-          <a href="services.html#vr" class="service-card-link" id="service-link-vr">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-vr">Explore <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-1" id="service-card-2">
           <div class="service-card-icon">📱</div>
           <h3 class="service-card-title">Augmented Reality</h3>
           <p class="service-card-desc">Layer digital content onto the real world for stunning product and brand
             experiences.</p>
-          <a href="services.html#ar" class="service-card-link" id="service-link-ar">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-ar">Explore <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-2" id="service-card-3">
           <div class="service-card-icon">🖨️</div>
           <h3 class="service-card-title">3D Printing</h3>
           <p class="service-card-desc">Physical prototypes, architectural models, and custom 3D-printed solutions.</p>
-          <a href="services.html#3d" class="service-card-link" id="service-link-3d">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-3d">Explore <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-3" id="service-card-4">
           <div class="service-card-icon">✦</div>
           <h3 class="service-card-title">Drone Shoots</h3>
           <p class="service-card-desc">Cinematic aerial photography and videography for properties and events.</p>
-          <a href="services.html#drone" class="service-card-link" id="service-link-drone">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-drone">Explore <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal" id="service-card-5">
           <div class="service-card-icon">✦</div>
           <h3 class="service-card-title">Web & App Development</h3>
           <p class="service-card-desc">Modern websites and mobile apps engineered for performance and scale.</p>
-          <a href="services.html#web" class="service-card-link" id="service-link-web">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-web">Explore <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-1" id="service-card-6">
           <div class="service-card-icon">🎨</div>
           <h3 class="service-card-title">Branding</h3>
           <p class="service-card-desc">Strategic brand identity, logo design, and visual systems that resonate.</p>
-          <a href="services.html#branding" class="service-card-link" id="service-link-branding">Explore
+          <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-branding">Explore
             <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-2" id="service-card-7">
           <div class="service-card-icon">📊</div>
           <h3 class="service-card-title">Digital Marketing</h3>
           <p class="service-card-desc">Data-driven campaigns that grow your brand and convert leads to customers.</p>
-          <a href="services.html#marketing" class="service-card-link" id="service-link-marketing">Explore
+          <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-marketing">Explore
             <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-3" id="service-card-8">
@@ -379,81 +394,23 @@
           <h3 class="service-card-title">Experience Center</h3>
           <p class="service-card-desc">Design and build captivating beyond-reality experience centres for your brand.
           </p>
-          <a href="services.html#bec" class="service-card-link" id="service-link-bec">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-bec">Explore <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-1" id="service-card-9">
           <div class="service-card-icon">✦</div>
           <h3 class="service-card-title">Availability Tool</h3>
           <p class="service-card-desc">Interactive unit selection tools for real estate projects and property showcases.
           </p>
-          <a href="services.html#tool" class="service-card-link" id="service-link-tool">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-tool">Explore <span>→</span></a>
         </div>
       </div>
 
       <div class="text-center" style="margin-top: 48px;">
-        <a href="services.html" class="btn btn-outline-light" id="all-services-btn">View All Services</a>
+        <a href="Portfolio-page/index.html" class="btn btn-outline-light" id="all-services-btn">Explore Portfolio</a>
       </div>
     </div>
   </section>
 
-  <!-- ============================
-       FEATURED WORK (with real images)
-  ============================= -->
-  <section class="section section--dark featured-work" id="featured-work" aria-labelledby="work-heading">
-    <div class="container">
-      <div class="section-header reveal" id="work-header">
-        <div>
-          <span class="section-badge">Our Portfolio</span>
-          <h2 class="section-heading" id="work-heading">Featured <span class="gradient-text">Projects</span></h2>
-          <div class="divider divider--left"></div>
-        </div>
-        <a href="Portfolio-page/index.html" class="btn btn-outline-light" id="view-all-work-btn">View All Projects</a>
-      </div>
-
-      <div class="work-grid" id="work-grid">
-        <div class="work-card work-card--large reveal" id="work-card-1">
-          <div class="work-card-bg" style="--card-color-1:#0EA5E9;--card-color-2:#7C3AED;"></div>
-          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Luxury Township VR Tour" class="work-card-img" loading="lazy" />
-          <div class="work-card-content">
-            <div class="work-card-tag">VR Walkthrough</div>
-            <h3 class="work-card-title">Luxury Township<br />Virtual Tour</h3>
-            <p class="work-card-desc">360 immersive walkthrough for a 500-unit residential project</p>
-            <a href="Portfolio-page/index.html" class="work-card-link" id="work-card-link-1">View Project →</a>
-          </div>
-        </div>
-        <div class="work-card reveal reveal-delay-1" id="work-card-2">
-          <div class="work-card-bg" style="--card-color-1:#F59E0B;--card-color-2:#EF4444;"></div>
-          <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&q=80" alt="AR Product Showcase" class="work-card-img" loading="lazy" />
-          <div class="work-card-content">
-            <div class="work-card-tag">Augmented Reality</div>
-            <h3 class="work-card-title">AR Product Showcase</h3>
-            <p class="work-card-desc">Interactive AR catalog for furniture brand</p>
-            <a href="Portfolio-page/index.html" class="work-card-link" id="work-card-link-2">View Project →</a>
-          </div>
-        </div>
-        <div class="work-card reveal reveal-delay-2" id="work-card-3">
-          <div class="work-card-bg" style="--card-color-1:#10B981;--card-color-2:#0EA5E9;"></div>
-          <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80" alt="3D Architectural Model" class="work-card-img" loading="lazy" />
-          <div class="work-card-content">
-            <div class="work-card-tag">3D Printing</div>
-            <h3 class="work-card-title">Architectural Scale Model</h3>
-            <p class="work-card-desc">Detailed 1:100 scale model for township project</p>
-            <a href="Portfolio-page/index.html" class="work-card-link" id="work-card-link-3">View Project →</a>
-          </div>
-        </div>
-        <div class="work-card reveal reveal-delay-3" id="work-card-4">
-          <div class="work-card-bg" style="--card-color-1:#8B5CF6;--card-color-2:#EC4899;"></div>
-          <img src="https://images.unsplash.com/photo-1506947411487-a56738267384?w=600&q=80" alt="Aerial Drone Shot" class="work-card-img" loading="lazy" />
-          <div class="work-card-content">
-            <div class="work-card-tag">Drone Shoot</div>
-            <h3 class="work-card-title">Aerial Property Film</h3>
-            <p class="work-card-desc">Cinematic aerial for 200-acre commercial campus</p>
-            <a href="Portfolio-page/index.html" class="work-card-link" id="work-card-link-4">View Project →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ============================
        HORIZONTAL SCROLL SHOWCASE
@@ -687,7 +644,7 @@
       </div>
 
       <div class="text-center" style="margin-top: 40px;">
-        <a href="testimonials.html" class="btn btn-outline-light" id="all-testimonials-btn">Read More Stories</a>
+        <a href="about.html" class="btn btn-outline-light" id="all-testimonials-btn">Read More Stories</a>
       </div>
     </div>
   </section>
@@ -726,10 +683,9 @@
         <div class="client-logo-item"><span class="client-name-text">SLV Group</span></div>
       </div>
     </div>
-    <div class="text-center" style="margin-top: 40px;">
-      <a href="clients.html" class="btn btn-outline-light" id="all-clients-btn">Meet All Our Clients</a>
-    </div>
   </section>
+
+
 
   <!-- ============================
        CTA BANNER
@@ -802,24 +758,22 @@
         <div class="footer-col">
           <div class="footer-col-title">Company</div>
           <ul class="footer-links">
+            <li><a href="index.html" id="footer-link-home">Home</a></li>
             <li><a href="about.html" id="footer-link-about">About Us</a></li>
-            <li><a href="services.html" id="footer-link-services">Our Services</a></li>
-            <li><a href="#award-frame" id="footer-link-award">Our Achievements</a></li>
             <li><a href="Portfolio-page/index.html" id="footer-link-portfolio">Portfolio</a></li>
-            <li><a href="clients.html" id="footer-link-clients">Our Clients</a></li>
-            <li><a href="blog.html" id="footer-link-blog">Blog</a></li>
-            <li><a href="testimonials.html" id="footer-link-testimonials">Testimonials</a></li>
+            <li><a href="index.html#award-frame" id="footer-link-award">Achievements</a></li>
+            <li><a href="contact.html" id="footer-link-contact-main">Contact Us</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <div class="footer-col-title">Services</div>
           <ul class="footer-links">
-            <li><a href="services.html#vr" id="footer-link-vr">VR Walkthrough</a></li>
-            <li><a href="services.html#ar" id="footer-link-ar">Augmented Reality</a></li>
-            <li><a href="services.html#3d" id="footer-link-3d">3D Printing</a></li>
-            <li><a href="services.html#drone" id="footer-link-drone">Drone Shoots</a></li>
-            <li><a href="services.html#web" id="footer-link-web">Web &amp; App Development</a></li>
+            <li><a href="Portfolio-page/index.html" id="footer-link-vr">VR Walkthrough</a></li>
+            <li><a href="Portfolio-page/index.html" id="footer-link-ar">Augmented Reality</a></li>
+            <li><a href="Portfolio-page/index.html" id="footer-link-3d">3D Printing</a></li>
+            <li><a href="Portfolio-page/index.html" id="footer-link-drone">Drone Shoots</a></li>
+            <li><a href="Portfolio-page/index.html" id="footer-link-web">Web &amp; App Development</a></li>
           </ul>
         </div>
 

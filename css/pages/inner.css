@@ -1,5 +1,5 @@
-/* =============================================
-   PRIZMABRIXX — Inner Pages Shared CSS
+﻿/* =============================================
+   PRIZMABRIXX â€” Inner Pages Shared CSS
    ============================================= */
 
 /* ========== PAGE HERO ========== */
@@ -1738,4 +1738,21 @@
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--text-dark-sub);
+}
+
+/* ABOUT HERO INTERACTIVE BLOB */
+.hero-glow-blob {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(245, 145, 40, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s ease;
+  z-index: 0;
+  opacity: 0;
+}
+.page-hero:hover .hero-glow-blob {
+  opacity: 1;
 }

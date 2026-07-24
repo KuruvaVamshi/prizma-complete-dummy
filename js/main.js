@@ -34,25 +34,35 @@ document.addEventListener('DOMContentLoaded', () => {
   // =====================
   // DYNAMIC ACTIVE LINK
   // =====================
-  const currentPath = window.location.pathname;
-  let activeFound = false;
+  const rawPath = window.location.pathname.toLowerCase();
+  const currentPath = rawPath.replace(/\/$/, "");
+
+  // Determine current page name (e.g. "index", "about", "contact", "portfolio-page")
+  let currentBase = currentPath.split('/').filter(Boolean).pop() || 'index';
+  currentBase = currentBase.replace(/\.html$/, '');
+
+  const isHomeCurrent = currentBase === 'index' || currentBase === 'prizma-main';
+
   document.querySelectorAll('.nav-menu a.nav-link').forEach(link => {
-      // Remove any pre-existing active class
-      link.classList.remove('active');
-      
-      const linkPath = new URL(link.href).pathname;
-      // Compare paths, handling index.html and root
-      if (currentPath === linkPath || (currentPath.endsWith('/') && linkPath.endsWith('index.html'))) {
-          link.classList.add('active');
-          activeFound = true;
+    link.classList.remove('active');
+    
+    try {
+      const linkUrl = new URL(link.href, window.location.origin);
+      let linkPath = linkUrl.pathname.toLowerCase().replace(/\/$/, "");
+      let linkBase = linkPath.split('/').filter(Boolean).pop() || 'index';
+      linkBase = linkBase.replace(/\.html$/, '');
+
+      const isHomeLink = linkBase === 'index' || linkBase === 'prizma-main';
+
+      if (isHomeCurrent && isHomeLink) {
+        link.classList.add('active');
+      } else if (!isHomeCurrent && !isHomeLink && (currentBase === linkBase || currentPath.endsWith(linkBase))) {
+        link.classList.add('active');
       }
+    } catch (e) {
+      console.error(e);
+    }
   });
-  
-  // fallback for home if nothing matches
-  if (!activeFound) {
-      const homeLink = document.getElementById('nav-home');
-      if (homeLink) homeLink.classList.add('active');
-  }
 
   // =====================
   // MOBILE MENU
@@ -92,10 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =====================
-  // SCROLL REVEAL (REMOVED)
-  // =====================
-  // Old CSS-based IntersectionObserver logic removed in favor of GSAP ScrollTrigger
-  // =====================
   // ANIMATED COUNTERS
   // =====================
   const counters = [
@@ -132,29 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
         statsObserver.disconnect();
       }
     }, { threshold: 0.1 });
-    statsObserver.observe(statsSection);
-  }
-
-  // =====================
-  // ACTIVE NAV LINK
-  // =====================
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('.navbar-nav a, .mobile-nav a');
-  navLinks.forEach((link) => {
-    const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-
-  // =====================
-  // SMOOTH PARALLAX (hero) (REMOVED)
-  // =====================
-  // Replaced by GSAP in animations.js
-  // =====================
-  // CURSOR GLOW EFFECT (REMOVED FOR PERFORMANCE)
   // =====================
 
   // =====================

@@ -164,6 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
           container.appendChild(document.createElement('br'));
         } else if (node.nodeType === Node.ELEMENT_NODE) {
           const clone = node.cloneNode(false);
+          if (clone.classList && clone.classList.contains('gradient-text')) {
+            clone.classList.remove('gradient-text');
+          }
           Array.from(node.childNodes).forEach(child => processNode(child, clone, hasGradient));
           container.appendChild(clone);
         }
@@ -442,5 +445,44 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollTrigger: { trigger: circle.closest('.progress-ring-container') || circle, start: "top 80%", toggleActions: "play none none reverse" }
     });
   });
+
+  // ==========================================
+  // 15. ABOUT HERO INTERACTIVE EFFECT
+  // ==========================================
+  const aboutHero = document.getElementById('about-hero');
+  const aboutBlob = document.getElementById('about-hero-blob');
+  const aboutContent = document.getElementById('about-hero-content');
+
+  if (aboutHero && aboutBlob && aboutContent) {
+    aboutHero.addEventListener('mousemove', (e) => {
+      const rect = aboutHero.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      // Move blob
+      gsap.to(aboutBlob, {
+        x: x, y: y, duration: 0.8, ease: "power2.out"
+      });
+
+      // 3D Parallax on text
+      const px = (x / rect.width) - 0.5;
+      const py = (y / rect.height) - 0.5;
+
+      gsap.to(aboutContent, {
+        rotateY: px * 15,
+        rotateX: -py * 15,
+        x: px * -30,
+        y: py * -30,
+        duration: 0.5,
+        ease: "power2.out"
+      });
+    });
+
+    aboutHero.addEventListener('mouseleave', () => {
+      gsap.to(aboutContent, {
+        rotateY: 0, rotateX: 0, x: 0, y: 0, duration: 1, ease: "power3.out"
+      });
+    });
+  }
 
 });
