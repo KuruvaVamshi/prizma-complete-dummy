@@ -6,6 +6,19 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // =====================
+  // DARK / LIGHT THEME SWITCHER
+  // =====================
+  // DARK / LIGHT THEME SWITCHER INIT
+  // =====================
+  (() => {
+    const savedTheme = localStorage.getItem('theme-preference') || 'light';
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+      if (document.body) document.body.classList.add('dark-mode');
+    }
+  })();
+
+  // =====================
   // NAVBAR SCROLL EFFECT
   // =====================
   const navbar = document.getElementById('navbar');
@@ -35,34 +48,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // DYNAMIC ACTIVE LINK
   // =====================
   const rawPath = window.location.pathname.toLowerCase();
-  const currentPath = rawPath.replace(/\/$/, "");
+  const allNavLinks = document.querySelectorAll('.nav-menu a.nav-link');
+  allNavLinks.forEach(link => link.classList.remove('active'));
 
-  // Determine current page name (e.g. "index", "about", "contact", "portfolio-page")
-  let currentBase = currentPath.split('/').filter(Boolean).pop() || 'index';
-  currentBase = currentBase.replace(/\.html$/, '');
-
-  const isHomeCurrent = currentBase === 'index' || currentBase === 'prizma-main';
-
-  document.querySelectorAll('.nav-menu a.nav-link').forEach(link => {
-    link.classList.remove('active');
-    
-    try {
-      const linkUrl = new URL(link.href, window.location.origin);
-      let linkPath = linkUrl.pathname.toLowerCase().replace(/\/$/, "");
-      let linkBase = linkPath.split('/').filter(Boolean).pop() || 'index';
-      linkBase = linkBase.replace(/\.html$/, '');
-
-      const isHomeLink = linkBase === 'index' || linkBase === 'prizma-main';
-
-      if (isHomeCurrent && isHomeLink) {
-        link.classList.add('active');
-      } else if (!isHomeCurrent && !isHomeLink && (currentBase === linkBase || currentPath.endsWith(linkBase))) {
-        link.classList.add('active');
-      }
-    } catch (e) {
-      console.error(e);
-    }
-  });
+  if (rawPath.includes('portfolio')) {
+    const pLink = document.getElementById('nav-portfolio');
+    if (pLink) pLink.classList.add('active');
+  } else if (rawPath.includes('about')) {
+    const aLink = document.getElementById('nav-about');
+    if (aLink) aLink.classList.add('active');
+  } else if (rawPath.includes('contact')) {
+    const cLink = document.getElementById('nav-contact');
+    if (cLink) cLink.classList.add('active');
+  } else {
+    const hLink = document.getElementById('nav-home');
+    if (hLink) hLink.classList.add('active');
+  }
 
   // =====================
   // MOBILE MENU
@@ -138,7 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
         statsObserver.disconnect();
       }
     }, { threshold: 0.1 });
-  // =====================
+    statsObserver.observe(statsSection);
+  }
 
   // =====================
   // SERVICE CARD TILT

@@ -4,14 +4,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prizmabrixx  Virtual Simulation | VR, AR & 3D Experts</title>
+  <title>PRIZMABRIXX  Virtual Simulation | VR, AR & 3D Experts</title>
   <meta name="description"
-    content="Prizmabrixx is a Hyderabad-based virtual simulation company specializing in VR walkthroughs, AR experiences, 3D printing, drone shoots, and immersive technology since 2018." />
+    content="PRIZMABRIXX is a Hyderabad-based Virtual Simulation Company specializing in VR Walkthroughs, AR Experiences, 3D Printing, Drone Shoots, and Immersive Technology since 2018." />
   <meta name="keywords"
-    content="virtual reality, augmented reality, 3D printing, VR walkthrough, AR experience, simulation company, Hyderabad, Prizmabrixx" />
-  <meta property="og:title" content="Prizmabrixx  Virtual Simulation Company" />
+    content="virtual reality, augmented reality, 3D printing, VR Walkthrough, AR Experience, simulation company, Hyderabad, PRIZMABRIXX" />
+  <meta property="og:title" content="PRIZMABRIXX  Virtual Simulation Company" />
   <meta property="og:description" content="Bringing imagination to life with VR, AR, and immersive technology." />
   <meta property="og:type" content="website" />
+
+  <!-- FontAwesome & Theme Early Init -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme-preference') || 'light';
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+        document.addEventListener('DOMContentLoaded', function() {
+          if (document.body) document.body.classList.add('dark-mode');
+        });
+      }
+    })();
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark-mode');
+      if (document.body) document.body.classList.toggle('dark-mode', isDark);
+      localStorage.setItem('theme-preference', isDark ? 'dark' : 'light');
+
+      const btns = document.querySelectorAll('#themeToggleBtn');
+      btns.forEach(function(btn) {
+        const activeIcon = btn.querySelector(isDark ? '.sun-icon' : '.moon-icon');
+        if (activeIcon && typeof gsap !== 'undefined') {
+          gsap.fromTo(activeIcon, { scale: 0.6, rotate: -45 }, { scale: 1, rotate: 0, duration: 0.45, ease: "back.out(1.8)" });
+        }
+      });
+    }
+  </script>
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/tokens.css" />
@@ -29,7 +57,7 @@
   <div id="preloader">
       <canvas id="preloader-canvas"></canvas>
       <div class="preloader-content">
-          <img src="assets/images/logo.png" class="preloader-logo-img" alt="prizmaBrixx">
+          <img src="assets/images/logo-full.png" class="preloader-logo-img" alt="PRIZMABRIXX">
           <div class="preloader-tagline">Building Visual Experiences Beyond Imagination</div>
           <div class="preloader-progress-bar">
               <div class="preloader-progress-fill"></div>
@@ -45,11 +73,11 @@
   ============================= -->
   <nav class="navbar" id="navbar">
     <a href="index.html" class="nav-logo">
-        <img src="assets/images/logo.png" alt="PrizmaBrixx" class="nav-logo-img">
-        <span class="nav-logo-text">Prizma<span>Brixx</span></span>
+        <img src="assets/images/logo.png" alt="PRIZMABRIXX" class="nav-logo-img">
+        <span class="nav-logo-text">PRIZMA<span>BRIXX</span></span>
     </a>
     <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
+        <li><a href="index.html" class="nav-link active" id="nav-home">Home</a></li>
         <li><a href="about.html" class="nav-link" id="nav-about">About Us</a></li>
 
         <li><a href="Portfolio-page/index.html" class="nav-link" id="nav-portfolio">Portfolio</a></li>
@@ -57,6 +85,15 @@
     </ul>
     <div class="nav-right">
         <a href="contact.html" class="nav-cta">Get a Quote</a>
+        <!-- Theme Toggle Switch -->
+        <button id="themeToggleBtn" class="theme-toggle-slider magnetic" aria-label="Toggle theme" onclick="toggleTheme()">
+            <span class="slider-track">
+                <span class="slider-thumb">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon"></i>
+                </span>
+            </span>
+        </button>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
             <span></span>
             <span></span>
@@ -82,12 +119,12 @@
       <div class="hero-content">
 
         <h1 class="display-heading reveal reveal-delay-1" id="hero-heading">
-          Virtual simulation studio,<br />
-          from concept to <span class="gradient-text">walkthrough</span>
+          Virtual Simulation Studio,<br />
+          From Concept to <span class="gradient-text">Walkthrough</span>
         </h1>
 
         <p class="body-lg text-muted-dark reveal reveal-delay-2" id="hero-subtext">
-          We craft VR walkthroughs, AR experiences, 3D simulations and beyond <br class="hide-mobile" />
+          We craft VR Walkthroughs, AR Experiences, 3D Simulations and beyond <br class="hide-mobile" />
           transforming how businesses and people experience the world.
         </p>
 
@@ -150,7 +187,7 @@
               </div>
               <div class="award-card-caption">
                 <div class="caption-title">3D Virtual Simulation Excellence Award</div>
-                <div class="caption-sub">Prizmabrixx · CEO Mr. Thotla Vineel</div>
+                <div class="caption-sub">PRIZMABRIXX · CEO Mr. Thotla Vineel</div>
               </div>
             </div>
           </div>
@@ -168,7 +205,7 @@
             Congratulations to <strong>Mr. THOTLA VINEEL</strong>, Chief Executive Officer at <strong>PRIZMABRIXX</strong>, on receiving the esteemed <em>3D Virtual Simulation Excellence Award</em>.
           </p>
           <p class="body-base text-muted-dark" style="margin-top: 14px;">
-            Prizmabrixx continues to pioneer high-fidelity 3D virtual simulations, architectural VR walkthroughs, 3D printed miniatures, and interactive visualization solutions for real estate and enterprise leaders nationwide.
+            PRIZMABRIXX continues to pioneer high-fidelity 3D Virtual Simulations, Architectural VR Walkthroughs, 3D Printed Miniatures, and Interactive Visualization Solutions for Real Estate and Enterprise Leaders Nationwide.
           </p>
 
           <div class="award-highlights-grid">
@@ -202,7 +239,7 @@
             <img src="assets/images/a1.jpg" alt="Award Ceremony Event" loading="lazy" />
             <div class="card-caption-overlay">
               <div class="card-caption-title">3D Simulation Honors</div>
-              <div class="card-caption-sub">Prizmabrixx Team &amp; Leadership</div>
+              <div class="card-caption-sub">PRIZMABRIXX Team &amp; Leadership</div>
             </div>
             <div class="img-reveal-overlay"></div>
           </a>
@@ -268,13 +305,13 @@
       <div class="about-grid">
         <!-- Text -->
         <div class="about-text reveal" id="about-text-block">
-          <span class="section-badge section-badge--light">About Prizmabrixx</span>
+          <span class="section-badge section-badge--light">About PRIZMABRIXX</span>
           <h2 class="section-heading" id="about-heading">
             Redefining Reality Since <span class="gradient-text">2018</span>
           </h2>
           <div class="divider divider--left"></div>
           <p class="body-lg text-muted-light">
-            Prizmabrixx is a Hyderabad-based virtual simulation powerhouse. We combine cutting-edge VR, AR, and 3D
+            PRIZMABRIXX is a Hyderabad-based Virtual Simulation Powerhouse. We combine cutting-edge VR, AR, and 3D
             technologies with bold creative thinking to deliver immersive experiences that captivate, convert, and
             inspire.
           </p>
@@ -366,7 +403,7 @@
         <div class="service-card glass-card reveal reveal-delay-3" id="service-card-4">
           <div class="service-card-icon">✦</div>
           <h3 class="service-card-title">Drone Shoots</h3>
-          <p class="service-card-desc">Cinematic aerial photography and videography for properties and events.</p>
+          <p class="service-card-desc">Cinematic Aerial Photography and videography for properties and events.</p>
           <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-drone">Explore <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal" id="service-card-5">
@@ -506,7 +543,7 @@
       <div class="text-center" style="margin-bottom: 60px;">
         <span class="section-badge reveal">Why Us</span>
         <h2 class="section-heading reveal reveal-delay-1" id="why-heading">
-          Why Brands Choose <span class="gradient-text">Prizmabrixx</span>
+          Why Brands Choose <span class="gradient-text">PRIZMABRIXX</span>
         </h2>
       </div>
 
@@ -605,7 +642,7 @@
       <div class="grid-3" id="testimonials-grid">
         <div class="testimonial-card reveal" id="testimonial-1">
           <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"Prizmabrixx completely transformed how we present our properties. The VR
+          <p class="testimonial-text">"PRIZMABRIXX completely transformed how we present our properties. The VR
             walkthroughs they built helped us close deals 3x faster. Absolutely world-class team."</p>
           <div class="testimonial-author">
             <div class="author-avatar">RK</div>
@@ -618,8 +655,8 @@
 
         <div class="testimonial-card reveal reveal-delay-1" id="testimonial-2">
           <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"The AR experience they created for our product launch was jaw-dropping. Customers
-            couldn't stop engaging with it. Prizmabrixx truly understands immersive storytelling."</p>
+          <p class="testimonial-text">"The AR Experience they created for our product launch was jaw-dropping. Customers
+            couldn't stop engaging with it. PRIZMABRIXX truly understands immersive storytelling."</p>
           <div class="testimonial-author">
             <div class="author-avatar">PM</div>
             <div>
@@ -631,7 +668,7 @@
 
         <div class="testimonial-card reveal reveal-delay-2" id="testimonial-3">
           <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"From drone shoots to 3D-printed architectural models, Prizmabrixx delivered
+          <p class="testimonial-text">"From Drone Shoots to 3D-Printed Architectural Models, PRIZMABRIXX delivered
             everything on time and beyond expectations. Our go-to partner for all things immersive."</p>
           <div class="testimonial-author">
             <div class="author-avatar">AS</div>
@@ -722,9 +759,9 @@
         <!-- Brand -->
         <div class="footer-brand">
           <a href="index.html" class="navbar-logo" id="footer-logo">
-            <img src="assets/images/logo.png" alt="Prizmabrixx" class="navbar-logo-img" />
+            <img src="assets/images/logo-footer.png" alt="PRIZMABRIXX" class="navbar-logo-img" />
           </a>
-          <p>A leading virtual simulation company based in Hyderabad, India. Crafting immersive VR, AR, and 3D
+          <p>A leading Virtual Simulation Company based in Hyderabad, India. Crafting immersive VR, AR, and 3D
             experiences since 2018.</p>
           <div class="footer-social">
             <a href="#" class="social-link" id="footer-instagram" aria-label="Instagram" title="Instagram">
@@ -789,7 +826,7 @@
 
       <!-- Bottom Bar -->
       <div class="footer-bottom">
-        <p>© 2026 Prizmabrixx. All rights reserved.</p>
+        <p>© 2026 PRIZMABRIXX. All rights reserved.</p>
         <div class="footer-bottom-links">
           <a href="contact.html" id="footer-privacy">Privacy Policy</a>
           <a href="contact.html" id="footer-terms">Terms of Service</a>

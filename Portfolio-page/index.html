@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prizma Brixx | Architectural Visualization & 3D Design Studio</title>
+    <title>PRIZMA BRIXX | Architectural Visualization & 3D Design Studio</title>
 
     <!-- Theme Initialization Script to Prevent Flash -->
     <script>
@@ -12,26 +12,43 @@
             const savedTheme = localStorage.getItem('theme-preference') || 'light';
             if (savedTheme === 'dark') {
                 document.documentElement.classList.add('dark-mode');
+                document.addEventListener('DOMContentLoaded', function () {
+                    if (document.body) document.body.classList.add('dark-mode');
+                });
             }
         })();
+
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.toggle('dark-mode');
+            if (document.body) document.body.classList.toggle('dark-mode', isDark);
+            localStorage.setItem('theme-preference', isDark ? 'dark' : 'light');
+
+            const btns = document.querySelectorAll('#themeToggleBtn');
+            btns.forEach(function (btn) {
+                const activeIcon = btn.querySelector(isDark ? '.sun-icon' : '.moon-icon');
+                if (activeIcon && typeof gsap !== 'undefined') {
+                    gsap.fromTo(activeIcon, { scale: 0.6, rotate: -45 }, { scale: 1, rotate: 0, duration: 0.45, ease: "back.out(1.8)" });
+                }
+            });
+        }
     </script>
 
     <!-- SEO Meta Tags -->
     <meta name="description"
-        content="Prizma Brixx is a premier architectural visualization, 3D floor planning, and interactive real estate design studio. Explore our portfolio of exterior renders, master layouts, and custom interactive tools.">
+        content="PRIZMA BRIXX is a premier architectural visualization, 3D floor planning, and interactive real estate design studio. Explore our portfolio of exterior renders, master layouts, and custom interactive tools.">
     <meta name="keywords"
-        content="Architectural Visualization, 3D Rendering, Real Estate UI, Floor Plans, Exterior Renders, GK Zenith, MVV Housing, Prizma Brixx">
-    <meta name="author" content="Prizma Brixx">
+        content="Architectural Visualization, 3D Rendering, Real Estate UI, Floor Plans, Exterior Renders, GK Zenith, MVV Housing, PRIZMA BRIXX">
+    <meta name="author" content="PRIZMA BRIXX">
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://prizmabrixx.in/">
-    <meta property="og:title" content="Prizma Brixx | Premium Architectural Visualization & 3D Design Studio">
+    <meta property="og:title" content="PRIZMA BRIXX | Premium Architectural Visualization & 3D Design Studio">
     <meta property="og:description"
         content="We build next-generation immersive visualization platforms, cinematic drone storytelling, and custom digital PropTech ecosystems.">
     <meta property="og:image" content="https://prizmabrixx.in/images/GK-Zenith.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Prizma Brixx | Premium Architectural Visualization">
+    <meta name="twitter:title" content="PRIZMA BRIXX | Premium Architectural Visualization">
     <meta name="twitter:description"
         content="Immersive visualization platforms, cinematic drone storytelling & custom PropTech ecosystems.">
     <meta name="twitter:image" content="https://prizmabrixx.in/images/GK-Zenith.png">
@@ -63,7 +80,7 @@
         <div class="reticle-core"></div>
         <span class="reticle-label">VIEW</span>
     </div>
-    
+
     <!-- ── PORTFOLIO OVERLAY MODAL ── -->
     <div id="portfolio-modal">
         <div class="modal-backdrop" id="modal-close-backdrop" style="position: absolute; inset: 0; z-index: 1;"></div>
@@ -84,8 +101,8 @@
     <!-- ── FLOATING GLASS NAVIGATION ── -->
     <nav class="navbar" style="opacity: 0; transform: translateY(-100px); pointer-events: none;">
         <a href="../index.html" class="nav-logo">
-            <img src="logo.png" alt="PrizmaBrixx" class="nav-logo-img">
-            <span class="nav-logo-text">Prizma<span>Brixx</span></span>
+            <img src="logo.png" alt="PRIZMABRIXX" class="nav-logo-img">
+            <span class="nav-logo-text">PRIZMA<span>BRIXX</span></span>
         </a>
         <ul class="nav-menu">
             <li><a href="../index.html" class="nav-link" id="nav-home">Home</a></li>
@@ -98,7 +115,8 @@
         <div class="nav-right">
             <a href="../contact.html" class="nav-cta">Get a Quote</a>
             <!-- Theme Toggle Switch -->
-            <button id="themeToggleBtn" class="theme-toggle-slider magnetic" aria-label="Toggle theme">
+            <button id="themeToggleBtn" class="theme-toggle-slider magnetic" aria-label="Toggle theme"
+                onclick="toggleTheme()">
                 <span class="slider-track">
                     <span class="slider-thumb">
                         <i class="fa-solid fa-moon moon-icon"></i>
@@ -123,7 +141,9 @@
                 Building <span class="rolling-text-container"><span class="rolling-text">Visions</span></span>
             </h1>
             <p class="hero-subtitle">
-                Behind every 3D model and VR walkthrough is a vision we had the privilege to bring to life. We've spent the last 8 years partnering with incredible people to build experiences that truly stand out. Here is some of our favorite work.
+                Behind every 3D Model and VR Walkthrough is a vision we had the privilege to bring to life. We've spent
+                the last 8 years partnering with incredible people to build experiences that truly stand out. Here is
+                some of our favorite work.
             </p>
             <!-- Hero CTA Buttons -->
             <div class="hero-cta-group">
@@ -137,22 +157,26 @@
             <!-- Tech Capabilities Bar (Now Interactive Grid) -->
             <div class="hero-stats-bar">
                 <div class="hero-stat-item hover-trigger" data-hover-index="1">
-                    <span class="hero-tech-title" style="font-size: 1.1rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 700; color: var(--accent);">500+</span>
+                    <span class="hero-tech-title"
+                        style="font-size: 1.1rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 700; color: var(--accent);">500+</span>
                     <span class="hero-stat-label">Visions Realized</span>
                 </div>
                 <div class="hero-stat-divider"></div>
                 <div class="hero-stat-item hover-trigger" data-hover-index="2">
-                    <span class="hero-tech-title" style="font-size: 1.1rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 700; color: var(--accent);">50+</span>
+                    <span class="hero-tech-title"
+                        style="font-size: 1.1rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 700; color: var(--accent);">50+</span>
                     <span class="hero-stat-label">Partnerships Built</span>
                 </div>
                 <div class="hero-stat-divider"></div>
                 <div class="hero-stat-item hover-trigger" data-hover-index="3">
-                    <span class="hero-tech-title" style="font-size: 1.1rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 700; color: var(--accent);">8+</span>
+                    <span class="hero-tech-title"
+                        style="font-size: 1.1rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 700; color: var(--accent);">8+</span>
                     <span class="hero-stat-label">Years of Crafting</span>
                 </div>
                 <div class="hero-stat-divider"></div>
                 <div class="hero-stat-item hover-trigger" data-hover-index="4">
-                    <span class="hero-tech-title" style="font-size: 1.1rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 700; color: var(--accent);">1</span>
+                    <span class="hero-tech-title"
+                        style="font-size: 1.1rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 700; color: var(--accent);">1</span>
                     <span class="hero-stat-label">Passionate Team</span>
                 </div>
             </div>
@@ -281,7 +305,8 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="numbered-heading">Drone Shoot & Route Video</h2>
-                <p class="section-subheading">Cinematic aerial site surveys and key navigation routes visualized through high-definition drone
+                <p class="section-subheading">Cinematic aerial site surveys and key navigation routes visualized through
+                    high-definition drone
                     visuals.</p>
             </div>
         </div>
@@ -296,7 +321,6 @@
                         <source src="Videos/drone1.mp4" type="video/mp4">
                     </video>
                     <div class="video-card-overlay">
-                        <span class="video-tag"><i class="fa-solid fa-play"></i> Drone View 01</span>
                         <h4 class="video-title">Aerial Layout Survey</h4>
                     </div>
                 </a>
@@ -304,10 +328,9 @@
                 <a href="https://drive.google.com/drive/u/0/folders/12f91mvgTYSkpWvFogJXRXlt2x3wIf-9r" target="_blank"
                     class="video-grid-card">
                     <video loop muted playsinline disableRemotePlayback preload="none">
-                        <source src="Videos/drone2.mp4" type="video/mp4">
+                        <source src="Videos/Route Visualisation.mp4" type="video/mp4">
                     </video>
                     <div class="video-card-overlay">
-                        <span class="video-tag"><i class="fa-solid fa-play"></i> Drone View 02</span>
                         <h4 class="video-title">Route Visualization</h4>
                     </div>
                 </a>
@@ -315,10 +338,9 @@
                 <a href="https://drive.google.com/drive/u/0/folders/12f91mvgTYSkpWvFogJXRXlt2x3wIf-9r" target="_blank"
                     class="video-grid-card">
                     <video loop muted playsinline disableRemotePlayback preload="none">
-                        <source src="Videos/drone3.mp4" type="video/mp4">
+                        <source src="Videos/petimeter flyby.mp4" type="video/mp4">
                     </video>
                     <div class="video-card-overlay">
-                        <span class="video-tag"><i class="fa-solid fa-play"></i> Drone View 03</span>
                         <h4 class="video-title">Perimeter Flyby</h4>
                     </div>
                 </a>
@@ -326,10 +348,9 @@
                 <a href="https://drive.google.com/drive/u/0/folders/12f91mvgTYSkpWvFogJXRXlt2x3wIf-9r" target="_blank"
                     class="video-grid-card">
                     <video loop muted playsinline disableRemotePlayback preload="none">
-                        <source src="Videos/drone1.mp4" type="video/mp4">
+                        <source src="Videos/Archetectuaral flythrough.mp4" type="video/mp4">
                     </video>
                     <div class="video-card-overlay">
-                        <span class="video-tag"><i class="fa-solid fa-play"></i> Drone View 04</span>
                         <h4 class="video-title">Architectural Fly-through</h4>
                     </div>
                 </a>
@@ -342,7 +363,6 @@
                         <source src="Videos/drone1.mp4" type="video/mp4">
                     </video>
                     <div class="video-card-overlay">
-                        <span class="video-tag"><i class="fa-solid fa-play"></i> Drone View 01</span>
                         <h4 class="video-title">Aerial Layout Survey</h4>
                     </div>
                 </a>
@@ -350,10 +370,9 @@
                 <a href="https://drive.google.com/drive/u/0/folders/12f91mvgTYSkpWvFogJXRXlt2x3wIf-9r" target="_blank"
                     class="video-grid-card">
                     <video loop muted playsinline disableRemotePlayback preload="none">
-                        <source src="Videos/drone2.mp4" type="video/mp4">
+                        <source src="Videos/Route Visualisation.mp4" type="video/mp4">
                     </video>
                     <div class="video-card-overlay">
-                        <span class="video-tag"><i class="fa-solid fa-play"></i> Drone View 02</span>
                         <h4 class="video-title">Route Visualization</h4>
                     </div>
                 </a>
@@ -361,10 +380,9 @@
                 <a href="https://drive.google.com/drive/u/0/folders/12f91mvgTYSkpWvFogJXRXlt2x3wIf-9r" target="_blank"
                     class="video-grid-card">
                     <video loop muted playsinline disableRemotePlayback preload="none">
-                        <source src="Videos/drone3.mp4" type="video/mp4">
+                        <source src="Videos/petimeter flyby.mp4" type="video/mp4">
                     </video>
                     <div class="video-card-overlay">
-                        <span class="video-tag"><i class="fa-solid fa-play"></i> Drone View 03</span>
                         <h4 class="video-title">Perimeter Flyby</h4>
                     </div>
                 </a>
@@ -372,13 +390,58 @@
                 <a href="https://drive.google.com/drive/u/0/folders/12f91mvgTYSkpWvFogJXRXlt2x3wIf-9r" target="_blank"
                     class="video-grid-card">
                     <video loop muted playsinline disableRemotePlayback preload="none">
-                        <source src="Videos/drone1.mp4" type="video/mp4">
+                        <source src="Videos/Archetectuaral flythrough.mp4" type="video/mp4">
                     </video>
                     <div class="video-card-overlay">
-                        <span class="video-tag"><i class="fa-solid fa-play"></i> Drone View 04</span>
                         <h4 class="video-title">Architectural Fly-through</h4>
                     </div>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SERVICE SECTION: WEB DEVELOPMENT & CUSTOM PLATFORMS ── -->
+    <section class="service-section web-dev-section" id="web-development">
+        <div class="container">
+            <div class="web-dev-header">
+                <h2 class="web-dev-main-heading">Web Engineering &amp; Custom Platforms</h2>
+                <p class="web-dev-subheading">A featured showcase of interactive real estate portals, e-commerce applications, and custom digital platforms engineered by PRIZMABRIXX — selected from 45+ custom web projects delivered to date.</p>
+            </div>
+        </div>
+
+        <!-- Full-Screen Interactive Web Showcase Stage -->
+        <div class="web-showcase-stage">
+            <!-- Viewport Stage -->
+            <div class="web-showcase-viewport">
+                <!-- Nav Overlay Buttons -->
+                <button class="web-showcase-nav-btn prev magnetic" id="webShowcasePrev" title="Previous Website Video">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="web-showcase-nav-btn next magnetic" id="webShowcaseNext" title="Next Website Video">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <!-- Active Video Stream -->
+                <video id="webShowcaseVideo" class="web-showcase-video" autoplay loop muted playsinline
+                    disableRemotePlayback>
+                    <source src="Videos/greensiri.mp4" type="video/mp4">
+                </video>
+
+                <!-- HUD info overlay bar -->
+                <div class="web-showcase-hud">
+                    <div class="web-showcase-hud-content">
+                        <span class="web-showcase-tag" id="webShowcaseCategory">Real Estate &amp; Layout Portal</span>
+                        <h3 class="web-showcase-title" id="webShowcaseTitle">Greensiri Infra &amp; Developers</h3>
+                        <p class="web-showcase-desc" id="webShowcaseDesc">Interactive real estate web platform
+                            showcasing master layout plans, land investment options, and plot availability tools.</p>
+                        <div class="web-showcase-actions">
+                            <a href="https://greensiri.in/" target="_blank" rel="noopener noreferrer"
+                                class="web-showcase-cta magnetic" id="webShowcaseLink">
+                                Watch Full Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -387,9 +450,11 @@
     <section class="service-section render-grid-section" id="renderings" style="background-color: var(--bg-primary);">
         <div class="container">
             <div class="s03-header">
-                <h2 class="s03-heading numbered-heading">Realistic 3D Renders<br><span>(Photo & Video)</span><br>& Resort / Villa / Township
+                <h2 class="s03-heading numbered-heading">Realistic 3D Renders<br><span>(Photo & Video)</span><br>&
+                    Resort / Villa / Township
                     Planning</h2>
-                <p class="s03-para section-subheading">Interactive architectural showcases and dynamic walkthrough layers engineered to
+                <p class="s03-para section-subheading">Interactive architectural showcases and dynamic walkthrough
+                    layers engineered to
                     visualize master planning and rendering details.</p>
             </div>
         </div>
@@ -397,7 +462,9 @@
         <!-- Photos Showcase -->
         <div class="renders-showcase-container">
             <div class="s03-divider">
-                <span class="s03-divider-label" style="font-family: 'DM Serif Display', serif; font-style: italic; font-size: 24px; font-weight: 400; text-transform: none; color: var(--text-primary);">Photorealistic Renders</span>
+                <span class="s03-divider-label"
+                    style="font-family: 'DM Serif Display', serif; font-style: italic; font-size: 24px; font-weight: 400; text-transform: none; color: var(--text-primary);">Photorealistic
+                    Renders</span>
                 <span class="s03-divider-line"></span>
             </div>
 
@@ -527,7 +594,9 @@
         <!-- Videos Showcase -->
         <div class="renders-showcase-container" style="margin-top: 6rem;">
             <div class="s03-divider">
-                <span class="s03-divider-label" style="font-family: 'DM Serif Display', serif; font-style: italic; font-size: 24px; font-weight: 400; text-transform: none; color: var(--text-primary);">3D Render Videos</span>
+                <span class="s03-divider-label"
+                    style="font-family: 'DM Serif Display', serif; font-style: italic; font-size: 24px; font-weight: 400; text-transform: none; color: var(--text-primary);">3D
+                    Render Videos</span>
                 <span class="s03-divider-line"></span>
             </div>
 
@@ -539,7 +608,8 @@
                             target="_blank" class="deck-video-card quad-tl" style="--card-idx: 0;">
                             <div class="deck-video-float-wrap">
                                 <div class="rc-glass-frame">
-                                    <video loop muted playsinline disableRemotePlayback preload="metadata" class="rc-video">
+                                    <video loop muted playsinline disableRemotePlayback preload="metadata"
+                                        class="rc-video">
                                         <source src="Videos/drone1.mp4" type="video/mp4">
                                     </video>
                                     <div class="rc-hud-info">
@@ -554,7 +624,8 @@
                             target="_blank" class="deck-video-card quad-tr" style="--card-idx: 1;">
                             <div class="deck-video-float-wrap">
                                 <div class="rc-glass-frame">
-                                    <video loop muted playsinline disableRemotePlayback preload="metadata" class="rc-video">
+                                    <video loop muted playsinline disableRemotePlayback preload="metadata"
+                                        class="rc-video">
                                         <source src="Videos/drone2.mp4" type="video/mp4">
                                     </video>
                                     <div class="rc-hud-info">
@@ -569,7 +640,8 @@
                             target="_blank" class="deck-video-card quad-bl" style="--card-idx: 2;">
                             <div class="deck-video-float-wrap">
                                 <div class="rc-glass-frame">
-                                    <video loop muted playsinline disableRemotePlayback preload="metadata" class="rc-video">
+                                    <video loop muted playsinline disableRemotePlayback preload="metadata"
+                                        class="rc-video">
                                         <source src="Videos/drone3.mp4" type="video/mp4">
                                     </video>
                                     <div class="rc-hud-info">
@@ -584,8 +656,11 @@
                             target="_blank" class="deck-video-card quad-br" style="--card-idx: 3;">
                             <div class="deck-video-float-wrap">
                                 <div class="rc-glass-frame">
-                                    <video loop muted playsinline disableRemotePlayback preload="metadata" class="rc-video">
-                                        <source src="Videos/vidssave.com%204K%20Cinematic%20Drone%20view%20village%20Highway%20l%20Free%20%20Drone%20Video%20l%20Free%20stock%20footage%20l%20Copyright%20free%20480P.mp4" type="video/mp4">
+                                    <video loop muted playsinline disableRemotePlayback preload="metadata"
+                                        class="rc-video">
+                                        <source
+                                            src="Videos/vidssave.com%204K%20Cinematic%20Drone%20view%20village%20Highway%20l%20Free%20%20Drone%20Video%20l%20Free%20stock%20footage%20l%20Copyright%20free%20480P.mp4"
+                                            type="video/mp4">
                                     </video>
                                     <div class="rc-hud-info">
                                         <span class="rc-hud-tag">FEED_04 // TOWNSHIP</span>
@@ -753,7 +828,428 @@
         </div>
     </section>
 
+    <!-- ── SERVICE SECTION: SOCIAL MEDIA MANAGEMENT & DIGITAL MARKETING ── -->
+    <section class="service-section social-marketing-section" id="social-marketing">
+        <div class="container">
+            <div class="web-dev-header">
+                <h2 class="web-dev-main-heading">Social Media Management &amp; Digital Marketing</h2>
+                <p class="web-dev-subheading">High-converting viral social media campaigns, aesthetic reel production, brand strategy, and targeted audience growth managed by PRIZMABRIXX.</p>
+            </div>
 
+            <!-- 3D Interactive Campaign Cards Grid -->
+            <div class="social-3d-grid">
+                <!-- Card 1: Cliff Cafe -->
+                <div class="social-card-3d" data-account="cliffcafe">
+                    <div class="social-card-inner">
+                        <!-- Big Full Logo Cover Box -->
+                        <div class="social-card-cover hospitality-cover">
+                            <img src="images/cliff cafe.jpeg" alt="Cliff Cafe Brand" class="cover-logo-full">
+                        </div>
+
+                        <div class="social-card-top-stat">
+                            <span class="stat-pill"><i class="fa-solid fa-fire"></i> 1.8M+ Reel Views</span>
+                            <span class="stat-pill growth"><i class="fa-solid fa-arrow-trend-up"></i> +320% Reach</span>
+                        </div>
+                        <div class="social-card-header">
+                            <div class="social-meta">
+                                <div class="social-handle">@cliffcafe.in <i class="fa-solid fa-circle-check social-verified"></i></div>
+                                <div class="social-badge">Cliff Cafe // Official</div>
+                            </div>
+                        </div>
+                        <span class="social-service-tag"><i class="fa-solid fa-utensils"></i> Hospitality Branding</span>
+                        <p class="social-desc">Creative content production, aesthetic reel curation, food styling, and digital marketing strategy driving footfall for Cliff Cafe.</p>
+                        <div class="social-card-metrics">
+                            <div class="metric-item">
+                                <span class="metric-val">120K+</span>
+                                <span class="metric-lbl">Monthly Reach</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-val">4.8x</span>
+                                <span class="metric-lbl">ROI Boost</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-val">45+</span>
+                                <span class="metric-lbl">Reels Curated</span>
+                            </div>
+                        </div>
+                        <a href="https://www.instagram.com/cliffcafe.in" target="_blank" rel="noopener noreferrer" class="social-action-btn magnetic">
+                            <i class="fa-brands fa-instagram"></i> View Instagram Profile <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Tea Park Cafe -->
+                <div class="social-card-3d" data-account="teapark">
+                    <div class="social-card-inner">
+                        <!-- Big Full Logo Cover Box -->
+                        <div class="social-card-cover cafe-cover">
+                            <img src="images/TeaPark.jpeg" alt="Tea Park Brand" class="cover-logo-full">
+                        </div>
+
+                        <div class="social-card-top-stat">
+                            <span class="stat-pill"><i class="fa-solid fa-bolt"></i> Local Virality</span>
+                            <span class="stat-pill growth"><i class="fa-solid fa-chart-line"></i> +280% Footfall</span>
+                        </div>
+                        <div class="social-card-header">
+                            <div class="social-meta">
+                                <div class="social-handle">@teaparkcafe <i class="fa-solid fa-circle-check social-verified"></i></div>
+                                <div class="social-badge">Tea Park Cafe</div>
+                            </div>
+                        </div>
+                        <span class="social-service-tag"><i class="fa-solid fa-store"></i> Cafe Culture &amp; Strategy</span>
+                        <p class="social-desc">Targeted hyper-local ads, customer experience reels, beverage launch campaigns, and brand community engagement.</p>
+                        <div class="social-card-metrics">
+                            <div class="metric-item">
+                                <span class="metric-val">85K+</span>
+                                <span class="metric-lbl">Impressions</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-val">94%</span>
+                                <span class="metric-lbl">Local Ad Ret</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-val">30+</span>
+                                <span class="metric-lbl">Campaigns</span>
+                            </div>
+                        </div>
+                        <a href="https://www.instagram.com/teaparkcafe" target="_blank" rel="noopener noreferrer" class="social-action-btn magnetic">
+                            <i class="fa-brands fa-instagram"></i> View Instagram Profile <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Armour Pro Detailing -->
+                <div class="social-card-3d" data-account="armourpro">
+                    <div class="social-card-inner">
+                        <!-- Big Full Logo Cover Box -->
+                        <div class="social-card-cover automotive-cover">
+                            <img src="images/armourproofficial.jpeg" alt="Armour Pro Brand" class="cover-logo-full">
+                        </div>
+
+                        <div class="social-card-top-stat">
+                            <span class="stat-pill"><i class="fa-solid fa-car-burst"></i> High Lead Gen</span>
+                            <span class="stat-pill growth"><i class="fa-solid fa-bullseye"></i> 5.2x Conversions</span>
+                        </div>
+                        <div class="social-card-header">
+                            <div class="social-meta">
+                                <div class="social-handle">@armourproofficial <i class="fa-solid fa-circle-check social-verified"></i></div>
+                                <div class="social-badge">Armour Pro Detailing</div>
+                            </div>
+                        </div>
+                        <span class="social-service-tag"><i class="fa-solid fa-gauge-high"></i> Automotive Media &amp; Leads</span>
+                        <p class="social-desc">High-octane detailing showcases, ceramic coating transformations, Meta lead campaigns, and luxury car positioning.</p>
+                        <div class="social-card-metrics">
+                            <div class="metric-item">
+                                <span class="metric-val">450K+</span>
+                                <span class="metric-lbl">Video Views</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-val">1.4K+</span>
+                                <span class="metric-lbl">Leads Captured</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-val">60+</span>
+                                <span class="metric-lbl">HD Reels</span>
+                            </div>
+                        </div>
+                        <a href="https://www.instagram.com/armourproofficial/" target="_blank" rel="noopener noreferrer" class="social-action-btn magnetic">
+                            <i class="fa-brands fa-instagram"></i> View Instagram Profile <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4: AnyProp -->
+                <div class="social-card-3d" data-account="anyprop">
+                    <div class="social-card-inner">
+                        <!-- Big Full Logo Cover Box -->
+                        <div class="social-card-cover realestate-cover">
+                            <img src="images/Anyprop.in.jpeg" alt="AnyProp Brand" class="cover-logo-full">
+                        </div>
+
+                        <div class="social-card-top-stat">
+                            <span class="stat-pill"><i class="fa-solid fa-city"></i> Real Estate Growth</span>
+                            <span class="stat-pill growth"><i class="fa-solid fa-chart-pie"></i> Premium Buyers</span>
+                        </div>
+                        <div class="social-card-header">
+                            <div class="social-meta">
+                                <div class="social-handle">@anyprop.in <i class="fa-solid fa-circle-check social-verified"></i></div>
+                                <div class="social-badge">AnyProp Real Estate</div>
+                            </div>
+                        </div>
+                        <span class="social-service-tag"><i class="fa-solid fa-house-chimney"></i> PropTech Social Marketing</span>
+                        <p class="social-desc">Property walkthrough video teasers, project launch announcements, targeted buyer acquisition, and brand management.</p>
+                        <div class="social-card-metrics">
+                            <div class="metric-item">
+                                <span class="metric-val">650K+</span>
+                                <span class="metric-lbl">Reel Views</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-val">2.8K+</span>
+                                <span class="metric-lbl">Inquiries</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-val">25+</span>
+                                <span class="metric-lbl">Projects</span>
+                            </div>
+                        </div>
+                        <a href="https://www.instagram.com/anyprop.in/" target="_blank" rel="noopener noreferrer" class="social-action-btn magnetic">
+                            <i class="fa-brands fa-instagram"></i> View Instagram Profile <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 5: Basant Sahney Hospital (New Enrollment) -->
+                <div class="social-card-3d" data-account="bsh_hyd">
+                    <div class="social-card-inner">
+                        <!-- Big Full Logo Cover Box -->
+                        <div class="social-card-cover healthcare-cover">
+                            <img src="images/Basat Sahney Hospital.jpeg" alt="Basant Sahney Hospital" class="cover-logo-full">
+                        </div>
+
+                        <div class="social-card-top-stat">
+                            <span class="stat-pill"><i class="fa-solid fa-heart-pulse"></i> Healthcare Media</span>
+                            <span class="stat-pill growth"><i class="fa-solid fa-user-doctor"></i> Patient Outreach</span>
+                        </div>
+                        <div class="social-card-header">
+                            <div class="social-meta">
+                                <div class="social-handle">@bsh_hyd <i class="fa-solid fa-circle-check social-verified"></i></div>
+                                <div class="social-badge">Basant Sahney Hospital</div>
+                            </div>
+                        </div>
+                        <span class="social-service-tag"><i class="fa-solid fa-suitcase-medical"></i> Healthcare Media &amp; Growth</span>
+                        <p class="social-desc">Healthcare branding, patient awareness campaigns, medical service reels, and digital marketing strategy for Basant Sahney Hospital.</p>
+                        <div class="social-card-metrics">
+                            <div class="metric-item">
+                                <span class="metric-val">500K+</span>
+                                <span class="metric-lbl">Impressions</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-val">15K+</span>
+                                <span class="metric-lbl">Patient Reach</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-val">100%</span>
+                                <span class="metric-lbl">Medical Trust</span>
+                            </div>
+                        </div>
+                        <a href="https://www.instagram.com/bsh_hyd" target="_blank" rel="noopener noreferrer" class="social-action-btn magnetic">
+                            <i class="fa-brands fa-instagram"></i> View Instagram Profile <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 6: Open Bear Relatie -->
+                <div class="social-card-3d" data-account="openbear">
+                    <div class="social-card-inner">
+                        <!-- Big Full Logo Cover Box -->
+                        <div class="social-card-cover lifestyle-cover">
+                            <img src="images/Open Bear.jpeg" alt="Open Bear Relatie Brand" class="cover-logo-full">
+                        </div>
+
+                        <div class="social-card-top-stat">
+                            <span class="stat-pill"><i class="fa-solid fa-gem"></i> Event &amp; Brand</span>
+                            <span class="stat-pill growth"><i class="fa-solid fa-heart"></i> High Engagement</span>
+                        </div>
+                        <div class="social-card-header">
+                            <div class="social-meta">
+                                <div class="social-handle">@open_bear_relatie <i class="fa-solid fa-circle-check social-verified"></i></div>
+                                <div class="social-badge">Open Bear Relatie</div>
+                            </div>
+                        </div>
+                        <span class="social-service-tag"><i class="fa-solid fa-masks-theater"></i> Brand &amp; Lifestyle Management</span>
+                        <p class="social-desc">Lifestyle brand curation, event promotional graphics, audience interaction campaigns, and social media presence management.</p>
+                        <div class="social-card-metrics">
+                            <div class="metric-item">
+                                <span class="metric-val">220K+</span>
+                                <span class="metric-lbl">Impressions</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-val">18%</span>
+                                <span class="metric-lbl">Eng. Rate</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-val">40+</span>
+                                <span class="metric-lbl">Events</span>
+                            </div>
+                        </div>
+                        <a href="https://www.instagram.com/open_bear_relatie/" target="_blank" rel="noopener noreferrer" class="social-action-btn magnetic">
+                            <i class="fa-brands fa-instagram"></i> View Instagram Profile <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SERVICE SECTION: CLIENTELE SHOWCASE (45+ CLIENTS SERVED) ── -->
+    <section class="service-section clientele-section" id="clientele">
+        <div class="container">
+            <div class="clientele-counter-banner">
+                <div class="clientele-count-pill">
+                    <i class="fa-solid fa-handshake-simple"></i> Proven Trust // 45+ Clients Served &amp; Counting
+                </div>
+                <h2 class="creative-heading">Trusted by Top Builders &amp; Industry Leaders</h2>
+                <p class="section-subheading">From major real estate developers to healthcare institutions and premium
+                    brands, we deliver world-class visualization and digital solutions.</p>
+            </div>
+
+            <!-- Top Clients Showcase Grid -->
+            <div class="client-grid">
+                <!-- Client 1 -->
+                <div class="client-card">
+                    <div class="client-icon-box"><i class="fa-solid fa-hospital"></i></div>
+                    <div class="client-card-info">
+                        <h4 class="client-name">Basant Sahney Hospital <span class="client-badge-new">New</span></h4>
+                        <span class="client-type">Healthcare Institution</span>
+                    </div>
+                </div>
+
+                <!-- Client 2 -->
+                <div class="client-card">
+                    <div class="client-icon-box"><i class="fa-solid fa-tree-city"></i></div>
+                    <div class="client-card-info">
+                        <h4 class="client-name">Greensiri Infra &amp; Developers</h4>
+                        <span class="client-type">Real Estate &amp; Infra</span>
+                    </div>
+                </div>
+
+                <!-- Client 3 -->
+                <div class="client-card">
+                    <div class="client-icon-box"><i class="fa-solid fa-city"></i></div>
+                    <div class="client-card-info">
+                        <h4 class="client-name">MVV Housing</h4>
+                        <span class="client-type">Residential Infra</span>
+                    </div>
+                </div>
+
+                <!-- Client 4 -->
+                <div class="client-card">
+                    <div class="client-icon-box"><i class="fa-solid fa-building"></i></div>
+                    <div class="client-card-info">
+                        <h4 class="client-name">Kapil Business Park</h4>
+                        <span class="client-type">Commercial Park</span>
+                    </div>
+                </div>
+
+                <!-- Client 5 -->
+                <div class="client-card">
+                    <div class="client-icon-box"><i class="fa-solid fa-helmet-safety"></i></div>
+                    <div class="client-card-info">
+                        <h4 class="client-name">GK Builders &amp; Developers</h4>
+                        <span class="client-type">Urban Builders</span>
+                    </div>
+                </div>
+
+                <!-- Client 6 -->
+                <div class="client-card">
+                    <div class="client-icon-box"><i class="fa-solid fa-industry"></i></div>
+                    <div class="client-card-info">
+                        <h4 class="client-name">Vaaraahi Infra</h4>
+                        <span class="client-type">Infrastructure Group</span>
+                    </div>
+                </div>
+
+                <!-- Client 7 -->
+                <div class="client-card">
+                    <div class="client-icon-box"><i class="fa-solid fa-house-flag"></i></div>
+                    <div class="client-card-info">
+                        <h4 class="client-name">Harivillu Homes</h4>
+                        <span class="client-type">Housing Projects</span>
+                    </div>
+                </div>
+
+                <!-- Client 8 -->
+                <div class="client-card">
+                    <div class="client-icon-box"><i class="fa-solid fa-star"></i></div>
+                    <div class="client-card-info">
+                        <h4 class="client-name">Celebrity Group</h4>
+                        <span class="client-type">Hospitality &amp; Leisure</span>
+                    </div>
+                </div>
+
+                <!-- Client 9 -->
+                <div class="client-card">
+                    <div class="client-icon-box"><i class="fa-solid fa-compass-drafting"></i></div>
+                    <div class="client-card-info">
+                        <h4 class="client-name">Capriaqua Designs</h4>
+                        <span class="client-type">Architectural Design</span>
+                    </div>
+                </div>
+
+                <!-- Client 10 -->
+                <div class="client-card">
+                    <div class="client-icon-box"><i class="fa-solid fa-mug-saucer"></i></div>
+                    <div class="client-card-info">
+                        <h4 class="client-name">Blue Sea Cafe</h4>
+                        <span class="client-type">Food &amp; Beverage</span>
+                    </div>
+                </div>
+
+                <!-- Client 11 -->
+                <div class="client-card">
+                    <div class="client-icon-box"><i class="fa-solid fa-utensils"></i></div>
+                    <div class="client-card-info">
+                        <h4 class="client-name">Tea Park Cafe</h4>
+                        <span class="client-type">Hospitality Brand</span>
+                    </div>
+                </div>
+
+                <!-- Client 12 -->
+                <div class="client-card">
+                    <div class="client-icon-box"><i class="fa-solid fa-car-burst"></i></div>
+                    <div class="client-card-info">
+                        <h4 class="client-name">Armour Pro Detailing Studio</h4>
+                        <span class="client-type">Automotive Care</span>
+                    </div>
+                </div>
+
+                <!-- Client 13 -->
+                <div class="client-card">
+                    <div class="client-icon-box"><i class="fa-solid fa-boxes-packing"></i></div>
+                    <div class="client-card-info">
+                        <h4 class="client-name">Vasavi Trading Company</h4>
+                        <span class="client-type">Enterprise &amp; Trade</span>
+                    </div>
+                </div>
+
+                <!-- Client 14: 32+ More -->
+                <div class="client-card" style="border-style: dashed; border-color: var(--accent);">
+                    <div class="client-icon-box" style="background: var(--accent); color: #fff;"><i
+                            class="fa-solid fa-plus"></i></div>
+                    <div class="client-card-info">
+                        <h4 class="client-name">32+ More Partners</h4>
+                        <span class="client-type">Regional &amp; National Clients</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dual Marquee Ticker -->
+        <div class="client-marquee-wrapper">
+            <div class="client-marquee-track">
+                <span class="marquee-pill"><i class="fa-solid fa-award"></i> Basant Sahney Hospital</span>
+                <span class="marquee-pill"><i class="fa-solid fa-building"></i> Greensiri Infra</span>
+                <span class="marquee-pill"><i class="fa-solid fa-city"></i> MVV Housing</span>
+                <span class="marquee-pill"><i class="fa-solid fa-landmark"></i> Kapil Business Park</span>
+                <span class="marquee-pill"><i class="fa-solid fa-helmet-safety"></i> GK Builders &amp; Developers</span>
+                <span class="marquee-pill"><i class="fa-solid fa-industry"></i> Vaaraahi Infra</span>
+                <span class="marquee-pill"><i class="fa-solid fa-house"></i> Harivillu Homes</span>
+                <span class="marquee-pill"><i class="fa-solid fa-star"></i> Celebrity Group</span>
+                <span class="marquee-pill"><i class="fa-solid fa-pen-ruler"></i> Capriaqua Designs</span>
+                <span class="marquee-pill"><i class="fa-solid fa-mug-hot"></i> Blue Sea Cafe</span>
+                <span class="marquee-pill"><i class="fa-solid fa-store"></i> Tea Park Cafe</span>
+                <span class="marquee-pill"><i class="fa-solid fa-car"></i> Armour Pro Detailing</span>
+                <span class="marquee-pill"><i class="fa-solid fa-briefcase"></i> Vasavi Trading Co.</span>
+                <!-- Duplicate for Seamless Animation -->
+                <span class="marquee-pill"><i class="fa-solid fa-award"></i> Basant Sahney Hospital</span>
+                <span class="marquee-pill"><i class="fa-solid fa-building"></i> Greensiri Infra</span>
+                <span class="marquee-pill"><i class="fa-solid fa-city"></i> MVV Housing</span>
+                <span class="marquee-pill"><i class="fa-solid fa-landmark"></i> Kapil Business Park</span>
+                <span class="marquee-pill"><i class="fa-solid fa-helmet-safety"></i> GK Builders &amp; Developers</span>
+                <span class="marquee-pill"><i class="fa-solid fa-industry"></i> Vaaraahi Infra</span>
+            </div>
+        </div>
+    </section>
 
     <!-- Service Section 5: Brochure, Branding & Digital Collaterals -->
     <section class="service-section" id="branding" style="background-color: var(--bg-primary); overflow: hidden;">
@@ -989,9 +1485,9 @@
                     <div class="logo-card-shimmer"></div>
                     <div class="logo-card-glow"></div>
                     <div class="logo-card-img-wrap">
-                        <img src="logo.png" alt="Prizma Brixx Brand Logo" loading="lazy" decoding="async">
+                        <img src="logo.png" alt="PRIZMA BRIXX Brand Logo" loading="lazy" decoding="async">
                     </div>
-                    <h4 class="logo-card-title">Prizma Brixx</h4>
+                    <h4 class="logo-card-title">PRIZMA BRIXX</h4>
                     <span class="logo-card-subtitle">Visual Studio Identity</span>
                 </div>
 
@@ -1005,7 +1501,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="tech-heading">CRM Dashboard</h2>
-                <p>An actual, state-driven client-side CRM tool developed for Prizma Brixx sales agents to manage
+                <p>An actual, state-driven client-side CRM tool developed for PRIZMA BRIXX sales agents to manage
                     properties, capture leads, and track deals.</p>
             </div>
         </div>
@@ -1323,7 +1819,7 @@
             <div class="section-header">
                 <h2 class="section-heading">Testimonials Gallery</h2>
                 <div class="section-subheading">Voices of Trust</div>
-                <p>Real experiences from developers, architects, and PropTech innovators who launched with Prizma Brixx.
+                <p>Real experiences from developers, architects, and PropTech innovators who launched with PRIZMA BRIXX.
                 </p>
             </div>
         </div>
@@ -1346,7 +1842,7 @@
                             class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                             class="fa-solid fa-star"></i>
                     </div>
-                    <p class="testi-quote">"Prizma Brixx completely transformed our project launches. Their interactive
+                    <p class="testi-quote">"PRIZMA BRIXX completely transformed our project launches. Their interactive
                         availability map is a game changer for real-time customer bookings."</p>
                     <span class="testi-project"><i class="fa-solid fa-building"></i> MVV Housing & Farms</span>
                 </div>
@@ -1441,7 +1937,7 @@
                             class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                             class="fa-solid fa-star"></i>
                     </div>
-                    <p class="testi-quote">"ROI on the digital campaigns exceeded our projections by 3x. Prizma Brixx
+                    <p class="testi-quote">"ROI on the digital campaigns exceeded our projections by 3x. PRIZMA BRIXX
                         understands PropTech marketing at a level nobody else does."</p>
                     <span class="testi-project"><i class="fa-solid fa-chart-line"></i> Skyline Digital Campaign</span>
                 </div>
@@ -1466,7 +1962,7 @@
                             class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                             class="fa-solid fa-star"></i>
                     </div>
-                    <p class="testi-quote">"From drone shoots to final delivery, they managed the complete visual
+                    <p class="testi-quote">"From Drone Shoots to final delivery, they managed the complete visual
                         narrative. Our project site sold 60% units within the first quarter."</p>
                     <span class="testi-project"><i class="fa-solid fa-helicopter"></i> Astra Valley Resort</span>
                 </div>
@@ -1485,7 +1981,7 @@
                             class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                             class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <p class="testi-quote">"As an architect, I'm picky about renders. Prizma Brixx nailed every detail —
+                    <p class="testi-quote">"As an architect, I'm picky about renders. PRIZMA BRIXX nailed every detail —
                         the material textures, lighting, and environmental context are simply exquisite."</p>
                     <span class="testi-project"><i class="fa-solid fa-drafting-compass"></i> Pinnacle Villas
                         Collection</span>
@@ -1524,7 +2020,7 @@
                             class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                             class="fa-solid fa-star"></i>
                     </div>
-                    <p class="testi-quote">"Prizma Brixx delivered a full 360 virtual tour that reduced our physical
+                    <p class="testi-quote">"PRIZMA BRIXX delivered a full 360 virtual tour that reduced our physical
                         site visit dependency by 50%. Buyers now shortlist from their phones."</p>
                     <span class="testi-project"><i class="fa-solid fa-street-view"></i> Zenova Smart Living</span>
                 </div>
@@ -1544,7 +2040,7 @@
                             class="fa-solid fa-star"></i>
                     </div>
                     <p class="testi-quote">"Our open-plot project needed a master layout that communicated scale and
-                        luxury — Prizma Brixx exceeded all expectations with their precision mapping."</p>
+                        luxury — PRIZMA BRIXX exceeded all expectations with their precision mapping."</p>
                     <span class="testi-project"><i class="fa-solid fa-layer-group"></i> Bhumi Greens Phase II</span>
                 </div>
                 <!-- Card 12 -->
@@ -1562,7 +2058,7 @@
                             class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                             class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <p class="testi-quote">"From CRM to branding to walkthroughs, Prizma Brixx is a one-stop powerhouse.
+                    <p class="testi-quote">"From CRM to branding to walkthroughs, PRIZMA BRIXX is a one-stop powerhouse.
                         We've partnered for all three of our upcoming township projects."</p>
                     <span class="testi-project"><i class="fa-solid fa-handshake"></i> NexGen Township Trilogy</span>
                 </div>
@@ -1663,32 +2159,83 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer" id="footer" role="contentinfo">
         <div class="container">
-            <div class="footer-top">
-                <a href="#home" class="footer-logo">
-                    <img src="logo-footer.png" alt="Prizma Brixx Logo" class="footer-logo-img"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <span class="footer-logo-text" style="display:none;">Prizma <span>Brixx</span></span>
-                </a>
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <a href="../index.html" class="navbar-logo" id="footer-logo">
+                        <img src="logo-footer.png" alt="PRIZMABRIXX" class="navbar-logo-img" />
+                    </a>
+                    <p>A leading Virtual Simulation Company based in Hyderabad, India. Crafting immersive VR, AR, and 3D
+                        experiences since 2018.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" id="footer-instagram" aria-label="Instagram" title="Instagram">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" id="footer-linkedin" aria-label="LinkedIn" title="LinkedIn">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" id="footer-youtube" aria-label="YouTube" title="YouTube">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" id="footer-facebook" aria-label="Facebook" title="Facebook">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
 
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="LinkedIn Profile"><i
-                            class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link" aria-label="Instagram Profile"><i
-                            class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="social-link" aria-label="Behance Portfolio"><i
-                            class="fa-brands fa-behance"></i></a>
-                    <a href="#" class="social-link" aria-label="Dribbble Profile"><i
-                            class="fa-brands fa-dribbble"></i></a>
+                <!-- Links -->
+                <div class="footer-col">
+                    <div class="footer-col-title">Company</div>
+                    <ul class="footer-links">
+                        <li><a href="../index.html" id="footer-link-home">Home</a></li>
+                        <li><a href="../about.html" id="footer-link-about">About Us</a></li>
+                        <li><a href="index.html" id="footer-link-portfolio">Portfolio</a></li>
+                        <li><a href="../index.html#award-frame" id="footer-link-award">Achievements</a></li>
+                        <li><a href="../contact.html" id="footer-link-contact-main">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <div class="footer-col-title">Services</div>
+                    <ul class="footer-links">
+                        <li><a href="index.html" id="footer-link-vr">VR Walkthrough</a></li>
+                        <li><a href="index.html" id="footer-link-ar">Augmented Reality</a></li>
+                        <li><a href="index.html" id="footer-link-3d">3D Printing</a></li>
+                        <li><a href="index.html" id="footer-link-drone">Drone Shoots</a></li>
+                        <li><a href="index.html" id="footer-link-web">Web &amp; App Development</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <div class="footer-col-title">Contact</div>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@prizmabrixx.com" id="footer-link-email">info@prizmabrixx.com</a></li>
+                        <li><a href="../contact.html" id="footer-link-contact">Hyderabad, India</a></li>
+                        <li><a href="../contact.html" id="footer-link-quote">Get a Quote</a></li>
+                    </ul>
                 </div>
             </div>
 
+            <!-- Bottom Bar -->
             <div class="footer-bottom">
-                <p>&copy; 2026 Prizma Brixx. All Rights Reserved.</p>
-                <div class="footer-links">
-                    <a href="#portfolio">Projects</a>
-                    <a href="#contact">Contact</a>
+                <p>© 2026 PRIZMABRIXX. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="../contact.html" id="footer-privacy">Privacy Policy</a>
+                    <a href="../contact.html" id="footer-terms">Terms of Service</a>
                 </div>
             </div>
         </div>
@@ -1742,6 +2289,139 @@
 
             document.addEventListener('click', forcePlay);
             document.addEventListener('touchstart', forcePlay);
+
+            // ── WEB SHOWCASE VIDEO SLIDER LOGIC ──
+            const webSlides = [
+                {
+                    src: 'Videos/greensiri.mp4',
+                    url: 'https://greensiri.in/',
+                    title: 'Greensiri Infra & Developers',
+                    category: 'Real Estate & Layout Portal',
+                    domain: 'greensiri.in',
+                    desc: 'Interactive real estate web platform showcasing master layout plans, land investment options, and plot availability tools.'
+                },
+                {
+                    src: 'Videos/shake and gulp.mp4',
+                    url: 'https://www.shakeandgulp.in/',
+                    title: 'Shake & Gulp',
+                    category: 'Hospitality & Food Brand',
+                    domain: 'shakeandgulp.in',
+                    desc: 'Vibrant, interactive cafe & beverage website featuring digital menus, store locators, and franchise inquiry portals.'
+                },
+                {
+                    src: 'Videos/Gk ZEnith.mp4',
+                    url: 'https://gkzenith.virtualsimulationcompany.com/',
+                    title: 'GK Zenith Facade & Layout',
+                    category: 'Architectural Real Estate Portal',
+                    domain: 'gkzenith.virtualsimulationcompany.com',
+                    desc: 'High-rise facade rendering & interactive unit selection platform for luxury residential towers.'
+                },
+                {
+                    src: 'Videos/Mvvhousing.mp4',
+                    url: 'https://www.kalarealty.in/',
+                    title: 'MVV Housing Blocks',
+                    category: 'Residential Infra Platform',
+                    domain: 'mvvhousing.com',
+                    desc: 'Comprehensive multi-residential tower layout, floor plan explorer, and project walkthrough portal.'
+                }
+            ];
+
+            let webIdx = 0;
+            let autoLoopTimer = null;
+            const vElem = document.getElementById('webShowcaseVideo');
+            const tElem = document.getElementById('webShowcaseTitle');
+            const cElem = document.getElementById('webShowcaseCategory');
+            const descEl = document.getElementById('webShowcaseDesc');
+            const lElem = document.getElementById('webShowcaseLink');
+            const pBtn = document.getElementById('webShowcasePrev');
+            const nBtn = document.getElementById('webShowcaseNext');
+            const webPills = document.querySelectorAll('.web-brand-pill[data-idx]');
+
+            function setWebSlide(i, userTriggered = false) {
+                if (i < 0) i = webSlides.length - 1;
+                if (i >= webSlides.length) i = 0;
+                webIdx = i;
+
+                const cur = webSlides[webIdx];
+                if (vElem) {
+                    vElem.src = cur.src;
+                    vElem.play().catch(() => { });
+                }
+                if (tElem) tElem.textContent = cur.title;
+                if (cElem) cElem.textContent = cur.category;
+                if (descEl) descEl.textContent = cur.desc;
+                if (lElem) lElem.href = cur.url;
+
+                webPills.forEach((pill) => {
+                    const pIdx = parseInt(pill.getAttribute('data-idx'));
+                    pill.classList.toggle('active', pIdx === webIdx);
+                });
+
+                if (userTriggered) restartAutoLoop();
+            }
+
+            function restartAutoLoop() {
+                if (autoLoopTimer) clearInterval(autoLoopTimer);
+                autoLoopTimer = setInterval(() => {
+                    setWebSlide(webIdx + 1, false);
+                }, 8000);
+            }
+
+            if (pBtn) pBtn.addEventListener('click', () => setWebSlide(webIdx - 1, true));
+            if (nBtn) nBtn.addEventListener('click', () => setWebSlide(webIdx + 1, true));
+            webPills.forEach((pill) => {
+                pill.addEventListener('click', () => {
+                    const pIdx = parseInt(pill.getAttribute('data-idx'));
+                    if (!isNaN(pIdx)) setWebSlide(pIdx, true);
+                });
+            });
+
+            // Start smooth auto-looping
+            restartAutoLoop();
+
+            // ── SOCIAL MEDIA INTERACTIVE 3D HUB LOGIC ──
+            const storyItems = document.querySelectorAll('.story-nav-item');
+            const socialCards = document.querySelectorAll('.social-card-3d');
+
+            storyItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const filter = item.getAttribute('data-filter');
+                    
+                    storyItems.forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+
+                    socialCards.forEach(card => {
+                        const account = card.getAttribute('data-account');
+                        if (filter === 'all' || filter === account) {
+                            card.style.display = 'block';
+                            setTimeout(() => { card.style.opacity = '1'; }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            setTimeout(() => { card.style.display = 'none'; }, 350);
+                        }
+                    });
+                });
+            });
+
+            // Interactive 3D Parallax Tilt on mousemove
+            socialCards.forEach(card => {
+                const inner = card.querySelector('.social-card-inner');
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    const rotateX = (-y / rect.height) * 12;
+                    const rotateY = (x / rect.width) * 12;
+                    if (inner) {
+                        inner.style.transform = `translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                    }
+                });
+                card.addEventListener('mouseleave', () => {
+                    if (inner) {
+                        inner.style.transform = `translateY(0) rotateX(0deg) rotateY(0deg)`;
+                    }
+                });
+            });
         });
 
         // GreenSock ScrollTrigger Registration
@@ -1820,8 +2500,9 @@
             }
 
             navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) {
+                const href = link.getAttribute('href') || '';
+                if (href.startsWith('#') && href.slice(1) === current) {
+                    navLinks.forEach(l => l.classList.remove('active'));
                     link.classList.add('active');
                 }
             });
@@ -1836,37 +2517,6 @@
                 }
             }
         });
-
-        // ── DARK/LIGHT THEME SWITCHER ──
-        (() => {
-            const themeToggleBtn = document.getElementById('themeToggleBtn');
-            if (!themeToggleBtn) return;
-
-            // Check for saved theme preference, otherwise default to light theme
-            const savedTheme = localStorage.getItem('theme-preference') || 'light';
-            if (savedTheme === 'dark') {
-                document.documentElement.classList.add('dark-mode');
-                document.body.classList.add('dark-mode');
-            } else {
-                document.documentElement.classList.remove('dark-mode');
-                document.body.classList.remove('dark-mode');
-            }
-
-            themeToggleBtn.addEventListener('click', () => {
-                const isDark = document.documentElement.classList.toggle('dark-mode');
-                document.body.classList.toggle('dark-mode', isDark);
-                localStorage.setItem('theme-preference', isDark ? 'dark' : 'light');
-
-                // Add a cool rotate/scale click animation using GSAP
-                const activeIcon = themeToggleBtn.querySelector(isDark ? '.sun-icon' : '.moon-icon');
-                if (activeIcon) {
-                    gsap.fromTo(activeIcon,
-                        { scale: 0.6, rotate: -45 },
-                        { scale: 1, rotate: 0, duration: 0.45, ease: "back.out(1.8)" }
-                    );
-                }
-            });
-        })();
 
         // Mobile Menu Toggle logic
         const menuToggle = document.getElementById('menuToggle');
@@ -3370,7 +4020,7 @@
                         const sensitivity = 0.15; // Smooth mouse spin speed
                         carouselState.angle = startAngleCarousel + (deltaX * sensitivity);
                         gsap.set(photoCarousel, { rotateY: carouselState.angle });
-                        
+
                         let closestIndex = Math.round(-carouselState.angle / stepAngle);
                         currentActiveIndex = ((closestIndex % totalCards) + totalCards) % totalCards;
                         updateMiddleCardClass();
@@ -3396,7 +4046,7 @@
                         const sensitivity = 0.25; // Slightly higher sensitivity for touch
                         carouselState.angle = startAngleCarousel + (deltaX * sensitivity);
                         gsap.set(photoCarousel, { rotateY: carouselState.angle });
-                        
+
                         let closestIndex = Math.round(-carouselState.angle / stepAngle);
                         currentActiveIndex = ((closestIndex % totalCards) + totalCards) % totalCards;
                         updateMiddleCardClass();
@@ -3447,7 +4097,7 @@
 
                 lightboxImg.src = imgData.src;
                 document.getElementById('lightboxCaption').textContent = imgData.title;
-                
+
                 const secNum = String(activeLightboxIndex + 1).padStart(2, '0');
                 document.getElementById('lightboxMeta').textContent = `RENDER // SEC.${secNum}`;
                 document.getElementById('lightboxCounter').textContent = `${activeLightboxIndex + 1} / ${totalCards}`;
@@ -3461,9 +4111,9 @@
                 // GSAP smooth entrance timeline
                 const tl = gsap.timeline();
                 tl.to(lightbox, { opacity: 1, duration: 0.4, ease: "power2.out" })
-                  .to(lightboxImg, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.2)" }, "-=0.2")
-                  .to('.lightbox-caption-wrapper', { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, "-=0.3")
-                  .to([lightboxClose, lightboxPrev, lightboxNext], { opacity: 1, scale: 1, duration: 0.4, stagger: 0.05, ease: "power2.out" }, "-=0.3");
+                    .to(lightboxImg, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.2)" }, "-=0.2")
+                    .to('.lightbox-caption-wrapper', { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, "-=0.3")
+                    .to([lightboxClose, lightboxPrev, lightboxNext], { opacity: 1, scale: 1, duration: 0.4, stagger: 0.05, ease: "power2.out" }, "-=0.3");
 
                 // Pause page scrolling
                 document.body.style.overflow = "hidden";
@@ -3477,9 +4127,9 @@
                     }
                 });
                 tl.to([lightboxClose, lightboxPrev, lightboxNext], { opacity: 0, scale: 0.8, duration: 0.25, ease: "power2.in" })
-                  .to('.lightbox-caption-wrapper', { y: 15, opacity: 0, duration: 0.25, ease: "power2.in" }, "-=0.2")
-                  .to(lightboxImg, { scale: 0.92, opacity: 0, duration: 0.3, ease: "power2.in" }, "-=0.25")
-                  .to(lightbox, { opacity: 0, duration: 0.35, ease: "power2.inOut" }, "-=0.2");
+                    .to('.lightbox-caption-wrapper', { y: 15, opacity: 0, duration: 0.25, ease: "power2.in" }, "-=0.2")
+                    .to(lightboxImg, { scale: 0.92, opacity: 0, duration: 0.3, ease: "power2.in" }, "-=0.25")
+                    .to(lightbox, { opacity: 0, duration: 0.35, ease: "power2.inOut" }, "-=0.2");
             }
 
             function navigateLightbox(dir) {
@@ -3497,14 +4147,14 @@
                         activeLightboxIndex = nextIndex;
                         lightboxImg.src = imgData.src;
                         document.getElementById('lightboxCaption').textContent = imgData.title;
-                        
+
                         const secNum = String(nextIndex + 1).padStart(2, '0');
                         document.getElementById('lightboxMeta').textContent = `RENDER // SEC.${secNum}`;
                         document.getElementById('lightboxCounter').textContent = `${nextIndex + 1} / ${totalCards}`;
 
                         // Set start position of slide-in animation
-                        gsap.set([lightboxImg, '.lightbox-caption-wrapper'], { 
-                            x: dir > 0 ? slideDist : -slideDist 
+                        gsap.set([lightboxImg, '.lightbox-caption-wrapper'], {
+                            x: dir > 0 ? slideDist : -slideDist
                         });
 
                         // Animate in
@@ -3559,17 +4209,17 @@
                     const rect = videoConsole.getBoundingClientRect();
                     const x = e.clientX - rect.left;
                     const y = e.clientY - rect.top;
-                    
+
                     // Determine which quadrant the mouse cursor is physically inside
                     const isRight = x >= rect.width / 2;
                     const isBottom = y >= rect.height / 2;
-                    
+
                     let activeIndex = -1;
                     if (!isRight && !isBottom) activeIndex = 0;      // Top-Left (quad-tl)
                     else if (isRight && !isBottom) activeIndex = 1;  // Top-Right (quad-tr)
                     else if (!isRight && isBottom) activeIndex = 2;  // Bottom-Left (quad-bl)
                     else if (isRight && isBottom) activeIndex = 3;   // Bottom-Right (quad-br)
-                    
+
                     videoCards.forEach((card, idx) => {
                         if (idx === activeIndex) {
                             card.classList.add('js-hover');
@@ -4036,7 +4686,7 @@
             const words = ["Visions", "Partnerships", "Experiences", "Spaces"];
             let currentIndex = 0;
             const rollingText = document.querySelector('.rolling-text');
-            
+
             if (rollingText) {
                 setInterval(() => {
                     rollingText.style.transform = 'translateY(-100%)';
@@ -4045,7 +4695,7 @@
                         rollingText.innerText = words[currentIndex];
                         rollingText.style.transition = 'none';
                         rollingText.style.transform = 'translateY(100%)';
-                        
+
                         setTimeout(() => {
                             rollingText.style.transition = 'transform 0.6s cubic-bezier(0.85, 0, 0.15, 1)';
                             rollingText.style.transform = 'translateY(0)';
@@ -4063,7 +4713,7 @@
                 if (currentImage && typeof gsap !== 'undefined') {
                     // Use GSAP for ultra-smooth cursor follow
                     gsap.to(currentImage, {
-                        x: e.clientX - 150, 
+                        x: e.clientX - 150,
                         y: e.clientY - 200,
                         duration: 0.6,
                         ease: 'power3.out'
