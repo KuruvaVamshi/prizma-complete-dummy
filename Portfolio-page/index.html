@@ -405,40 +405,179 @@
         <div class="container">
             <div class="web-dev-header">
                 <h2 class="web-dev-main-heading">Web Engineering &amp; Custom Platforms</h2>
-                <p class="web-dev-subheading">A featured showcase of interactive real estate portals, e-commerce applications, and custom digital platforms engineered by PRIZMABRIXX — selected from 45+ custom web projects delivered to date.</p>
+                <p class="web-dev-subheading">A featured showcase of interactive real estate portals, e-commerce
+                    applications, and custom digital platforms engineered by PRIZMABRIXX — selected from 45+ custom web
+                    projects delivered to date.</p>
             </div>
-        </div>
 
-        <!-- Full-Screen Interactive Web Showcase Stage -->
-        <div class="web-showcase-stage">
-            <!-- Viewport Stage -->
-            <div class="web-showcase-viewport">
-                <!-- Nav Overlay Buttons -->
-                <button class="web-showcase-nav-btn prev magnetic" id="webShowcasePrev" title="Previous Website Video">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <button class="web-showcase-nav-btn next magnetic" id="webShowcaseNext" title="Next Website Video">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
+            <!-- Laptop 3/4th & Info Card 1/4th Showcase Grid -->
+            <div class="web-laptop-showcase-grid">
+                <!-- 3/4th Column: Real Laptop Office Desk Photo Stage -->
+                <div class="web-laptop-col">
+                    <div class="real-photo-desk-container">
+                        <!-- Real 8K Studio Desk Photo Frame (Tight Laptop View) -->
+                        <img src="images/real_macbook_desk_photo_tight.png" alt="MacBook Pro Workspace"
+                            class="real-desk-bg-img">
 
-                <!-- Active Video Stream -->
-                <video id="webShowcaseVideo" class="web-showcase-video" autoplay loop muted playsinline
-                    disableRemotePlayback>
-                    <source src="Videos/greensiri.mp4" type="video/mp4">
-                </video>
+                        <!-- Laptop Screen Bezel Frame overlaid on photo -->
+                        <div class="screen-bezel-frame" id="webShowcaseStage">
+                            <!-- Top bezel with FaceTime camera -->
+                            <div class="bezel-top-bar">
+                                <span class="facetime-camera-dot"></span>
+                            </div>
 
-                <!-- HUD info overlay bar -->
-                <div class="web-showcase-hud">
-                    <div class="web-showcase-hud-content">
-                        <span class="web-showcase-tag" id="webShowcaseCategory">Real Estate &amp; Layout Portal</span>
-                        <h3 class="web-showcase-title" id="webShowcaseTitle">Greensiri Infra &amp; Developers</h3>
-                        <p class="web-showcase-desc" id="webShowcaseDesc">Interactive real estate web platform
-                            showcasing master layout plans, land investment options, and plot availability tools.</p>
-                        <div class="web-showcase-actions">
+                            <!-- macOS Chrome Browser Window inside screen -->
+                            <div class="macos-browser-window">
+                                <!-- Tab Bar (macOS Chrome style) -->
+                                <div class="macos-tab-bar">
+                                    <div class="macos-window-controls">
+                                        <span class="macos-dot macos-dot-close"></span>
+                                        <span class="macos-dot macos-dot-minimize"></span>
+                                        <span class="macos-dot macos-dot-maximize"></span>
+                                    </div>
+                                    <div class="macos-tabs-row" id="browserTabs">
+                                        <div class="macos-tab active" data-idx="0">
+                                            <i class="fa-solid fa-globe macos-tab-favicon"></i>
+                                            <span class="macos-tab-label">Greensiri Properties</span>
+                                            <span class="macos-tab-close">&times;</span>
+                                        </div>
+                                        <div class="macos-tab" data-idx="1">
+                                            <i class="fa-solid fa-utensils macos-tab-favicon"></i>
+                                            <span class="macos-tab-label">Shake &amp; Gulp</span>
+                                            <span class="macos-tab-close">&times;</span>
+                                        </div>
+                                        <div class="macos-tab" data-idx="2">
+                                            <i class="fa-solid fa-building macos-tab-favicon"></i>
+                                            <span class="macos-tab-label">GK Zenith</span>
+                                            <span class="macos-tab-close">&times;</span>
+                                        </div>
+                                        <div class="macos-tab" data-idx="3">
+                                            <i class="fa-solid fa-house-laptop macos-tab-favicon"></i>
+                                            <span class="macos-tab-label">MVV Housing</span>
+                                            <span class="macos-tab-close">&times;</span>
+                                        </div>
+                                        <span class="macos-new-tab-btn">+</span>
+                                    </div>
+                                </div>
+
+                                <!-- Address / URL Bar (macOS Chrome style) -->
+                                <div class="macos-address-bar">
+                                    <div class="macos-nav-btns">
+                                        <button class="macos-nav-btn" id="browserBackBtn"><i
+                                                class="fa-solid fa-chevron-left"></i></button>
+                                        <button class="macos-nav-btn" id="browserForwardBtn"><i
+                                                class="fa-solid fa-chevron-right"></i></button>
+                                        <button class="macos-nav-btn" id="browserReloadBtn"><i
+                                                class="fa-solid fa-rotate-right"></i></button>
+                                    </div>
+                                    <div class="macos-url-box">
+                                        <i class="fa-solid fa-lock macos-lock-icon"></i>
+                                        <span class="macos-url-text"
+                                            id="webShowcaseUrlText">https://greensiri.in/</span>
+                                    </div>
+                                    <div class="macos-toolbar-right">
+                                        <i class="fa-solid fa-puzzle-piece macos-ext-icon"></i>
+                                        <i class="fa-solid fa-ellipsis-vertical macos-menu-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Website Video Viewport -->
+                            <div class="macos-viewport">
+                                <video id="webShowcaseVideo" class="macos-viewport-video" autoplay muted playsinline
+                                    disableRemotePlayback>
+                                    <source src="Videos/greensiri.mp4" type="video/mp4">
+                                </video>
+                            </div>
+
+                            <!-- Bottom bezel chin -->
+                            <div class="bezel-bottom-bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1/4th Column: Premium Website Details & Switcher Panel -->
+                <div class="web-details-col">
+                    <div class="web-info-panel-card">
+                        <!-- Category & Title -->
+                        <div class="web-info-header">
+                            <span class="web-showcase-tag" id="webShowcaseCategory">Real Estate &amp; Layout
+                                Portal</span>
+                            <h3 class="web-showcase-title" id="webShowcaseTitle">Greensiri Properties</h3>
+                        </div>
+
+                        <!-- Description -->
+                        <p class="web-showcase-desc" id="webShowcaseDesc">
+                            Interactive real estate web platform showcasing master layout plans, land investment
+                            options, and plot availability tools.
+                        </p>
+
+                        <!-- CTA Button -->
+                        <div class="web-info-actions">
                             <a href="https://greensiri.in/" target="_blank" rel="noopener noreferrer"
                                 class="web-showcase-cta magnetic" id="webShowcaseLink">
-                                Watch Full Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <span class="cta-text">Launch Live Website</span>
+                                <span class="cta-icon-wrap"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></span>
                             </a>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="web-panel-divider"></div>
+
+                        <!-- Project Selector List -->
+                        <div class="web-project-list-wrapper">
+                            <div class="web-list-label"><i class="fa-solid fa-layer-group"></i> Featured Projects</div>
+                            <div class="web-project-items">
+                                <div class="web-project-item active" data-idx="0">
+                                    <div class="project-item-num">01</div>
+                                    <div class="project-item-icon"><i class="fa-solid fa-city"></i></div>
+                                    <div class="project-item-info">
+                                        <span class="project-item-title">Greensiri Properties</span>
+                                        <span class="project-item-domain">greensiri.in</span>
+                                    </div>
+                                    <div class="project-item-status"><span class="status-dot active-dot"></span></div>
+                                </div>
+                                <div class="web-project-item" data-idx="1">
+                                    <div class="project-item-num">02</div>
+                                    <div class="project-item-icon"><i class="fa-solid fa-martini-glass-citrus"></i>
+                                    </div>
+                                    <div class="project-item-info">
+                                        <span class="project-item-title">Shake &amp; Gulp</span>
+                                        <span class="project-item-domain">shakeandgulp.in</span>
+                                    </div>
+                                    <div class="project-item-status"><span class="status-dot"></span></div>
+                                </div>
+                                <div class="web-project-item" data-idx="2">
+                                    <div class="project-item-num">03</div>
+                                    <div class="project-item-icon"><i class="fa-solid fa-building"></i></div>
+                                    <div class="project-item-info">
+                                        <span class="project-item-title">GK Zenith High-Rise</span>
+                                        <span class="project-item-domain">gkzenith.com</span>
+                                    </div>
+                                    <div class="project-item-status"><span class="status-dot"></span></div>
+                                </div>
+                                <div class="web-project-item" data-idx="3">
+                                    <div class="project-item-num">04</div>
+                                    <div class="project-item-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                                    <div class="project-item-info">
+                                        <span class="project-item-title">MVV Housing</span>
+                                        <span class="project-item-domain">mvvhousing.com</span>
+                                    </div>
+                                    <div class="project-item-status"><span class="status-dot"></span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Nav Arrows -->
+                        <div class="web-card-nav-row">
+                            <button class="web-card-nav-btn prev magnetic" id="webShowcasePrev"
+                                title="Previous Website">
+                                <i class="fa-solid fa-arrow-left"></i> <span>Previous</span>
+                            </button>
+                            <button class="web-card-nav-btn next magnetic" id="webShowcaseNext" title="Next Website">
+                                <span>Next</span> <i class="fa-solid fa-arrow-right"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -480,109 +619,100 @@
                         <!-- Card 1 -->
                         <div class="ring-card" style="--card-idx: 0; --card-rot: 0deg;">
                             <div class="rc-glass-frame">
-                                <img src="images/rendors/1_1 - Photo.jpg" alt="Premium Villa Frontage" class="rc-image">
+                                <img src="../assets/Renders/Paved Walkway with Potted Lavender.jpg"
+                                    alt="Paved Walkway with Potted Lavender" class="rc-image">
                                 <div class="rc-hud-info">
-                                    <span class="rc-hud-tag">SEC_01 // VILLA</span>
-                                    <h4 class="rc-hud-title">Premium Villa Frontage</h4>
+                                    <h4 class="rc-hud-title">Paved Walkway with Potted Lavender</h4>
                                 </div>
                             </div>
                         </div>
                         <!-- Card 2 -->
                         <div class="ring-card" style="--card-idx: 1; --card-rot: 36deg;">
                             <div class="rc-glass-frame">
-                                <img src="images/renders-gen/villa-interior.png" alt="Luxury Villa Living Room"
-                                    class="rc-image">
+                                <img src="../assets/Renders/Waterway with Floral Arches.jpg"
+                                    alt="Waterway with Floral Arches" class="rc-image">
                                 <div class="rc-hud-info">
-                                    <span class="rc-hud-tag">SEC_02 // INTERIOR</span>
-                                    <h4 class="rc-hud-title">Villa Living Room</h4>
+                                    <h4 class="rc-hud-title">Waterway with Floral Arches</h4>
                                 </div>
                             </div>
                         </div>
                         <!-- Card 3 -->
                         <div class="ring-card" style="--card-idx: 2; --card-rot: 72deg;">
                             <div class="rc-glass-frame">
-                                <img src="images/rendors/1_3 - Photo.jpg" alt="Modern Architectural Concept"
-                                    class="rc-image">
+                                <img src="../assets/Renders/Rooftop Terrace with Pool.jpg"
+                                    alt="Rooftop Terrace with Pool" class="rc-image">
                                 <div class="rc-hud-info">
-                                    <span class="rc-hud-tag">SEC_03 // CONCEPT</span>
-                                    <h4 class="rc-hud-title">Modern Concept</h4>
+                                    <h4 class="rc-hud-title">Rooftop Terrace with Pool</h4>
                                 </div>
                             </div>
                         </div>
                         <!-- Card 4 -->
                         <div class="ring-card" style="--card-idx: 3; --card-rot: 108deg;">
                             <div class="rc-glass-frame">
-                                <img src="images/renders-gen/tower-exterior.png" alt="Modern High-Rise Tower"
-                                    class="rc-image">
+                                <img src="../assets/Renders/Modern Two-Story Villa with Red Car.jpg"
+                                    alt="Modern Two-Story Villa with Red Car" class="rc-image">
                                 <div class="rc-hud-info">
-                                    <span class="rc-hud-tag">SEC_04 // TOWER</span>
-                                    <h4 class="rc-hud-title">High-Rise Tower</h4>
+                                    <h4 class="rc-hud-title">Modern Two-Story Villa with Red Car</h4>
                                 </div>
                             </div>
                         </div>
                         <!-- Card 5 -->
                         <div class="ring-card" style="--card-idx: 4; --card-rot: 144deg;">
                             <div class="rc-glass-frame">
-                                <img src="images/rendors/1_4 - Photo.jpg" alt="Modern Penthouse Exterior"
-                                    class="rc-image">
+                                <img src="../assets/Renders/A-Frame Glamping Cabins.jpg"
+                                    alt="A-Frame Glamping Cabins" class="rc-image">
                                 <div class="rc-hud-info">
-                                    <span class="rc-hud-tag">SEC_05 // PENTHOUSE</span>
-                                    <h4 class="rc-hud-title">Penthouse Exterior</h4>
+                                    <h4 class="rc-hud-title">A-Frame Glamping Cabins</h4>
                                 </div>
                             </div>
                         </div>
                         <!-- Card 6 -->
                         <div class="ring-card" style="--card-idx: 5; --card-rot: 180deg;">
                             <div class="rc-glass-frame">
-                                <img src="images/renders-gen/resort-pool.png" alt="Infinity Pool & Resort"
-                                    class="rc-image">
+                                <img src="../assets/Renders/Grand Resort Pool.jpg"
+                                    alt="Grand Resort Pool" class="rc-image">
                                 <div class="rc-hud-info">
-                                    <span class="rc-hud-tag">SEC_06 // RESORT</span>
-                                    <h4 class="rc-hud-title">Infinity Pool & Resort</h4>
+                                    <h4 class="rc-hud-title">Grand Resort Pool</h4>
                                 </div>
                             </div>
                         </div>
                         <!-- Card 7 -->
                         <div class="ring-card" style="--card-idx: 6; --card-rot: 216deg;">
                             <div class="rc-glass-frame">
-                                <img src="images/renders-gen/penthouse-terrace.png" alt="Penthouse Terrace"
-                                    class="rc-image">
+                                <img src="../assets/Renders/Circular Building with Central Pond.jpg"
+                                    alt="Circular Building with Central Pond" class="rc-image">
                                 <div class="rc-hud-info">
-                                    <span class="rc-hud-tag">SEC_07 // TERRACE</span>
-                                    <h4 class="rc-hud-title">Penthouse Terrace</h4>
+                                    <h4 class="rc-hud-title">Circular Building with Central Pond</h4>
                                 </div>
                             </div>
                         </div>
                         <!-- Card 8 -->
                         <div class="ring-card" style="--card-idx: 7; --card-rot: 252deg;">
                             <div class="rc-glass-frame">
-                                <img src="images/renders-gen/township-aerial.png" alt="Township Aerial View"
-                                    class="rc-image">
+                                <img src="../assets/Renders/High Rise Apartment Building.jpg"
+                                    alt="High Rise Apartment Building" class="rc-image">
                                 <div class="rc-hud-info">
-                                    <span class="rc-hud-tag">SEC_08 // TOWNSHIP</span>
-                                    <h4 class="rc-hud-title">Township Aerial View</h4>
+                                    <h4 class="rc-hud-title">High Rise Apartment Building</h4>
                                 </div>
                             </div>
                         </div>
                         <!-- Card 9 -->
                         <div class="ring-card" style="--card-idx: 8; --card-rot: 288deg;">
                             <div class="rc-glass-frame">
-                                <img src="images/renders-gen/modern-villa-night.png" alt="Modern Villa Night"
-                                    class="rc-image">
+                                <img src="../assets/Renders/Traditional Villa with Terracotta Roof.jpg"
+                                    alt="Traditional Villa with Terracotta Roof" class="rc-image">
                                 <div class="rc-hud-info">
-                                    <span class="rc-hud-tag">SEC_09 // NIGHT</span>
-                                    <h4 class="rc-hud-title">Modern Villa Night</h4>
+                                    <h4 class="rc-hud-title">Traditional Villa with Terracotta Roof</h4>
                                 </div>
                             </div>
                         </div>
                         <!-- Card 10 -->
                         <div class="ring-card" style="--card-idx: 9; --card-rot: 324deg;">
                             <div class="rc-glass-frame">
-                                <img src="images/renders-gen/commercial-glass-facade.png" alt="Commercial Glass Facade"
-                                    class="rc-image">
+                                <img src="../assets/Renders/Villa with Outdoor Seating Pergola.jpg"
+                                    alt="Villa with Outdoor Seating Pergola" class="rc-image">
                                 <div class="rc-hud-info">
-                                    <span class="rc-hud-tag">SEC_10 // COMMERCIAL</span>
-                                    <h4 class="rc-hud-title">Commercial Glass Facade</h4>
+                                    <h4 class="rc-hud-title">Villa with Outdoor Seating Pergola</h4>
                                 </div>
                             </div>
                         </div>
@@ -613,7 +743,6 @@
                                         <source src="Videos/drone1.mp4" type="video/mp4">
                                     </video>
                                     <div class="rc-hud-info">
-                                        <span class="rc-hud-tag">FEED_01 // RESORT</span>
                                         <h4 class="rc-hud-title">Resort Flyby View</h4>
                                     </div>
                                 </div>
@@ -629,7 +758,6 @@
                                         <source src="Videos/drone2.mp4" type="video/mp4">
                                     </video>
                                     <div class="rc-hud-info">
-                                        <span class="rc-hud-tag">FEED_02 // ROUTE</span>
                                         <h4 class="rc-hud-title">Cinematic Site Survey</h4>
                                     </div>
                                 </div>
@@ -645,7 +773,6 @@
                                         <source src="Videos/drone3.mp4" type="video/mp4">
                                     </video>
                                     <div class="rc-hud-info">
-                                        <span class="rc-hud-tag">FEED_03 // TOWER</span>
                                         <h4 class="rc-hud-title">High-Rise Structure</h4>
                                     </div>
                                 </div>
@@ -663,7 +790,6 @@
                                             type="video/mp4">
                                     </video>
                                     <div class="rc-hud-info">
-                                        <span class="rc-hud-tag">FEED_04 // TOWNSHIP</span>
                                         <h4 class="rc-hud-title">Aerial Layout Flyby</h4>
                                     </div>
                                 </div>
@@ -833,7 +959,8 @@
         <div class="container">
             <div class="web-dev-header">
                 <h2 class="web-dev-main-heading">Social Media Management &amp; Digital Marketing</h2>
-                <p class="web-dev-subheading">High-converting viral social media campaigns, aesthetic reel production, brand strategy, and targeted audience growth managed by PRIZMABRIXX.</p>
+                <p class="web-dev-subheading">High-converting viral social media campaigns, aesthetic reel production,
+                    brand strategy, and targeted audience growth managed by PRIZMABRIXX.</p>
             </div>
 
             <!-- 3D Interactive Campaign Cards Grid -->
@@ -852,28 +979,19 @@
                         </div>
                         <div class="social-card-header">
                             <div class="social-meta">
-                                <div class="social-handle">@cliffcafe.in <i class="fa-solid fa-circle-check social-verified"></i></div>
+                                <div class="social-handle">@cliffcafe.in <i
+                                        class="fa-solid fa-circle-check social-verified"></i></div>
                                 <div class="social-badge">Cliff Cafe // Official</div>
                             </div>
                         </div>
-                        <span class="social-service-tag"><i class="fa-solid fa-utensils"></i> Hospitality Branding</span>
-                        <p class="social-desc">Creative content production, aesthetic reel curation, food styling, and digital marketing strategy driving footfall for Cliff Cafe.</p>
-                        <div class="social-card-metrics">
-                            <div class="metric-item">
-                                <span class="metric-val">120K+</span>
-                                <span class="metric-lbl">Monthly Reach</span>
-                            </div>
-                            <div class="metric-item">
-                                <span class="metric-val">4.8x</span>
-                                <span class="metric-lbl">ROI Boost</span>
-                            </div>
-                            <div class="metric-item">
-                                <span class="metric-val">45+</span>
-                                <span class="metric-lbl">Reels Curated</span>
-                            </div>
-                        </div>
-                        <a href="https://www.instagram.com/cliffcafe.in" target="_blank" rel="noopener noreferrer" class="social-action-btn magnetic">
-                            <i class="fa-brands fa-instagram"></i> View Instagram Profile <i class="fa-solid fa-arrow-right"></i>
+                        <span class="social-service-tag"><i class="fa-solid fa-utensils"></i> Hospitality
+                            Branding</span>
+                        <p class="social-desc">Creative content production, aesthetic reel curation, food styling, and
+                            digital marketing strategy driving footfall for Cliff Cafe.</p>
+                        <a href="https://www.instagram.com/cliffcafe.in" target="_blank" rel="noopener noreferrer"
+                            class="social-action-btn magnetic">
+                            <i class="fa-brands fa-instagram"></i> View Instagram Profile <i
+                                class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -892,28 +1010,19 @@
                         </div>
                         <div class="social-card-header">
                             <div class="social-meta">
-                                <div class="social-handle">@teaparkcafe <i class="fa-solid fa-circle-check social-verified"></i></div>
+                                <div class="social-handle">@teaparkcafe <i
+                                        class="fa-solid fa-circle-check social-verified"></i></div>
                                 <div class="social-badge">Tea Park Cafe</div>
                             </div>
                         </div>
-                        <span class="social-service-tag"><i class="fa-solid fa-store"></i> Cafe Culture &amp; Strategy</span>
-                        <p class="social-desc">Targeted hyper-local ads, customer experience reels, beverage launch campaigns, and brand community engagement.</p>
-                        <div class="social-card-metrics">
-                            <div class="metric-item">
-                                <span class="metric-val">85K+</span>
-                                <span class="metric-lbl">Impressions</span>
-                            </div>
-                            <div class="metric-item">
-                                <span class="metric-val">94%</span>
-                                <span class="metric-lbl">Local Ad Ret</span>
-                            </div>
-                            <div class="metric-item">
-                                <span class="metric-val">30+</span>
-                                <span class="metric-lbl">Campaigns</span>
-                            </div>
-                        </div>
-                        <a href="https://www.instagram.com/teaparkcafe" target="_blank" rel="noopener noreferrer" class="social-action-btn magnetic">
-                            <i class="fa-brands fa-instagram"></i> View Instagram Profile <i class="fa-solid fa-arrow-right"></i>
+                        <span class="social-service-tag"><i class="fa-solid fa-store"></i> Cafe Culture &amp;
+                            Strategy</span>
+                        <p class="social-desc">Targeted hyper-local ads, customer experience reels, beverage launch
+                            campaigns, and brand community engagement.</p>
+                        <a href="https://www.instagram.com/teaparkcafe" target="_blank" rel="noopener noreferrer"
+                            class="social-action-btn magnetic">
+                            <i class="fa-brands fa-instagram"></i> View Instagram Profile <i
+                                class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -932,28 +1041,19 @@
                         </div>
                         <div class="social-card-header">
                             <div class="social-meta">
-                                <div class="social-handle">@armourproofficial <i class="fa-solid fa-circle-check social-verified"></i></div>
+                                <div class="social-handle">@armourproofficial <i
+                                        class="fa-solid fa-circle-check social-verified"></i></div>
                                 <div class="social-badge">Armour Pro Detailing</div>
                             </div>
                         </div>
-                        <span class="social-service-tag"><i class="fa-solid fa-gauge-high"></i> Automotive Media &amp; Leads</span>
-                        <p class="social-desc">High-octane detailing showcases, ceramic coating transformations, Meta lead campaigns, and luxury car positioning.</p>
-                        <div class="social-card-metrics">
-                            <div class="metric-item">
-                                <span class="metric-val">450K+</span>
-                                <span class="metric-lbl">Video Views</span>
-                            </div>
-                            <div class="metric-item">
-                                <span class="metric-val">1.4K+</span>
-                                <span class="metric-lbl">Leads Captured</span>
-                            </div>
-                            <div class="metric-item">
-                                <span class="metric-val">60+</span>
-                                <span class="metric-lbl">HD Reels</span>
-                            </div>
-                        </div>
-                        <a href="https://www.instagram.com/armourproofficial/" target="_blank" rel="noopener noreferrer" class="social-action-btn magnetic">
-                            <i class="fa-brands fa-instagram"></i> View Instagram Profile <i class="fa-solid fa-arrow-right"></i>
+                        <span class="social-service-tag"><i class="fa-solid fa-gauge-high"></i> Automotive Media &amp;
+                            Leads</span>
+                        <p class="social-desc">High-octane detailing showcases, ceramic coating transformations, Meta
+                            lead campaigns, and luxury car positioning.</p>
+                        <a href="https://www.instagram.com/armourproofficial/" target="_blank" rel="noopener noreferrer"
+                            class="social-action-btn magnetic">
+                            <i class="fa-brands fa-instagram"></i> View Instagram Profile <i
+                                class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -972,28 +1072,19 @@
                         </div>
                         <div class="social-card-header">
                             <div class="social-meta">
-                                <div class="social-handle">@anyprop.in <i class="fa-solid fa-circle-check social-verified"></i></div>
+                                <div class="social-handle">@anyprop.in <i
+                                        class="fa-solid fa-circle-check social-verified"></i></div>
                                 <div class="social-badge">AnyProp Real Estate</div>
                             </div>
                         </div>
-                        <span class="social-service-tag"><i class="fa-solid fa-house-chimney"></i> PropTech Social Marketing</span>
-                        <p class="social-desc">Property walkthrough video teasers, project launch announcements, targeted buyer acquisition, and brand management.</p>
-                        <div class="social-card-metrics">
-                            <div class="metric-item">
-                                <span class="metric-val">650K+</span>
-                                <span class="metric-lbl">Reel Views</span>
-                            </div>
-                            <div class="metric-item">
-                                <span class="metric-val">2.8K+</span>
-                                <span class="metric-lbl">Inquiries</span>
-                            </div>
-                            <div class="metric-item">
-                                <span class="metric-val">25+</span>
-                                <span class="metric-lbl">Projects</span>
-                            </div>
-                        </div>
-                        <a href="https://www.instagram.com/anyprop.in/" target="_blank" rel="noopener noreferrer" class="social-action-btn magnetic">
-                            <i class="fa-brands fa-instagram"></i> View Instagram Profile <i class="fa-solid fa-arrow-right"></i>
+                        <span class="social-service-tag"><i class="fa-solid fa-house-chimney"></i> PropTech Social
+                            Marketing</span>
+                        <p class="social-desc">Property walkthrough video teasers, project launch announcements,
+                            targeted buyer acquisition, and brand management.</p>
+                        <a href="https://www.instagram.com/anyprop.in/" target="_blank" rel="noopener noreferrer"
+                            class="social-action-btn magnetic">
+                            <i class="fa-brands fa-instagram"></i> View Instagram Profile <i
+                                class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -1003,37 +1094,30 @@
                     <div class="social-card-inner">
                         <!-- Big Full Logo Cover Box -->
                         <div class="social-card-cover healthcare-cover">
-                            <img src="images/Basat Sahney Hospital.jpeg" alt="Basant Sahney Hospital" class="cover-logo-full">
+                            <img src="images/Basat Sahney Hospital.jpeg" alt="Basant Sahney Hospital"
+                                class="cover-logo-full">
                         </div>
 
                         <div class="social-card-top-stat">
                             <span class="stat-pill"><i class="fa-solid fa-heart-pulse"></i> Healthcare Media</span>
-                            <span class="stat-pill growth"><i class="fa-solid fa-user-doctor"></i> Patient Outreach</span>
+                            <span class="stat-pill growth"><i class="fa-solid fa-user-doctor"></i> Patient
+                                Outreach</span>
                         </div>
                         <div class="social-card-header">
                             <div class="social-meta">
-                                <div class="social-handle">@bsh_hyd <i class="fa-solid fa-circle-check social-verified"></i></div>
+                                <div class="social-handle">@bsh_hyd <i
+                                        class="fa-solid fa-circle-check social-verified"></i></div>
                                 <div class="social-badge">Basant Sahney Hospital</div>
                             </div>
                         </div>
-                        <span class="social-service-tag"><i class="fa-solid fa-suitcase-medical"></i> Healthcare Media &amp; Growth</span>
-                        <p class="social-desc">Healthcare branding, patient awareness campaigns, medical service reels, and digital marketing strategy for Basant Sahney Hospital.</p>
-                        <div class="social-card-metrics">
-                            <div class="metric-item">
-                                <span class="metric-val">500K+</span>
-                                <span class="metric-lbl">Impressions</span>
-                            </div>
-                            <div class="metric-item">
-                                <span class="metric-val">15K+</span>
-                                <span class="metric-lbl">Patient Reach</span>
-                            </div>
-                            <div class="metric-item">
-                                <span class="metric-val">100%</span>
-                                <span class="metric-lbl">Medical Trust</span>
-                            </div>
-                        </div>
-                        <a href="https://www.instagram.com/bsh_hyd" target="_blank" rel="noopener noreferrer" class="social-action-btn magnetic">
-                            <i class="fa-brands fa-instagram"></i> View Instagram Profile <i class="fa-solid fa-arrow-right"></i>
+                        <span class="social-service-tag"><i class="fa-solid fa-suitcase-medical"></i> Healthcare Media
+                            &amp; Growth</span>
+                        <p class="social-desc">Healthcare branding, patient awareness campaigns, medical service reels,
+                            and digital marketing strategy for Basant Sahney Hospital.</p>
+                        <a href="https://www.instagram.com/bsh_hyd" target="_blank" rel="noopener noreferrer"
+                            class="social-action-btn magnetic">
+                            <i class="fa-brands fa-instagram"></i> View Instagram Profile <i
+                                class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -1052,28 +1136,19 @@
                         </div>
                         <div class="social-card-header">
                             <div class="social-meta">
-                                <div class="social-handle">@open_bear_relatie <i class="fa-solid fa-circle-check social-verified"></i></div>
+                                <div class="social-handle">@open_bear_relatie <i
+                                        class="fa-solid fa-circle-check social-verified"></i></div>
                                 <div class="social-badge">Open Bear Relatie</div>
                             </div>
                         </div>
-                        <span class="social-service-tag"><i class="fa-solid fa-masks-theater"></i> Brand &amp; Lifestyle Management</span>
-                        <p class="social-desc">Lifestyle brand curation, event promotional graphics, audience interaction campaigns, and social media presence management.</p>
-                        <div class="social-card-metrics">
-                            <div class="metric-item">
-                                <span class="metric-val">220K+</span>
-                                <span class="metric-lbl">Impressions</span>
-                            </div>
-                            <div class="metric-item">
-                                <span class="metric-val">18%</span>
-                                <span class="metric-lbl">Eng. Rate</span>
-                            </div>
-                            <div class="metric-item">
-                                <span class="metric-val">40+</span>
-                                <span class="metric-lbl">Events</span>
-                            </div>
-                        </div>
-                        <a href="https://www.instagram.com/open_bear_relatie/" target="_blank" rel="noopener noreferrer" class="social-action-btn magnetic">
-                            <i class="fa-brands fa-instagram"></i> View Instagram Profile <i class="fa-solid fa-arrow-right"></i>
+                        <span class="social-service-tag"><i class="fa-solid fa-masks-theater"></i> Brand &amp; Lifestyle
+                            Management</span>
+                        <p class="social-desc">Lifestyle brand curation, event promotional graphics, audience
+                            interaction campaigns, and social media presence management.</p>
+                        <a href="https://www.instagram.com/open_bear_relatie/" target="_blank" rel="noopener noreferrer"
+                            class="social-action-btn magnetic">
+                            <i class="fa-brands fa-instagram"></i> View Instagram Profile <i
+                                class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -1267,9 +1342,10 @@
                     <div class="page cover-front" style="z-index: 10;">
                         <div class="page-front">
                             <div class="book-cover-content">
-                                <span class="book-tag">Brochure & Branding</span>
-                                <h3>CITY PRIDE</h3>
-                                <p>Premium Residential & Commercial Landmark</p>
+                                <span class="book-tag">Company Profile & Services</span>
+                                <h3 style="font-size: 1.8rem; margin: 15px 0;">PRIZMA<span
+                                        style="color: var(--accent);">BRIXX</span></h3>
+                                <p style="font-size: 0.95rem;">Virtual Simulation & Creative Studio</p>
                                 <div class="flip-hint">Click Corner to Open <i class="fa-solid fa-hand-pointer"></i>
                                 </div>
                             </div>
@@ -1277,69 +1353,214 @@
                         <div class="page-back">
                             <div class="book-page-content">
                                 <h4>Introduction</h4>
-                                <p>Welcome to City Pride, a landmark development designed for modern living and
-                                    corporate excellence in Hyderabad.</p>
-                                <img src="images/rendors/1_1 - Photo.jpg" alt="City Pride Aerial View"
-                                    class="book-page-img">
+                                <p>Welcome to PRIZMABRIXX. We are a pioneering Virtual Simulation and Creative Studio
+                                    dedicated to transforming how the world visualizes real estate and architecture.</p>
+                                <img src="../assets/images/logo-full.png" alt="PrizmaBrixx Logo" class="book-page-img"
+                                    style="object-fit: contain; padding: 20px;">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Page 2: Inside Spread 1 (Amenities & Design) -->
+                    <!-- Page 2: VR & AR -->
                     <div class="page" style="z-index: 9;">
                         <div class="page-front">
                             <div class="book-page-content">
-                                <h4>Architectural Vision</h4>
-                                <p>Designed by world-class architects, the facade features reflective glass curtain
-                                    walls and sustainable design features.</p>
-                                <img src="images/rendors/1_3 - Photo.jpg" alt="Architectural Facade"
-                                    class="book-page-img">
+                                <h4>Virtual Reality Walkthroughs</h4>
+                                <p>Step inside unbuilt spaces. We craft high-fidelity VR Walkthroughs that allow clients
+                                    to explore architecture and real estate before construction begins.</p>
+                                <img src="../assets/Renders/Paved Walkway with Potted Lavender.jpg"
+                                    alt="Paved Walkway with Potted Lavender" class="book-page-img">
                             </div>
                         </div>
                         <div class="page-back">
                             <div class="book-page-content">
-                                <h4>World Class Amenities</h4>
+                                <h4>Augmented Reality</h4>
+                                <p>Interactive AR experiences that superimpose digital master plans and 3D properties
+                                    into the real world via mobile and tablets.</p>
                                 <ul>
-                                    <li>Double-Height Entrance Lobby</li>
-                                    <li>Infinity Swimming Pool</li>
-                                    <li>Equipped Fitness Center</li>
-                                    <li>24/7 Multi-Tier Security</li>
+                                    <li>Interactive Property Catalogs</li>
+                                    <li>On-Site AR Projection</li>
+                                    <li>Mobile-Ready Masterplans</li>
+                                    <li>Dynamic Sales Tools</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Page 3: Inside Spread 2 (Floor Plans & Visuals) -->
+                    <!-- Page 3: 3D Models & Rendering -->
                     <div class="page" style="z-index: 8;">
                         <div class="page-front">
                             <div class="book-page-content">
-                                <h4>3D Floor Layouts</h4>
-                                <p>Spacious, naturally lit apartments and flexible office layouts engineered to maximize
-                                    space utility.</p>
-                                <img src="images/Mvv-housing-floor.png" alt="Floor Layout Preview"
+                                <h4>3D Scale Models</h4>
+                                <p>Precision 3D printed miniatures for master layouts, high-rises, and industrial
+                                    projects. Bring physical tangibility to your vision.</p>
+                                <img src="images/Mvv-housing-blocks.png" alt="3D Printed Scale Model"
+                                    class="book-page-img" style="object-fit: contain; background: #f0f0f0;">
+                            </div>
+                        </div>
+                        <div class="page-back">
+                            <div class="book-page-content">
+                                <h4>3D Rendering & Vision</h4>
+                                <p>Photorealistic 3D rendering for architectural facades, interiors, and commercial
+                                    landscapes to boost your pre-sales conversions.</p>
+                                <img src="../assets/Renders/Rooftop Terrace with Pool.jpg"
+                                    alt="Rooftop Terrace with Pool" class="book-page-img">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 4: Drone & Plots -->
+                    <div class="page" style="z-index: 7;">
+                        <div class="page-front">
+                            <div class="book-page-content">
+                                <h4>Drone Shoots & Aerials</h4>
+                                <p>Ultra-HD aerial photography and videography for land surveys, capturing the true
+                                    essence of your project's location and surroundings.</p>
+                                <img src="../assets/images/a1.jpg" alt="Aerial Drone Shot" class="book-page-img">
+                            </div>
+                        </div>
+                        <div class="page-back">
+                            <div class="book-page-content">
+                                <h4>Master Plot Maps</h4>
+                                <p>Highly detailed 2D and 3D master plot layouts designed for clear communication of
+                                    land division and geographical marketing.</p>
+                                <img src="images/Farm-Plots.png" alt="Drone Aerial Plot View" class="book-page-img">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 5: Web Dev & Branding -->
+                    <div class="page" style="z-index: 6;">
+                        <div class="page-front">
+                            <div class="book-page-content">
+                                <h4>Web Development</h4>
+                                <p>Custom-built, high-performance websites and PropTech platforms engineered
+                                    specifically for real estate developers and agencies.</p>
+                                <img src="images/real_macbook_desk_photo_tight.png" alt="Web Development"
                                     class="book-page-img">
                             </div>
                         </div>
                         <div class="page-back">
                             <div class="book-page-content">
-                                <h4>Strategic Location</h4>
-                                <p>Conveniently situated with seamless access to major highways, business centers, and
-                                    luxury shopping plazas.</p>
-                                <img src="images/Farm-Plots.png" alt="Location Map Layout" class="book-page-img">
+                                <h4>Branding & Identity</h4>
+                                <p>Curated brand identities, logo architecture, and visual systems developed for premium
+                                    real estate landmarks.</p>
+                                <ul>
+                                    <li>Logo Design</li>
+                                    <li>Brand Guidelines</li>
+                                    <li>Color Palettes</li>
+                                    <li>Typography Selection</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Page 4: Cover (Back) -->
-                    <div class="page cover-back" style="z-index: 7;">
+                    <!-- Page 6: Digital Marketing -->
+                    <div class="page" style="z-index: 5;">
+                        <div class="page-front">
+                            <div class="book-page-content">
+                                <h4>Digital Marketing</h4>
+                                <p>Data-driven marketing campaigns, SEO, and social media strategies designed to
+                                    maximize lead generation and brand awareness.</p>
+                                <img src="../assets/images/a2.jpg" alt="Digital Marketing" class="book-page-img"
+                                    style="object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="page-back">
+                            <div class="book-page-content">
+                                <h4>Print Collaterals</h4>
+                                <p>High-end corporate identity kits, print collateral designs, and physical marketing
+                                    brochures engineered for target conversions.</p>
+                                <ul>
+                                    <li>Business Cards</li>
+                                    <li>Flyers & Hoardings</li>
+                                    <li>Physical Brochures</li>
+                                    <li>Stationery Kits</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 7: Experience Center -->
+                    <div class="page" style="z-index: 4;">
+                        <div class="page-front">
+                            <div class="book-page-content">
+                                <h4>Experience Centers</h4>
+                                <p>Complete setup of state-of-the-art interactive sales lounges and experience centers
+                                    equipped with VR headsets and touch displays.</p>
+                                <img src="../assets/images/a3.jpg" alt="Experience Center Setup" class="book-page-img">
+                            </div>
+                        </div>
+                        <div class="page-back">
+                            <div class="book-page-content">
+                                <h4>Interactive Tools</h4>
+                                <p>Custom Digital Collaterals and Interactive Availability Plot Selectors to streamline
+                                    your real estate sales.</p>
+                                <img src="images/avialblity tool.png" alt="Availability Tool" class="book-page-img"
+                                    style="object-fit: cover; border-radius: 8px; margin-bottom: 20px;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 8: Architecture -->
+                    <div class="page" style="z-index: 3;">
+                        <div class="page-front">
+                            <div class="book-page-content">
+                                <h4>Interior Visualization</h4>
+                                <p>Hyper-realistic interior renders showcasing furniture, lighting, and textures to help
+                                    buyers visualize their future homes.</p>
+                                <img src="../assets/Renders/A-Frame Glamping Cabins.jpg" alt="A-Frame Glamping Cabins"
+                                    class="book-page-img">
+                            </div>
+                        </div>
+                        <div class="page-back">
+                            <div class="book-page-content">
+                                <h4>Exterior Facades</h4>
+                                <p>Stunning architectural exterior visualizations highlighting building materials,
+                                    environment integration, and structural grandeur.</p>
+                                <ul>
+                                    <li>Day & Night Views</li>
+                                    <li>Landscape Integration</li>
+                                    <li>Material Accuracy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 9: Client Success -->
+                    <div class="page" style="z-index: 2;">
+                        <div class="page-front">
+                            <div class="book-page-content">
+                                <h4>Our Network</h4>
+                                <p>Trusted by top developers across the nation, we deliver excellence in every project.
+                                    Join our network of over 50+ happy clients.</p>
+                                <img src="images/Basat Sahney Hospital.jpeg" alt="Client Projects"
+                                    class="book-page-img">
+                            </div>
+                        </div>
+                        <div class="page-back">
+                            <div class="book-page-content">
+                                <h4>Why Choose Us?</h4>
+                                <p>With 8+ years of excellence and 500+ projects delivered, we blend creativity with
+                                    cutting-edge technology to bring your vision to life.</p>
+                                <ul>
+                                    <li>Award-Winning Team</li>
+                                    <li>Timely Delivery</li>
+                                    <li>Unmatched Quality</li>
+                                    <li>End-to-End Solutions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 10: Cover (Back) -->
+                    <div class="page cover-back" style="z-index: 1;">
                         <div class="page-front">
                             <div class="book-page-content book-back-cover">
-                                <h3>CITY PRIDE</h3>
-                                <p>blueprints & brochure download</p>
-
-                                <a href="city pride digital copy.pdf" target="_blank"
-                                    class="btn btn-primary brochure-download-btn magnetic">
-                                    <i class="fa-solid fa-file-pdf"></i> Download PDF Brochure
+                                <h4>Get In Touch</h4>
+                                <p>Ready to transform your vision into reality? Contact our expert team today.</p>
+                                <a href="../contact.html" class="btn btn-primary brochure-download-btn magnetic">
+                                    <i class="fa-solid fa-envelope"></i> Contact Us
                                 </a>
 
                                 <div class="flip-hint-back">Click to Flip Back</div>
@@ -1347,8 +1568,9 @@
                         </div>
                         <div class="page-back">
                             <div class="book-cover-content">
-                                <h3>PRIZMA BRIXX</h3>
-                                <p>© 2026 Architectural Studio</p>
+                                <h3 style="font-size: 1.5rem; margin-bottom: 10px;">PRIZMA<span
+                                        style="color: var(--accent);">BRIXX</span></h3>
+                                <p style="font-size: 0.85rem;">© 2026 Virtual Simulation Studio<br>Hyderabad, India</p>
                             </div>
                         </div>
                     </div>
@@ -1747,7 +1969,8 @@
                                 </option>
                                 <option value="Estate Plots Layout - Villa Plot">Estate Plots Layout - Villa Plot
                                 </option>
-                                <option value="Infinity Pool & Resort Penthouse">Infinity Pool & Resort Penthouse
+                                <option value="Luxury Resort Swimming Pool Oasis Penthouse">Luxury Resort Swimming Pool
+                                    Oasis Penthouse
                                 </option>
                                 <option value="Resort Waterfront Villa - Phase 2">Resort Waterfront Villa - Phase 2
                                 </option>
@@ -2295,7 +2518,7 @@
                 {
                     src: 'Videos/greensiri.mp4',
                     url: 'https://greensiri.in/',
-                    title: 'Greensiri Infra & Developers',
+                    title: 'Greensiri Properties',
                     category: 'Real Estate & Layout Portal',
                     domain: 'greensiri.in',
                     desc: 'Interactive real estate web platform showcasing master layout plans, land investment options, and plot availability tools.'
@@ -2336,6 +2559,16 @@
             const pBtn = document.getElementById('webShowcasePrev');
             const nBtn = document.getElementById('webShowcaseNext');
             const webPills = document.querySelectorAll('.web-brand-pill[data-idx]');
+            const urlTextElem = document.getElementById('webShowcaseUrlText');
+            const bBackBtn = document.getElementById('browserBackBtn');
+            const bFwdBtn = document.getElementById('browserForwardBtn');
+            const bReloadBtn = document.getElementById('browserReloadBtn');
+            const fsBtn = document.getElementById('webShowcaseFullscreen');
+            const stageElem = document.getElementById('webShowcaseStage');
+
+            const browserTabs = document.querySelectorAll('.macos-tab[data-idx]');
+            const webProjectItems = document.querySelectorAll('.web-project-item[data-idx]');
+            const webSlideNum = document.getElementById('webSlideNum');
 
             function setWebSlide(i, userTriggered = false) {
                 if (i < 0) i = webSlides.length - 1;
@@ -2351,27 +2584,71 @@
                 if (cElem) cElem.textContent = cur.category;
                 if (descEl) descEl.textContent = cur.desc;
                 if (lElem) lElem.href = cur.url;
+                if (urlTextElem) urlTextElem.textContent = cur.url;
+                if (webSlideNum) webSlideNum.textContent = String(webIdx + 1).padStart(2, '0');
 
                 webPills.forEach((pill) => {
                     const pIdx = parseInt(pill.getAttribute('data-idx'));
                     pill.classList.toggle('active', pIdx === webIdx);
                 });
+                browserTabs.forEach((tab) => {
+                    const tIdx = parseInt(tab.getAttribute('data-idx'));
+                    tab.classList.toggle('active', tIdx === webIdx);
+                });
+                webProjectItems.forEach((item) => {
+                    const pIdx = parseInt(item.getAttribute('data-idx'));
+                    item.classList.toggle('active', pIdx === webIdx);
+                });
 
-                if (userTriggered) restartAutoLoop();
+                if (userTriggered && autoLoopTimer) {
+                    clearTimeout(autoLoopTimer);
+                    autoLoopTimer = null;
+                }
             }
 
-            function restartAutoLoop() {
-                if (autoLoopTimer) clearInterval(autoLoopTimer);
-                autoLoopTimer = setInterval(() => {
+            /* Auto-advance to next website only after current video ends */
+            if (vElem) {
+                vElem.addEventListener('ended', () => {
                     setWebSlide(webIdx + 1, false);
-                }, 8000);
+                });
             }
 
             if (pBtn) pBtn.addEventListener('click', () => setWebSlide(webIdx - 1, true));
             if (nBtn) nBtn.addEventListener('click', () => setWebSlide(webIdx + 1, true));
+            if (bBackBtn) bBackBtn.addEventListener('click', () => setWebSlide(webIdx - 1, true));
+            if (bFwdBtn) bFwdBtn.addEventListener('click', () => setWebSlide(webIdx + 1, true));
+            if (bReloadBtn) bReloadBtn.addEventListener('click', () => {
+                if (vElem) {
+                    vElem.currentTime = 0;
+                    vElem.play().catch(() => { });
+                }
+            });
+            if (fsBtn && stageElem) {
+                fsBtn.addEventListener('click', () => {
+                    if (!document.fullscreenElement) {
+                        if (stageElem.requestFullscreen) stageElem.requestFullscreen();
+                        else if (stageElem.webkitRequestFullscreen) stageElem.webkitRequestFullscreen();
+                    } else {
+                        if (document.exitFullscreen) document.exitFullscreen();
+                        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+                    }
+                });
+            }
             webPills.forEach((pill) => {
                 pill.addEventListener('click', () => {
                     const pIdx = parseInt(pill.getAttribute('data-idx'));
+                    if (!isNaN(pIdx)) setWebSlide(pIdx, true);
+                });
+            });
+            browserTabs.forEach((tab) => {
+                tab.addEventListener('click', () => {
+                    const tIdx = parseInt(tab.getAttribute('data-idx'));
+                    if (!isNaN(tIdx)) setWebSlide(tIdx, true);
+                });
+            });
+            webProjectItems.forEach((item) => {
+                item.addEventListener('click', () => {
+                    const pIdx = parseInt(item.getAttribute('data-idx'));
                     if (!isNaN(pIdx)) setWebSlide(pIdx, true);
                 });
             });
@@ -2386,7 +2663,7 @@
             storyItems.forEach(item => {
                 item.addEventListener('click', () => {
                     const filter = item.getAttribute('data-filter');
-                    
+
                     storyItems.forEach(i => i.classList.remove('active'));
                     item.classList.add('active');
 
@@ -3243,7 +3520,7 @@
                     { id: 1, name: "Rahul Sharma", phone: "+91 98765 43210", email: "rahul.sharma@gmail.com", property: "MVV Housing Blocks - 3 BHK", budget: "₹75 L", budgetVal: 0.75, source: "meta", status: "won" },
                     { id: 2, name: "Sarah D'Souza", phone: "+91 91234 56789", email: "sarah.dsouza@yahoo.com", property: "GK Zenith Facade - Commercial Unit", budget: "₹1.2 Cr", budgetVal: 1.2, source: "google", status: "sitevisit" },
                     { id: 3, name: "Vikram Malhotra", phone: "+91 95432 10987", email: "vikram.m@outlook.com", property: "Estate Plots Layout - Villa Plot", budget: "₹2.5 Cr", budgetVal: 2.5, source: "insta", status: "negotiation" },
-                    { id: 4, name: "Pooja Hegde", phone: "+91 88888 77777", email: "pooja@hegde.me", property: "Infinity Pool & Resort Penthouse", budget: "₹4.5 Cr", budgetVal: 4.5, source: "meta", status: "new" },
+                    { id: 4, name: "Pooja Hegde", phone: "+91 88888 77777", email: "pooja@hegde.me", property: "Luxury Resort Swimming Pool Oasis Penthouse", budget: "₹4.5 Cr", budgetVal: 4.5, source: "meta", status: "new" },
                     { id: 5, name: "Sameer Deshmukh", phone: "+91 99999 11111", email: "sameer@deshmukh.co", property: "Resort Waterfront Villa - Phase 2", budget: "₹2.5 Cr", budgetVal: 2.5, source: "linkedin", status: "won" },
                     { id: 6, name: "Neha Reddy", phone: "+91 77777 55555", email: "neha.reddy@reddy.io", property: "MVV Housing Blocks - 3 BHK", budget: "₹75 L", budgetVal: 0.75, source: "meta", status: "contacted" },
                     { id: 7, name: "Arjun Patel", phone: "+91 91111 22222", email: "arjun.p@gmail.com", property: "Terra Heights - Eco Villa", budget: "₹3.2 Cr", budgetVal: 3.2, source: "google", status: "new" },
@@ -3252,16 +3529,16 @@
                     { id: 10, name: "Ananya Singh", phone: "+91 97777 88888", email: "ananya.s@outlook.com", property: "Nova Horizon - Penthouse", budget: "₹5.0 Cr", budgetVal: 5.0, source: "meta", status: "contacted" }
                 ],
                 properties: [
-                    { id: 1, name: "MVV Housing Block A - Unit 302", specs: "3 BHK // 1850 SFT", price: "₹75 L", priceVal: 0.75, status: "available", img: "images/renders-gen/tower-exterior.png", assignedTo: null },
-                    { id: 2, name: "GK Zenith Commercial - Office 10", specs: "Premium Studio // 1200 SFT", price: "₹1.2 Cr", priceVal: 1.2, status: "available", img: "images/renders-gen/commercial-glass-facade.png", assignedTo: null },
-                    { id: 3, name: "Estate Plots Layout - Villa Plot #45", specs: "West-Facing // 4000 SFT", price: "₹2.5 Cr", priceVal: 2.5, status: "available", img: "images/rendors/1_3 - Photo.jpg", assignedTo: null },
-                    { id: 4, name: "Infinity Pool Penthouse - Unit 901", specs: "Duplex Suite // 4500 SFT", price: "₹4.5 Cr", priceVal: 4.5, status: "available", img: "images/renders-gen/penthouse-terrace.png", assignedTo: null },
-                    { id: 5, name: "Resort Waterfront Villa - Unit B2", specs: "Private Deck // 5200 SFT", price: "₹2.5 Cr", priceVal: 2.5, status: "booked", img: "images/renders-gen/resort-pool.png", assignedTo: "Sameer Deshmukh" },
-                    { id: 6, name: "MVV Housing Block B - Unit 405", specs: "3 BHK // 1850 SFT", price: "₹75 L", priceVal: 0.75, status: "booked", img: "images/renders-gen/villa-interior.png", assignedTo: "Rahul Sharma" },
-                    { id: 7, name: "Terra Heights Eco - Villa #12", specs: "4 BHK // 3500 SFT", price: "₹3.2 Cr", priceVal: 3.2, status: "available", img: "images/renders-gen/villa-interior.png", assignedTo: null },
-                    { id: 8, name: "City Pride Towers - Unit 201", specs: "2 BHK // 1100 SFT", price: "₹55 L", priceVal: 0.55, status: "available", img: "images/renders-gen/tower-exterior.png", assignedTo: null },
-                    { id: 9, name: "Aura Boutique Office - Space A", specs: "Commercial // 1500 SFT", price: "₹1.8 Cr", priceVal: 1.8, status: "available", img: "images/renders-gen/commercial-glass-facade.png", assignedTo: null },
-                    { id: 10, name: "Nova Horizon - Unit 1001", specs: "Sky Condo // 5000 SFT", price: "₹5.0 Cr", priceVal: 5.0, status: "available", img: "images/renders-gen/penthouse-terrace.png", assignedTo: null }
+                    { id: 1, name: "MVV Housing Block A - Unit 302", specs: "3 BHK // 1850 SFT", price: "₹75 L", priceVal: 0.75, status: "available", img: "../assets/Renders/exterior.jpg", assignedTo: null },
+                    { id: 2, name: "GK Zenith Commercial - Office 10", specs: "Premium Studio // 1200 SFT", price: "₹1.2 Cr", priceVal: 1.2, status: "available", img: "../assets/Renders/11.jpg", assignedTo: null },
+                    { id: 3, name: "Estate Plots Layout - Villa Plot #45", specs: "West-Facing // 4000 SFT", price: "₹2.5 Cr", priceVal: 2.5, status: "available", img: "../assets/Renders/1_4 - Photo.jpg", assignedTo: null },
+                    { id: 4, name: "Infinity Pool Penthouse - Unit 901", specs: "Duplex Suite // 4500 SFT", price: "₹4.5 Cr", priceVal: 4.5, status: "available", img: "../assets/Renders/1_8 - Photo.jpg", assignedTo: null },
+                    { id: 5, name: "Resort Waterfront Villa - Unit B2", specs: "Private Deck // 5200 SFT", price: "₹2.5 Cr", priceVal: 2.5, status: "booked", img: "../assets/Renders/1_7 - Photo.jpg", assignedTo: "Sameer Deshmukh" },
+                    { id: 6, name: "MVV Housing Block B - Unit 405", specs: "3 BHK // 1850 SFT", price: "₹75 L", priceVal: 0.75, status: "booked", img: "../assets/Renders/1_5 - Photo.jpg", assignedTo: "Rahul Sharma" },
+                    { id: 7, name: "Terra Heights Eco - Villa #12", specs: "4 BHK // 3500 SFT", price: "₹3.2 Cr", priceVal: 3.2, status: "available", img: "../assets/Renders/1_5 - Photo.jpg", assignedTo: null },
+                    { id: 8, name: "City Pride Towers - Unit 201", specs: "2 BHK // 1100 SFT", price: "₹55 L", priceVal: 0.55, status: "available", img: "../assets/Renders/exterior.jpg", assignedTo: null },
+                    { id: 9, name: "Aura Boutique Office - Space A", specs: "Commercial // 1500 SFT", price: "₹1.8 Cr", priceVal: 1.8, status: "available", img: "../assets/Renders/11.jpg", assignedTo: null },
+                    { id: 10, name: "Nova Horizon - Unit 1001", specs: "Sky Condo // 5000 SFT", price: "₹5.0 Cr", priceVal: 5.0, status: "available", img: "../assets/Renders/1_8 - Photo.jpg", assignedTo: null }
                 ],
                 tasks: [
                     { id: 1, title: "Call Vikram Malhotra (Negotiation phase details)", completed: false },
@@ -3926,15 +4203,85 @@
             function updateMiddleCardClass() {
                 ringCards.forEach((card, idx) => {
                     if (idx === currentActiveIndex) {
-                        card.classList.add('middle-card');
+                        card.classList.add("middle-card");
                     } else {
-                        card.classList.remove('middle-card');
+                        card.classList.remove("middle-card");
                     }
                 });
             }
 
             // Initialize middle card class
             updateMiddleCardClass();
+
+            const renderTitlesMap = {
+                "Traditional Villa with Terracotta Roof.jpg": "Traditional Villa with Terracotta Roof",
+                "Villa with Outdoor Seating Pergola.jpg": "Villa with Outdoor Seating Pergola",
+                "Paved Walkway with Potted Lavender.jpg": "Paved Walkway with Potted Lavender",
+                "Streetscape with Organic Archway.jpg": "Streetscape with Organic Archway",
+                "Water Road with Archway.jpg": "Water Road with Archway",
+                "Entrance Gate Top View.jpg": "Entrance Gate Top View",
+                "Rooftop Terrace with Pool.jpg": "Rooftop Terrace with Pool",
+                "Waterway with Floral Arches.jpg": "Waterway with Floral Arches",
+                "A-Frame Glamping Cabins.jpg": "A-Frame Glamping Cabins",
+                "Grand Resort Pool.jpg": "Grand Resort Pool",
+                "Circular Building with Central Pond.jpg": "Circular Building with Central Pond",
+                "Modern Walkway with Bamboo.jpg": "Modern Walkway with Bamboo",
+                "View from Inside Car.jpg": "View from Inside Car",
+                "Top Down Road with Flower Arches.jpg": "Top Down Road with Flower Arches",
+                "Amphitheater with Large Screen.jpg": "Amphitheater with Large Screen",
+                "Masterplan Overview.jpg": "Masterplan Overview",
+                "Multi-Sports Complex.jpg": "Multi-Sports Complex",
+                "Sports Courts and Gazebos.jpg": "Sports Courts and Gazebos",
+                "Single Story Traditional House.jpg": "Single Story Traditional House",
+                "High Rise Apartment Building.jpg": "High Rise Apartment Building",
+                "Community Masterplan with Sports Courts.jpg": "Community Masterplan with Sports Courts",
+                "Modern Two-Story Villa with Red Car.jpg": "Modern Two-Story Villa with Red Car",
+                "Circular Banquet Hall with Golden Deer.jpg": "Circular Banquet Hall with Golden Deer",
+                "Modern Villa at Twilight.jpg": "Modern Villa at Twilight"
+            };
+
+            const allRenderImages = Object.keys(renderTitlesMap);
+
+            let currentAbsoluteStep = null;
+
+            function updateVirtualCards(absoluteStep) {
+                if (absoluteStep === currentAbsoluteStep) return;
+                currentAbsoluteStep = absoluteStep;
+
+                const totalImages = allRenderImages.length;
+                let wrappedActive = ((absoluteStep % totalCards) + totalCards) % totalCards;
+
+                ringCards.forEach((card, domIndex) => {
+                    let diff = domIndex - wrappedActive;
+                    if (diff < -5) diff += 10;
+                    if (diff > 4) diff -= 10;
+
+                    let imageIndex = ((absoluteStep + diff) % totalImages + totalImages) % totalImages;
+                    let img = card.querySelector('.rc-image');
+                    let title = card.querySelector('.rc-hud-title');
+
+                    let filename = allRenderImages[imageIndex];
+                    let newSrc = '../assets/Renders/' + filename;
+                    let newTitle = renderTitlesMap[filename] || filename.replace(/\.[^/.]+$/, '').replace(/ \(\d+\)$/, '');
+
+                    if (img && img.getAttribute('src') !== newSrc) {
+                        img.src = newSrc;
+                        img.alt = newTitle;
+                    }
+                    if (title && title.innerText !== newTitle) {
+                        title.innerText = newTitle;
+                    }
+                });
+            }
+
+            updateVirtualCards(0);
+
+            function carouselLoop() {
+                let absoluteStep = Math.round(-carouselState.angle / stepAngle);
+                updateVirtualCards(absoluteStep);
+                requestAnimationFrame(carouselLoop);
+            }
+            carouselLoop();
 
             // Calculate the closest target angle to align card `index` to the front
             function rotateCarouselToCard(index) {
@@ -4068,6 +4415,7 @@
             }
 
             // 3. Render Lightbox Modal Logic
+            let activeLightboxIndex = 0;
             const lightbox = document.getElementById('render-lightbox');
             const lightboxImg = document.getElementById('lightboxImg');
             const lightboxCaption = document.getElementById('lightboxCaption');
@@ -4075,32 +4423,17 @@
             const lightboxPrev = document.getElementById('lightboxPrev');
             const lightboxNext = document.getElementById('lightboxNext');
 
-            // Image definitions matching the HTML
-            const renderImages = [
-                { src: "images/rendors/1_1 - Photo.jpg", title: "Premium Villa Frontage" },
-                { src: "images/renders-gen/villa-interior.png", title: "Villa Living Room" },
-                { src: "images/rendors/1_3 - Photo.jpg", title: "Modern Concept" },
-                { src: "images/renders-gen/tower-exterior.png", title: "High-Rise Tower" },
-                { src: "images/rendors/1_4 - Photo.jpg", title: "Penthouse Exterior" },
-                { src: "images/renders-gen/resort-pool.png", title: "Infinity Pool & Resort" },
-                { src: "images/renders-gen/penthouse-terrace.png", title: "Penthouse Terrace" },
-                { src: "images/renders-gen/township-aerial.png", title: "Township Aerial View" },
-                { src: "images/renders-gen/modern-villa-night.png", title: "Modern Villa Night" },
-                { src: "images/renders-gen/commercial-glass-facade.png", title: "Commercial Glass Facade" }
-            ];
-
-            let activeLightboxIndex = 0;
-
             function openLightbox(index) {
-                activeLightboxIndex = (index + totalCards) % totalCards;
-                const imgData = renderImages[activeLightboxIndex];
+                activeLightboxIndex = (index + allRenderImages.length) % allRenderImages.length;
+                const filename = allRenderImages[activeLightboxIndex];
+                const title = filename.replace(/\.[^/.]+$/, '').replace(/ \(\d+\)$/, '');
 
-                lightboxImg.src = imgData.src;
-                document.getElementById('lightboxCaption').textContent = imgData.title;
+                lightboxImg.src = '../assets/Renders/' + filename;
+                document.getElementById('lightboxCaption').textContent = title;
 
-                const secNum = String(activeLightboxIndex + 1).padStart(2, '0');
-                document.getElementById('lightboxMeta').textContent = `RENDER // SEC.${secNum}`;
-                document.getElementById('lightboxCounter').textContent = `${activeLightboxIndex + 1} / ${totalCards}`;
+                // Clear meta and counter as per user request
+                document.getElementById('lightboxMeta').textContent = '';
+                document.getElementById('lightboxCounter').textContent = '';
 
                 // Set initial animated states
                 gsap.set(lightbox, { display: "flex", opacity: 0 });
@@ -4133,8 +4466,10 @@
             }
 
             function navigateLightbox(dir) {
-                const nextIndex = (activeLightboxIndex + dir + totalCards) % totalCards;
-                const imgData = renderImages[nextIndex];
+                const totalImages = allRenderImages.length;
+                const nextIndex = (activeLightboxIndex + dir + totalImages) % totalImages;
+                const filename = allRenderImages[nextIndex];
+                const title = filename.replace(/\.[^/.]+$/, '').replace(/ \(\d+\)$/, '');
 
                 // Smooth slide-out / fade-out transition based on direction
                 const slideDist = 35;
@@ -4145,12 +4480,11 @@
                     ease: "power2.in",
                     onComplete: () => {
                         activeLightboxIndex = nextIndex;
-                        lightboxImg.src = imgData.src;
-                        document.getElementById('lightboxCaption').textContent = imgData.title;
+                        lightboxImg.src = '../assets/Renders/' + filename;
+                        document.getElementById('lightboxCaption').textContent = title;
 
-                        const secNum = String(nextIndex + 1).padStart(2, '0');
-                        document.getElementById('lightboxMeta').textContent = `RENDER // SEC.${secNum}`;
-                        document.getElementById('lightboxCounter').textContent = `${nextIndex + 1} / ${totalCards}`;
+                        document.getElementById('lightboxMeta').textContent = '';
+                        document.getElementById('lightboxCounter').textContent = '';
 
                         // Set start position of slide-in animation
                         gsap.set([lightboxImg, '.lightbox-caption-wrapper'], {
@@ -4172,7 +4506,14 @@
             ringCards.forEach((card, idx) => {
                 card.addEventListener('click', (e) => {
                     if (card.classList.contains('middle-card')) {
-                        openLightbox(idx);
+                        const totalImages = allRenderImages.length;
+                        let wrappedActive = ((currentAbsoluteStep % totalCards) + totalCards) % totalCards;
+                        let diff = idx - wrappedActive;
+                        if (diff < -5) diff += 10;
+                        if (diff > 4) diff -= 10;
+                        let imageIndex = ((currentAbsoluteStep + diff) % totalImages + totalImages) % totalImages;
+                        
+                        openLightbox(imageIndex);
                     } else {
                         rotateCarouselToCard(idx);
                     }
