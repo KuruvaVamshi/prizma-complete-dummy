@@ -303,11 +303,11 @@
   <section class="section section--light about-teaser" id="about-teaser" aria-labelledby="about-heading">
     <div class="container">
       <div class="about-grid">
-        <!-- Text -->
+        <!-- Text Column -->
         <div class="about-text reveal" id="about-text-block">
           <span class="section-badge section-badge--light">About PRIZMABRIXX</span>
           <h2 class="section-heading" id="about-heading">
-            Redefining Reality Since <span class="gradient-text">2018</span>
+            Redefining Reality<br>Since <span class="gradient-text">2018</span>
           </h2>
           <div class="divider divider--left"></div>
           <p class="body-lg text-muted-light">
@@ -318,23 +318,44 @@
           <p class="body-base text-muted-light" style="margin-top: 16px;">
             From real estate developers to enterprise brands, we help clients visualize the future before it's built.
           </p>
+
+          <!-- Stat Counters -->
+          <div class="about-stats-row">
+            <div class="about-stat-item">
+              <span class="about-stat-number" data-target="50">0</span><span class="about-stat-suffix">+</span>
+              <span class="about-stat-label">Projects Delivered</span>
+            </div>
+            <div class="about-stat-divider"></div>
+            <div class="about-stat-item">
+              <span class="about-stat-number" data-target="8">0</span><span class="about-stat-suffix">+</span>
+              <span class="about-stat-label">Years Experience</span>
+            </div>
+            <div class="about-stat-divider"></div>
+            <div class="about-stat-item">
+              <span class="about-stat-number" data-target="9">0</span>
+              <span class="about-stat-label">Service Verticals</span>
+            </div>
+          </div>
+
+          <!-- Highlight Cards -->
           <div class="about-highlights">
             <div class="highlight-item" id="highlight-1">
-              <div class="highlight-icon">✦</div>
+              <div class="highlight-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></div>
               <div>
                 <div class="highlight-title">Award-Winning</div>
                 <div class="highlight-desc">Recognized for innovation in immersive tech</div>
               </div>
             </div>
             <div class="highlight-item" id="highlight-2">
-              <div class="highlight-icon">✦</div>
+              <div class="highlight-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
               <div>
                 <div class="highlight-title">Pan-India Reach</div>
                 <div class="highlight-desc">Serving clients across India & internationally</div>
               </div>
             </div>
           </div>
-          <a href="about.html" class="btn btn-outline-dark" id="about-learn-more-btn">
+
+          <a href="about.html" class="btn btn-outline-dark about-cta-btn" id="about-learn-more-btn">
             Learn More About Us
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
               aria-hidden="true">
@@ -343,22 +364,52 @@
           </a>
         </div>
 
-        <!-- 3D Visual -->
+        <!-- Visual Column — Tech Sphere -->
         <div class="about-visual reveal reveal-delay-2" id="about-visual" aria-hidden="true">
-          <div class="cube-scene">
-            <div class="cube">
-              <div class="cube-face front">VR</div>
-              <div class="cube-face back">AR</div>
-              <div class="cube-face left">3D</div>
-              <div class="cube-face right">XR</div>
-              <div class="cube-face top">AI</div>
-              <div class="cube-face bottom">WEB</div>
+          <div class="tech-sphere-wrap">
+            <!-- Glow backdrop -->
+            <div class="sphere-glow"></div>
+            <!-- Orbit rings (Visual only) -->
+            <div class="sphere-orbit sphere-orbit-1"></div>
+            <div class="sphere-orbit sphere-orbit-2"></div>
+            <div class="sphere-orbit sphere-orbit-3"></div>
+            <!-- Core sphere -->
+            <div class="sphere-core">
+              <div class="sphere-inner-ring"></div>
+              <span class="sphere-label">PB</span>
+            </div>
+            <!-- Floating particle dots revolving -->
+            <div class="dots-orbit">
+              <div class="dot-counter dot-pos-1"><span class="sphere-dot dot-float-1"></span></div>
+              <div class="dot-counter dot-pos-2"><span class="sphere-dot dot-float-2"></span></div>
+              <div class="dot-counter dot-pos-3"><span class="sphere-dot dot-float-3"></span></div>
+              <div class="dot-counter dot-pos-4"><span class="sphere-dot dot-float-4"></span></div>
+              <div class="dot-counter dot-pos-5"><span class="sphere-dot dot-float-5"></span></div>
+              <div class="dot-counter dot-pos-6"><span class="sphere-dot dot-float-6"></span></div>
+            </div>
+
+            <!-- Revolving Satellites -->
+            <!-- Satellite 1: VR Walkthrough -->
+            <div class="sat-track sat-track-1">
+              <div class="sat-mover sat-mover-1">
+                <div class="sat-badge sat-badge-1"><i class="fa-solid fa-vr-cardboard"></i> VR Walkthrough</div>
+              </div>
+            </div>
+            
+            <!-- Satellite 2: Drone Shoots -->
+            <div class="sat-track sat-track-2">
+              <div class="sat-mover sat-mover-2">
+                <div class="sat-badge sat-badge-2"><i class="fa-solid fa-helicopter"></i> Drone Shoots</div>
+              </div>
+            </div>
+
+            <!-- Satellite 3: 3D Printing -->
+            <div class="sat-track sat-track-3">
+              <div class="sat-mover sat-mover-3">
+                <div class="sat-badge sat-badge-3"><i class="fa-solid fa-print"></i> 3D Printing</div>
+              </div>
             </div>
           </div>
-          <div class="orbit-ring ring-1"></div>
-          <div class="orbit-ring ring-2"></div>
-          <div class="about-badge-1">🥽 VR Ready</div>
-          <div class="about-badge-2">⚡ Real-time</div>
         </div>
       </div>
     </div>
@@ -382,63 +433,63 @@
 
       <div class="services-grid" id="services-grid">
         <div class="service-card glass-card reveal" id="service-card-1">
-          <div class="service-card-icon">🥽</div>
+          <div class="service-card-icon"><i class="fa-solid fa-vr-cardboard"></i></div>
           <h3 class="service-card-title">VR Walkthrough</h3>
           <p class="service-card-desc">Immersive virtual tours for real estate, architecture and enterprise spaces.</p>
-          <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-vr">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html#vr-experience" class="service-card-link" id="service-link-vr">Explore <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-1" id="service-card-2">
-          <div class="service-card-icon">📱</div>
+          <div class="service-card-icon"><i class="fa-solid fa-mobile-screen"></i></div>
           <h3 class="service-card-title">Augmented Reality</h3>
           <p class="service-card-desc">Layer digital content onto the real world for stunning product and brand
             experiences.</p>
-          <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-ar">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html#portfolio" class="service-card-link" id="service-link-ar">Explore <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-2" id="service-card-3">
-          <div class="service-card-icon">🖨️</div>
+          <div class="service-card-icon"><i class="fa-solid fa-print"></i></div>
           <h3 class="service-card-title">3D Printing</h3>
           <p class="service-card-desc">Physical prototypes, architectural models, and custom 3D-printed solutions.</p>
-          <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-3d">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html#renderings" class="service-card-link" id="service-link-3d">Explore <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-3" id="service-card-4">
-          <div class="service-card-icon">✦</div>
+          <div class="service-card-icon"><i class="fa-solid fa-helicopter"></i></div>
           <h3 class="service-card-title">Drone Shoots</h3>
           <p class="service-card-desc">Cinematic Aerial Photography and videography for properties and events.</p>
-          <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-drone">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html#drone-shoot" class="service-card-link" id="service-link-drone">Explore <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal" id="service-card-5">
-          <div class="service-card-icon">✦</div>
+          <div class="service-card-icon"><i class="fa-solid fa-code"></i></div>
           <h3 class="service-card-title">Web & App Development</h3>
           <p class="service-card-desc">Modern websites and mobile apps engineered for performance and scale.</p>
-          <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-web">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html#web-development" class="service-card-link" id="service-link-web">Explore <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-1" id="service-card-6">
-          <div class="service-card-icon">🎨</div>
+          <div class="service-card-icon"><i class="fa-solid fa-palette"></i></div>
           <h3 class="service-card-title">Branding</h3>
           <p class="service-card-desc">Strategic brand identity, logo design, and visual systems that resonate.</p>
-          <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-branding">Explore
+          <a href="Portfolio-page/index.html#branding" class="service-card-link" id="service-link-branding">Explore
             <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-2" id="service-card-7">
-          <div class="service-card-icon">📊</div>
+          <div class="service-card-icon"><i class="fa-solid fa-chart-line"></i></div>
           <h3 class="service-card-title">Digital Marketing</h3>
           <p class="service-card-desc">Data-driven campaigns that grow your brand and convert leads to customers.</p>
-          <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-marketing">Explore
+          <a href="Portfolio-page/index.html#social-marketing" class="service-card-link" id="service-link-marketing">Explore
             <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-3" id="service-card-8">
-          <div class="service-card-icon">✦</div>
+          <div class="service-card-icon"><i class="fa-solid fa-building"></i></div>
           <h3 class="service-card-title">Experience Center</h3>
           <p class="service-card-desc">Design and build captivating beyond-reality experience centres for your brand.
           </p>
-          <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-bec">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html#vr-experience" class="service-card-link" id="service-link-bec">Explore <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-1" id="service-card-9">
-          <div class="service-card-icon">✦</div>
+          <div class="service-card-icon"><i class="fa-solid fa-layer-group"></i></div>
           <h3 class="service-card-title">Availability Tool</h3>
           <p class="service-card-desc">Interactive unit selection tools for real estate projects and property showcases.
           </p>
-          <a href="Portfolio-page/index.html" class="service-card-link" id="service-link-tool">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html#portfolio" class="service-card-link" id="service-link-tool">Explore <span>→</span></a>
         </div>
       </div>
 
@@ -449,91 +500,6 @@
   </section>
 
 
-  <!-- ============================
-       HORIZONTAL SCROLL SHOWCASE
-  ============================= -->
-  <section class="horizontal-showcase" id="horizontal-showcase">
-    <div class="horizontal-showcase-header">
-      <div class="container">
-        <span class="section-badge reveal">Immersive Gallery</span>
-        <h2 class="section-heading reveal reveal-delay-1">Experience Our <span class="gradient-text">Work</span></h2>
-      </div>
-    </div>
-    <div class="horizontal-track">
-      <div class="horizontal-item">
-        <div class="horizontal-card">
-          <div class="parallax-img-wrap">
-            <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=800&q=80" alt="VR Headset Experience" loading="lazy" />
-          </div>
-          <div class="horizontal-card-info">
-            <span class="horizontal-tag">VR Experience</span>
-            <h3>Immersive VR Walkthrough</h3>
-            <p>Step inside your future home before a single brick is laid.</p>
-          </div>
-        </div>
-      </div>
-      <div class="horizontal-item">
-        <div class="horizontal-card">
-          <div class="parallax-img-wrap">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Luxury Interior" loading="lazy" />
-          </div>
-          <div class="horizontal-card-info">
-            <span class="horizontal-tag">Interior Design</span>
-            <h3>Photorealistic Renders</h3>
-            <p>Every texture, every light ray  crafted to perfection.</p>
-          </div>
-        </div>
-      </div>
-      <div class="horizontal-item">
-        <div class="horizontal-card">
-          <div class="parallax-img-wrap">
-            <img src="https://images.unsplash.com/photo-1506947411487-a56738267384?w=800&q=80" alt="Aerial Drone Shot" loading="lazy" />
-          </div>
-          <div class="horizontal-card-info">
-            <span class="horizontal-tag">Drone Cinema</span>
-            <h3>Cinematic Aerial Film</h3>
-            <p>4K footage that captures the full scale of your vision.</p>
-          </div>
-        </div>
-      </div>
-      <div class="horizontal-item">
-        <div class="horizontal-card">
-          <div class="parallax-img-wrap">
-            <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=800&q=80" alt="AR Visualization" loading="lazy" />
-          </div>
-          <div class="horizontal-card-info">
-            <span class="horizontal-tag">Augmented Reality</span>
-            <h3>AR Product Placement</h3>
-            <p>Place any product in any space, instantly, through your phone.</p>
-          </div>
-        </div>
-      </div>
-      <div class="horizontal-item">
-        <div class="horizontal-card">
-          <div class="parallax-img-wrap">
-            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80" alt="3D Print Model" loading="lazy" />
-          </div>
-          <div class="horizontal-card-info">
-            <span class="horizontal-tag">3D Printing</span>
-            <h3>Physical Prototypes</h3>
-            <p>From screen to hands  tangible models for stakeholders.</p>
-          </div>
-        </div>
-      </div>
-      <div class="horizontal-item">
-        <div class="horizontal-card">
-          <div class="parallax-img-wrap">
-            <img src="https://images.unsplash.com/photo-1531297172867-4f54ee216962?w=800&q=80" alt="Experience Center" loading="lazy" />
-          </div>
-          <div class="horizontal-card-info">
-            <span class="horizontal-tag">Experience Center</span>
-            <h3>Beyond Experience</h3>
-            <p>Walk-in showrooms powered by mixed reality technology.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ============================
        WHY CHOOSE US (with parallax images)
@@ -625,6 +591,93 @@
       </div>
     </div>
   </section>
+
+  <!-- ============================
+       HORIZONTAL SCROLL SHOWCASE
+  ============================= -->
+  <section class="horizontal-showcase" id="horizontal-showcase">
+    <div class="horizontal-showcase-header">
+      <div class="container">
+        <span class="section-badge reveal">Immersive Gallery</span>
+        <h2 class="section-heading reveal reveal-delay-1">Experience Our <span class="gradient-text">Work</span></h2>
+      </div>
+    </div>
+    <div class="horizontal-track">
+      <div class="horizontal-item">
+        <div class="horizontal-card">
+          <div class="parallax-img-wrap">
+            <img src="assets/images/gallery/vr.png" alt="VR Headset Experience" loading="lazy" />
+          </div>
+          <div class="horizontal-card-info">
+            <span class="horizontal-tag">VR Experience</span>
+            <h3>Immersive VR Walkthrough</h3>
+            <p>Step inside your future home before a single brick is laid.</p>
+          </div>
+        </div>
+      </div>
+      <div class="horizontal-item">
+        <div class="horizontal-card">
+          <div class="parallax-img-wrap">
+            <img src="assets/images/gallery/interior.png" alt="Luxury Interior" loading="lazy" />
+          </div>
+          <div class="horizontal-card-info">
+            <span class="horizontal-tag">Interior Design</span>
+            <h3>Photorealistic Renders</h3>
+            <p>Every texture, every light ray  crafted to perfection.</p>
+          </div>
+        </div>
+      </div>
+      <div class="horizontal-item">
+        <div class="horizontal-card">
+          <div class="parallax-img-wrap">
+            <img src="assets/images/gallery/drone.png" alt="Aerial Drone Shot" loading="lazy" />
+          </div>
+          <div class="horizontal-card-info">
+            <span class="horizontal-tag">Drone Cinema</span>
+            <h3>Cinematic Aerial Film</h3>
+            <p>4K footage that captures the full scale of your vision.</p>
+          </div>
+        </div>
+      </div>
+      <div class="horizontal-item">
+        <div class="horizontal-card">
+          <div class="parallax-img-wrap">
+            <img src="assets/images/gallery/ar.png" alt="AR Visualization" loading="lazy" />
+          </div>
+          <div class="horizontal-card-info">
+            <span class="horizontal-tag">Augmented Reality</span>
+            <h3>AR Product Placement</h3>
+            <p>Place any product in any space, instantly, through your phone.</p>
+          </div>
+        </div>
+      </div>
+      <div class="horizontal-item">
+        <div class="horizontal-card">
+          <div class="parallax-img-wrap">
+            <img src="assets/images/gallery/3dprint.png" alt="3D Print Model" loading="lazy" />
+          </div>
+          <div class="horizontal-card-info">
+            <span class="horizontal-tag">3D Printing</span>
+            <h3>Physical Prototypes</h3>
+            <p>From screen to hands  tangible models for stakeholders.</p>
+          </div>
+        </div>
+      </div>
+      <div class="horizontal-item">
+        <div class="horizontal-card">
+          <div class="parallax-img-wrap">
+            <img src="assets/images/gallery/experience.png" alt="Experience Center" loading="lazy" />
+          </div>
+          <div class="horizontal-card-info">
+            <span class="horizontal-tag">Experience Center</span>
+            <h3>Beyond Experience</h3>
+            <p>Walk-in showrooms powered by mixed reality technology.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- ============================
        TESTIMONIALS
@@ -846,6 +899,36 @@
   <!-- Custom Scripts -->
   <script src="js/animations.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    // ── About Section Stat Counter Animation ──
+    (function() {
+      const counters = document.querySelectorAll('.about-stat-number[data-target]');
+      if (!counters.length) return;
+      let animated = false;
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !animated) {
+            animated = true;
+            counters.forEach(function(el) {
+              const target = parseInt(el.getAttribute('data-target'), 10);
+              const duration = 1800;
+              const start = performance.now();
+              function step(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.round(target * eased);
+                if (progress < 1) requestAnimationFrame(step);
+              }
+              requestAnimationFrame(step);
+            });
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      const section = document.getElementById('about-teaser');
+      if (section) observer.observe(section);
+    })();
+  </script>
 </body>
 
 </html>

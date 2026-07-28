@@ -4507,9 +4507,6 @@ body:not(.dark-mode) .moon-icon {
     line-height: 1.1;
     color: #71272c;
     margin-bottom: 24px;
-    opacity: 0;
-    filter: blur(20px);
-    transform: translateY(40px);
     transition: text-shadow 0.3s ease;
 }
 
@@ -4536,8 +4533,6 @@ body:not(.dark-mode) .moon-icon {
     line-height: 1.6;
     margin-bottom: 40px;
     letter-spacing: 0.01em;
-    opacity: 0;
-    transform: translateY(20px);
 }
 
 .hero-scroll-indicator {
