@@ -2478,20 +2478,32 @@
 
             const videos = document.querySelectorAll('.video-grid-card video');
 
-            const startAutoplay = () => {
-                videos.forEach(v => {
-                    v.play().catch(err => {
-                        console.warn("Autoplay block caught, retrying on first interaction.");
-                    });
+            // Use IntersectionObserver to only load/play videos when they scroll into view
+            const videoObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const v = entry.target;
+                        v.play().catch(err => {
+                            console.warn("Autoplay block caught, retrying on first interaction.");
+                        });
+                    } else {
+                        const v = entry.target;
+                        v.pause();
+                    }
                 });
-            };
+            }, { rootMargin: "0px 0px 200px 0px" }); // Start loading slightly before it enters the viewport
 
-            // Trigger autoplay on load
-            startAutoplay();
+            videos.forEach(v => {
+                videoObserver.observe(v);
+            });
 
             // Fallback for browsers that block autoplay until first click/touch interaction
             const forcePlay = () => {
-                startAutoplay();
+                videos.forEach(v => {
+                    if (v.getBoundingClientRect().top < window.innerHeight && v.getBoundingClientRect().bottom > 0) {
+                        v.play().catch(() => {});
+                    }
+                });
                 document.removeEventListener('click', forcePlay);
                 document.removeEventListener('touchstart', forcePlay);
             };
