@@ -837,7 +837,7 @@
 
                     <!-- Active video wrapper -->
                     <div class="vr-stage-video-wrap" id="vrStageWrap">
-                        <video id="vrStageVideo" class="vr-stage-video" autoplay loop muted playsinline
+                        <video id="vrStageVideo" class="vr-stage-video" autoplay muted playsinline
                             disableRemotePlayback>
                             <source src="Videos/Vr main.mp4" type="video/mp4">
                         </video>
@@ -4116,25 +4116,10 @@
                 });
             }
 
-            // Auto-cycle function
-            function startAutoCycle() {
-                clearInterval(autoCycleTimer);
-                autoCycleTimer = setInterval(() => {
-                    const nextIdx = (activeIdx + 1) % thumbBtns.length;
-                    switchToStream(thumbBtns[nextIdx], nextIdx);
-                }, 6000);
-            }
-
-            // Start cycle initially
-            startAutoCycle();
-
-            // Intercept user click to pause auto-spin/auto-cycle for 10 seconds
-            thumbBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    clearInterval(autoCycleTimer);
-                    // Resume auto-cycle after 10s of inactivity
-                    setTimeout(startAutoCycle, 10000);
-                });
+            // Switch to the next video when the current video ends
+            stageVideo.addEventListener('ended', () => {
+                const nextIdx = (activeIdx + 1) % thumbBtns.length;
+                switchToStream(thumbBtns[nextIdx], nextIdx);
             });
 
             // Fullscreen viewport logic
