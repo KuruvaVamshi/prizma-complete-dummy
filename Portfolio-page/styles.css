@@ -3701,8 +3701,8 @@ body::before {
     position: relative;
     z-index: 2;
     /* Sits behind text when text shifts up */
-    width: 110px;
-    height: 110px;
+    width: 140px;
+    height: 140px;
     margin-bottom: 1.5rem;
     opacity: 0.35;
     filter: blur(14px) saturate(140%);
@@ -3711,6 +3711,11 @@ body::before {
         opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
         filter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 12px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .logo-card:hover .logo-card-img-wrap {
@@ -3837,8 +3842,8 @@ body::before {
     }
 
     .logo-card-img-wrap {
-        width: 100px;
-        height: 100px;
+        width: 130px;
+        height: 130px;
     }
 }
 
@@ -3855,8 +3860,8 @@ body::before {
     }
 
     .logo-card-img-wrap {
-        width: 80px;
-        height: 80px;
+        width: 110px;
+        height: 110px;
         margin-bottom: 1.25rem;
     }
 
