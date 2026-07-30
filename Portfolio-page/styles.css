@@ -9965,6 +9965,8 @@ svg {
     color: #ffffff;
 }
 
+
+
 .web-more-badge {
     background: rgba(245, 145, 40, 0.08);
     border: 1px dashed rgba(245, 145, 40, 0.4);
@@ -10183,7 +10185,7 @@ svg {
     height: 100%;
     max-width: 100%;
     max-height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     border-radius: 20px;
     display: block;
