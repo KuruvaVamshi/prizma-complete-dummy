@@ -1,88 +1,85 @@
-/* =============================================
-   PRIZMABRIXX — Design Tokens (Premium Portfolio Glassmorphism)
-   ============================================= */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 :root {
   /* Typography */
-  --font-heading:   'Outfit', 'Space Grotesk', sans-serif;
-  --font-body:      'Plus Jakarta Sans', sans-serif;
+  --font-heading: 'Outfit', 'Space Grotesk', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
 
   /* Backgrounds (Warm Light) */
-  --bg-dark:        #f9f7f3;
-  --bg-dark-2:      #ffffff;
-  --bg-light:       #f9f7f3;
-  --bg-light-2:     #ede9e0;
+  --bg-dark: #f9f7f3;
+  --bg-dark-2: #ffffff;
+  --bg-light: #f9f7f3;
+  --bg-light-2: #ede9e0;
 
   /* Brand Colors */
-  --primary:        #1c1917;
-  --primary-dark:   #57534e;
-  --accent:         #f59128; /* Warm bronze accent / orange */
-  --accent-warm:    #fa9e42;
-  --accent-cyan:    #e07820;
+  --primary: #1c1917;
+  --primary-dark: #57534e;
+  --accent: #f59128;
+  --accent-warm: #fa9e42;
+  --accent-cyan: #e07820;
 
   /* Surfaces (Light Glass) */
-  --surface-dark:   rgba(255, 253, 249, 0.90);
+  --surface-dark: rgba(255, 253, 249, 0.90);
   --surface-dark-2: rgba(255, 253, 249, 0.95);
-  --surface-light:  #ffffff;
+  --surface-light: #ffffff;
 
   /* Text */
-  --text-dark:      #1c1917;
-  --text-dark-sub:  #57534e;
-  --text-light:     #1c1917;
+  --text-dark: #1c1917;
+  --text-dark-sub: #57534e;
+  --text-light: #1c1917;
   --text-light-sub: #57534e;
-  --text-muted:     #a8a29e;
+  --text-muted: #a8a29e;
   --text-muted-light: #57534e;
 
   /* Borders (Seamless Borderless Design) */
-  --border-glass:   transparent;
-  --border-light:   transparent;
-  --border-color:   transparent;
-  --glass-border:   transparent;
+  --border-glass: transparent;
+  --border-light: transparent;
+  --border-color: transparent;
+  --glass-border: transparent;
 
   /* Gradients */
-  --grad-hero:      linear-gradient(135deg, #f9f7f3 0%, #ffffff 50%, #ede9e0 100%);
-  --grad-accent:    linear-gradient(135deg, #f59128, #fa9e42);
-  --grad-warm:      linear-gradient(135deg, #f59128, #e07820);
-  --grad-card:      linear-gradient(145deg, rgba(255,253,249,0.9), rgba(237,233,224,0.6));
-  --grad-text:      linear-gradient(135deg, #1c1917, #f59128);
+  --grad-hero: linear-gradient(135deg, #f9f7f3 0%, #ffffff 50%, #ede9e0 100%);
+  --grad-accent: linear-gradient(135deg, #f59128, #fa9e42);
+  --grad-warm: linear-gradient(135deg, #f59128, #e07820);
+  --grad-card: linear-gradient(145deg, rgba(255, 253, 249, 0.9), rgba(237, 233, 224, 0.6));
+  --grad-text: linear-gradient(135deg, #1c1917, #f59128);
 
   /* Shadows (Light Theme Shadows) */
-  --shadow-sm:      0 1px 3px rgba(100, 60, 10, 0.06);
-  --shadow-md:      0 8px 24px rgba(100, 60, 10, 0.08);
-  --shadow-lg:      0 12px 32px rgba(100, 60, 10, 0.10);
-  --shadow-glow:    0 8px 24px rgba(245, 145, 40, 0.12), 0 2px 8px rgba(245, 145, 40, 0.08);
+  --shadow-sm: 0 1px 3px rgba(100, 60, 10, 0.06);
+  --shadow-md: 0 8px 24px rgba(100, 60, 10, 0.08);
+  --shadow-lg: 0 12px 32px rgba(100, 60, 10, 0.10);
+  --shadow-glow: 0 8px 24px rgba(245, 145, 40, 0.12), 0 2px 8px rgba(245, 145, 40, 0.08);
   --shadow-glow-accent: 0 8px 24px rgba(245, 145, 40, 0.15);
 
   /* Radius */
-  --radius-sm:      8px;
-  --radius-md:      12px;
-  --radius-lg:      20px;
-  --radius-xl:      32px;
-  --radius-full:    9999px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
 
   /* Spacing */
-  --section-pad:    80px 0;
-  --container-max:  1320px;
-  --container-pad:  0 32px;
+  --section-pad: 80px 0;
+  --container-max: 1320px;
+  --container-pad: 0 32px;
 
   /* Transitions */
-  --transition-fast:   all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-base:   all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  --transition-slow:   all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
   --transition-spring: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   /* Font sizes */
-  --text-xs:   12px;
-  --text-sm:   14px;
+  --text-xs: 12px;
+  --text-sm: 14px;
   --text-base: 16px;
-  --text-lg:   18px;
-  --text-xl:   24px;
-  --text-2xl:  32px;
-  --text-3xl:  40px;
-  --text-4xl:  56px;
-  --text-5xl:  72px;
-  --text-6xl:  96px;
+  --text-lg: 18px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 40px;
+  --text-4xl: 56px;
+  --text-5xl: 72px;
+  --text-6xl: 96px;
 
   /* Nav height */
   --nav-height: 90px;
@@ -91,43 +88,45 @@
 /* =============================================
    DARK MODE TOKEN OVERRIDES
    ============================================= */
-html.dark-mode, body.dark-mode, .dark-mode {
+html.dark-mode,
+body.dark-mode,
+.dark-mode {
   /* Backgrounds */
-  --bg-dark:        #0a0908;
-  --bg-dark-2:      #12100e;
-  --bg-light:       #0a0908;
-  --bg-light-2:     #14120f;
+  --bg-dark: #0a0908;
+  --bg-dark-2: #12100e;
+  --bg-light: #0a0908;
+  --bg-light-2: #14120f;
 
   /* Brand Colors */
-  --primary:        #f9f7f3;
-  --primary-dark:   #dcd7cd;
+  --primary: #f9f7f3;
+  --primary-dark: #dcd7cd;
 
   /* Surfaces */
-  --surface-dark:   rgba(20, 18, 15, 0.92);
+  --surface-dark: rgba(20, 18, 15, 0.92);
   --surface-dark-2: rgba(25, 22, 18, 0.95);
-  --surface-light:  #14120f;
+  --surface-light: #14120f;
 
   /* Text */
-  --text-dark:      #f9f7f3;
-  --text-dark-sub:  #dcd7cd;
-  --text-light:     #f9f7f3;
+  --text-dark: #f9f7f3;
+  --text-dark-sub: #dcd7cd;
+  --text-light: #f9f7f3;
   --text-light-sub: #dcd7cd;
-  --text-muted:     #a8a29e;
+  --text-muted: #a8a29e;
   --text-muted-light: #dcd7cd;
 
   /* Borders (Seamless Borderless Design) */
-  --border-glass:   transparent;
-  --border-light:   transparent;
-  --border-color:   transparent;
-  --glass-border:   transparent;
+  --border-glass: transparent;
+  --border-light: transparent;
+  --border-color: transparent;
+  --glass-border: transparent;
 
   /* Gradients */
-  --grad-hero:      linear-gradient(135deg, #0a0908 0%, #14120f 50%, #1b1814 100%);
-  --grad-card:      linear-gradient(145deg, rgba(25, 22, 18, 0.9), rgba(18, 16, 14, 0.8));
-  --grad-text:      linear-gradient(135deg, #ffffff, #f59128);
+  --grad-hero: linear-gradient(135deg, #0a0908 0%, #14120f 50%, #1b1814 100%);
+  --grad-card: linear-gradient(145deg, rgba(25, 22, 18, 0.9), rgba(18, 16, 14, 0.8));
+  --grad-text: linear-gradient(135deg, #ffffff, #f59128);
 
   /* Shadows */
-  --shadow-sm:      0 1px 3px rgba(0, 0, 0, 0.5);
-  --shadow-md:      0 8px 24px rgba(0, 0, 0, 0.6);
-  --shadow-lg:      0 12px 32px rgba(0, 0, 0, 0.7);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.7);
 }

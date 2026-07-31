@@ -8979,7 +8979,7 @@ svg {
     flex: 1;
     width: 100%;
     overflow: hidden;
-    background: #000;
+    background: var(--bg-primary, #ffffff);
     min-height: 0;
 }
 
@@ -8988,6 +8988,7 @@ svg {
     height: 100%;
     object-fit: fill;
     display: block;
+    transition: opacity 0.3s ease;
 }
 
 /* 1/4th Column: Details Panel Card */
