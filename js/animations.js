@@ -137,6 +137,12 @@ document.addEventListener('DOMContentLoaded', () => {
       el.innerHTML = '';
 
       function processNode(node, container, isGradient = false) {
+        if (node.nodeType === Node.ELEMENT_NODE && (node.classList.contains('dynamic-type-text') || node.classList.contains('type-cursor'))) {
+          // Do not split or modify our dynamic typing elements
+          container.appendChild(node.cloneNode(true));
+          return;
+        }
+
         const hasGradient = isGradient || (node.nodeType === Node.ELEMENT_NODE && node.classList.contains('gradient-text'));
         if (node.nodeType === Node.TEXT_NODE) {
           const text = node.textContent;
@@ -303,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const horizItems = horizTrack.querySelectorAll('.horizontal-item');
     const totalWidth = (horizItems.length * (window.innerWidth > 768 ? 500 : 300)) + 100;
 
-    gsap.to(horizTrack, {
+    const horizTween = gsap.to(horizTrack, {
       x: -(totalWidth - window.innerWidth + 100),
       ease: "none",
       scrollTrigger: {
@@ -321,27 +327,32 @@ document.addEventListener('DOMContentLoaded', () => {
       gsap.fromTo(item, { scale: 0.85, opacity: 0.5 }, {
         scale: 1, opacity: 1, duration: 1,
         scrollTrigger: {
-          trigger: item, containerAnimation: undefined,
+          trigger: item, 
+          containerAnimation: horizTween,
           start: "left 80%", end: "left 30%",
           scrub: true
         }
       });
     });
-  }
 
-  // ==========================================
-  // 5. IMAGE PARALLAX WITHIN FRAMES
-  // ==========================================
-  const parallaxImages = document.querySelectorAll('.parallax-img-wrap');
-  parallaxImages.forEach(wrap => {
-    const img = wrap.querySelector('img');
-    if (img) {
-      gsap.fromTo(img, { yPercent: -15, scale: 1.2 }, {
-        yPercent: 15, scale: 1.2, ease: "none",
-        scrollTrigger: { trigger: wrap, start: "top bottom", end: "bottom top", scrub: true }
-      });
-    }
-  });
+    // Parallax images within horizontal showcase
+    const parallaxImages = horizSection.querySelectorAll('.parallax-img-wrap');
+    parallaxImages.forEach(wrap => {
+      const img = wrap.querySelector('img');
+      if (img) {
+        gsap.fromTo(img, { xPercent: -15, scale: 1.2 }, {
+          xPercent: 15, scale: 1.2, ease: "none",
+          scrollTrigger: { 
+            trigger: wrap,
+            containerAnimation: horizTween,
+            start: "left right", 
+            end: "right left", 
+            scrub: true 
+          }
+        });
+      }
+    });
+  }
 
   // ==========================================
   // 6. PARALLAX BACKGROUNDS

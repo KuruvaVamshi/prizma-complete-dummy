@@ -107,9 +107,11 @@
   ============================= -->
   <section class="hero-section" id="hero" aria-label="Hero">
     <!-- Hero Video -->
-    <div class="hero-bg-video-wrapper">
-      <video class="hero-bg-video" autoplay loop muted playsinline
-        src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
+    <!-- Hero Animated Background -->
+    <div class="hero-bg-animated-wrapper">
+      <div class="hero-bg-orb orb-1"></div>
+      <div class="hero-bg-orb orb-2"></div>
+      <div class="hero-bg-orb orb-3"></div>
       <div class="hero-video-overlay"></div>
       <canvas id="particleCanvas" style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:2;"></canvas>
     </div>
@@ -120,7 +122,7 @@
 
         <h1 class="display-heading reveal reveal-delay-1" id="hero-heading">
           Virtual Simulation Studio,<br />
-          From Concept to <span class="gradient-text">Walkthrough</span>
+          From Concept to <span class="gradient-text dynamic-type-text">Walkthrough</span><span class="type-cursor">|</span>
         </h1>
 
         <p class="body-lg text-muted-dark reveal reveal-delay-2" id="hero-subtext">

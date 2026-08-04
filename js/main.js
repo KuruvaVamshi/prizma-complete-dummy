@@ -106,10 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // ANIMATED COUNTERS
   // =====================
   const counters = [
-    { id: 'stat-years',    target: 8,   suffix: '+', duration: 1500 },
+    { id: 'stat-years', target: 8, suffix: '+', duration: 1500 },
     { id: 'stat-projects', target: 500, suffix: '+', duration: 2000 },
-    { id: 'stat-clients',  target: 50,  suffix: '+', duration: 1800 },
-    { id: 'stat-services', target: 9,   suffix: '',  duration: 1200 },
+    { id: 'stat-clients', target: 50, suffix: '+', duration: 1800 },
+    { id: 'stat-services', target: 9, suffix: '', duration: 1200 },
   ];
 
   const easeOut = (t) => 1 - Math.pow(1 - t, 3);
@@ -170,6 +170,90 @@ document.addEventListener('DOMContentLoaded', () => {
       card.querySelector('.work-card-bg').style.backgroundPosition = `${x}% ${y}%`;
     });
   });
+
+  // =====================
+  // HERO DYNAMIC TYPING EFFECT
+  // =====================
+  const dynamicText = document.querySelector('.dynamic-type-text');
+  const typeCursor = document.querySelector('.type-cursor');
+  if (dynamicText) {
+    const words = [
+      { text: "Walkthrough", class: "color-orange", cursor: "#E07820" },
+      { text: "AR Experiences", class: "color-orange", cursor: "#E07820" },
+      { text: "3D Reality", class: "color-orange", cursor: "#E07820" },
+      { text: "Metaverse", class: "color-orange", cursor: "#E07820" }
+    ];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    // Set initial class
+    dynamicText.classList.add(words[0].class);
+
+    function typeEffect() {
+      const currentWordObj = words[wordIndex];
+      const currentWord = currentWordObj.text;
+
+      if (isDeleting) {
+        dynamicText.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        dynamicText.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let typeSpeed = isDeleting ? 50 : 100;
+
+      if (!isDeleting && charIndex === currentWord.length) {
+        typeSpeed = 2000; // Pause at end of word
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+
+        // Remove old class
+        dynamicText.classList.remove(words[wordIndex].class);
+
+        // Move to next word
+        wordIndex = (wordIndex + 1) % words.length;
+
+        // Add new class and cursor color
+        dynamicText.classList.add(words[wordIndex].class);
+        if (typeCursor) {
+          typeCursor.style.color = words[wordIndex].cursor;
+        }
+
+        typeSpeed = 500; // Pause before typing new word
+      }
+
+      setTimeout(typeEffect, typeSpeed);
+    }
+
+    // Start typing effect slightly delayed
+    setTimeout(typeEffect, 1000);
+  }
+
+  // =====================
+  // HERO MOUSE SPOTLIGHT
+  // =====================
+  const heroSection = document.getElementById('hero');
+  if (heroSection) {
+    const spotlight = document.createElement('div');
+    spotlight.classList.add('hero-spotlight');
+    heroSection.appendChild(spotlight);
+
+    heroSection.addEventListener('mousemove', (e) => {
+      spotlight.style.opacity = '1';
+      const rect = heroSection.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      spotlight.style.left = `${x}px`;
+      spotlight.style.top = `${y}px`;
+    });
+
+    heroSection.addEventListener('mouseleave', () => {
+      spotlight.style.opacity = '0';
+    });
+  }
 
   console.log('%c✨ Prizmabrixx', 'color: #0EA5E9; font-size: 20px; font-weight: 900;');
   console.log('%cBuilt with passion for immersive experiences.', 'color: #8B5CF6; font-size: 12px;');

@@ -4970,7 +4970,7 @@ body:not(.dark-mode) .moon-icon {
 
 .renders-showcase-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 2.5rem auto 0 auto;
     position: relative;
 }
@@ -5509,6 +5509,10 @@ body:not(.dark-mode) .moon-icon {
     align-items: center;
     flex-direction: row;
     box-sizing: border-box;
+}
+
+.lightbox-modal.active {
+    display: flex;
 }
 
 .lightbox-content {

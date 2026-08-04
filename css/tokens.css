@@ -130,3 +130,30 @@ body.dark-mode,
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
   --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.7);
 }
+
+/* =============================================
+   MOBILE OVERRIDES (TYPOGRAPHY & SPACING)
+   ============================================= */
+@media (max-width: 768px) {
+  :root {
+    --text-2xl: 28px;
+    --text-3xl: 32px;
+    --text-4xl: 40px;
+    --text-5xl: 48px;
+    --text-6xl: 56px;
+    --section-pad: 60px 0;
+    --nav-height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --text-2xl: 24px;
+    --text-3xl: 28px;
+    --text-4xl: 32px;
+    --text-5xl: 40px;
+    --text-6xl: 48px;
+    --section-pad: 48px 0;
+    --nav-height: 70px;
+  }
+}
