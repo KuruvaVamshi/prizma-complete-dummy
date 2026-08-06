@@ -10,3 +10,8 @@ temp/
 
 .agents/
 .ffmpeg/
+node_modules/
+*.js.tmp
+diff.txt
+scratch_*
+

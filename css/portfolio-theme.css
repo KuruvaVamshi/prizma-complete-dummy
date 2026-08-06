@@ -1672,7 +1672,7 @@ body::before {
 /* --- Seamless Horizontal Sliding Video Carousel Section --- */
 .video-carousel-container {
     position: relative;
-    width: 100vw;
+    width: 100%;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
@@ -4697,7 +4697,7 @@ body:not(.dark-mode) .moon-icon {
     transform: translate(-50%, -50%);
     width: 90px;
     height: 90px;
-    z-index: 20;
+    z-index: 9999;
     pointer-events: none;
     display: flex;
     align-items: center;
@@ -5471,11 +5471,11 @@ body:not(.dark-mode) .moon-icon {
 }
 
 .ring-nav-btn.prev-btn {
-    left: 2rem;
+    left: 1rem;
 }
 
 .ring-nav-btn.next-btn {
-    right: 2rem;
+    right: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -6331,7 +6331,7 @@ body:not(.dark-mode) .moon-icon {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 800;
-    color: #fff;
+    color: #000;
     margin: 0;
     line-height: 1.2;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
@@ -6456,7 +6456,7 @@ body:not(.dark-mode) .moon-icon {
     font-family: var(--font-heading);
     font-size: 0.7rem;
     font-weight: 700;
-    color: #fff;
+    color: #000;
     line-height: 1.2;
 }
 
@@ -7152,7 +7152,7 @@ body:not(.dark-mode) .moon-icon {
     gap: 0.6rem;
     padding: 0.95rem 2rem;
     background: linear-gradient(135deg, var(--accent) 0%, #e07820 100%);
-    color: #fff;
+    color: #000;
     text-decoration: none;
     font-family: var(--font-heading);
     font-weight: 700;
@@ -8452,4 +8452,104 @@ svg {
     text-transform: uppercase !important;
     text-shadow: 0 0 15px rgba(245, 145, 40, 0.3) !important;
     margin-bottom: 0.5rem !important;
+}
+
+
+/* --- FULLWIDTH VIDEO SLIDER (3D ADVERTISEMENTS & MINIATURES) --- */
+.fullwidth-video-slider {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    background: #000;
+}
+
+.fvs-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.fvs-slide {
+    position: relative;
+    min-width: 100vw;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fvs-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    transition: opacity 0.8s ease;
+}
+
+.fvs-slide.active video {
+    opacity: 1;
+}
+
+.fvs-overlay {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s;
+    transform: translate(-50%, 20px);
+}
+
+.fvs-slide.active .fvs-overlay {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.fvs-title {
+    color: #000;
+    font-size: 1.5rem;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.fvs-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #000;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.fvs-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.fvs-nav-btn.prev {
+    left: 1rem;
+}
+
+.fvs-nav-btn.next {
+    right: 1rem;
 }
