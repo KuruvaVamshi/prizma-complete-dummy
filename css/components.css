@@ -209,253 +209,364 @@
   margin-left: 0;
 }
 
-/* ========== NAVBAR (Portfolio Glass) ========== */
+/* ========== NAVBAR (Exact copy from Portfolio page) ========== */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: var(--nav-height, 90px);
-  padding: 0 8%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(180, 130, 60, 0.10);
-  background: rgba(249, 247, 243, 0.82);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  transition: height 0.3s, background-color 0.3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    border-bottom: 1px solid rgba(180, 130, 60, 0.10);
+    background: rgba(249, 247, 243, 0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: height 0.3s, background-color 0.3s;
 }
 
 .navbar.scrolled {
-  height: calc(var(--nav-height, 90px) - 20px);
-  background: rgba(255, 255, 255, 0.97);
-  border-bottom: 1px solid rgba(245, 145, 40, 0.18);
-  box-shadow: 0 4px 24px rgba(100, 60, 10, 0.08);
+    height: 70px;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid rgba(245, 145, 40, 0.18);
+    box-shadow: 0 4px 24px rgba(100, 60, 10, 0.08);
 }
 
 .navbar.nav-hidden {
-  transform: translateY(-100%);
+    transform: translateY(-100%);
 }
 
 .nav-logo {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  position: relative;
-  z-index: 101;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .nav-logo-img {
-  height: 38px;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.25));
-  transition: var(--transition-base);
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.25));
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .nav-logo:hover .nav-logo-img {
-  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.45));
-  transform: scale(1.03);
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.45));
+    transform: scale(1.03);
 }
 
 .nav-logo-text {
-  font-family: var(--font-heading);
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #111318;
-  transition: var(--transition-base);
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #111318;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .nav-logo-text span {
-  color: var(--accent);
+    color: var(--accent);
 }
 
 .nav-logo:hover .nav-logo-text {
-  text-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+    text-shadow: 0 0 12px rgba(245, 145, 40, 0.22);
 }
 
 .nav-right {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  z-index: 101;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 101;
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    padding: 0 5%;
-  }
-
-  .nav-logo-text {
-    font-size: 15px;
-  }
-
-  .nav-right {
-    gap: 0.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar {
-    padding: 0 15px;
-  }
-
-  .nav-logo {
-    gap: 8px;
-  }
-
-  .nav-logo-img {
-    height: 32px;
-  }
-
-  .nav-logo-text {
-    font-size: 13px;
-    letter-spacing: 0;
-  }
+    .nav-right {
+        gap: 0.8rem;
+    }
 }
 
 .nav-menu {
-  display: flex;
-  list-style: none;
-  gap: 36px;
-  margin: 0;
-  padding: 0;
-  align-items: center;
+    display: flex;
+    list-style: none;
+    gap: 36px;
 }
 
 .nav-link {
-  text-decoration: none;
-  color: #555c6e;
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  position: relative;
-  padding: 8px 0;
-  transition: var(--transition-base);
-  white-space: nowrap;
+    text-decoration: none;
+    color: #555c6e;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    position: relative;
+    padding: 8px 0;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: #d4af37;
-  transition: var(--transition-base);
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent, #f59128);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.nav-link:hover,
+.nav-link:hover {
+    color: #111318;
+    text-shadow: none;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
 .nav-link.active {
-  color: #111318;
-  text-shadow: none;
+    color: #111318;
+    text-shadow: none;
 }
 
-.nav-link:hover::after,
 .nav-link.active::after {
-  width: 100%;
+    width: 100%;
 }
 
 .nav-cta {
-  text-decoration: none;
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  padding: 10px 22px;
-  border-radius: 2px;
-  transition: var(--transition-base);
-  background: transparent;
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 10px 22px;
+    border-radius: 2px;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    background: transparent;
 }
 
 .nav-cta:hover {
-  background: var(--accent);
-  color: #ffffff;
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-  transform: translateY(-2px);
+    background: var(--accent);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(245, 145, 40, 0.22);
+    transform: translateY(-2px);
+}
+
+/* --- Premium Modern Sliding Theme Switcher --- */
+.theme-toggle-slider {
+    background: rgba(180, 130, 60, 0.06);
+    border: 1px solid var(--border-color, rgba(180, 130, 60, 0.13));
+    border-radius: 30px;
+    width: 68px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding: 0 4px;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    overflow: hidden;
+    box-shadow: inset 0 2px 6px rgba(100, 60, 10, 0.05);
+}
+
+.theme-toggle-slider:hover {
+    border-color: var(--accent);
+    background: rgba(245, 145, 40, 0.06);
+    transform: scale(1.03);
+}
+
+.slider-track {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.slider-thumb {
+    width: 28px;
+    height: 28px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s, box-shadow 0.4s;
+    box-shadow: 0 3px 8px rgba(100, 60, 10, 0.15);
+}
+
+.dark-mode .slider-thumb {
+    background: var(--accent);
+    box-shadow: 0 0 12px rgba(245, 145, 40, 0.45);
+}
+
+.slider-thumb i {
+    font-size: 0.85rem;
+    position: absolute;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s;
+}
+
+/* Light mode: moon visible, sun hidden and rotated */
+body:not(.dark-mode) .sun-icon {
+    transform: rotate(-180deg);
+    opacity: 0;
+}
+
+body:not(.dark-mode) .moon-icon {
+    transform: rotate(0deg);
+    opacity: 1;
+    color: var(--text-dark-sub, #57534e);
+}
+
+/* Dark mode: sun visible, moon hidden, thumb translated to the right */
+.dark-mode .theme-toggle-slider .slider-thumb {
+    transform: translateX(32px);
+}
+
+.dark-mode .sun-icon {
+    transform: rotate(0deg);
+    opacity: 1;
+    color: #ffffff;
+}
+
+.dark-mode .moon-icon {
+    transform: rotate(180deg);
+    opacity: 0;
+}
+
+.dark-mode .theme-toggle-slider {
+    background: rgba(245, 145, 40, 0.1);
 }
 
 /* --- Mobile Menu Toggle (Hamburger) --- */
 .menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 20px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 100;
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
 }
 
 .menu-toggle span {
-  width: 100%;
-  height: 2px;
-  background-color: var(--text-dark);
-  transition: all 0.3s ease;
+    display: block;
+    width: 28px;
+    height: 2px;
+    background-color: var(--text-dark, #1c1917);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Mobile Nav Overlay */
-@media (max-width: 1200px) {
-  .nav-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(255, 253, 249, 0.98);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    transform: translateY(-100%);
-    opacity: 0;
-    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-    z-index: 99;
-    pointer-events: none;
-  }
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 16px !important;
+    }
 
-  .nav-menu.active {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: all;
-  }
+    .nav-logo {
+        flex-shrink: 0;
+    }
 
-  .nav-link {
-    font-size: 18px;
-    letter-spacing: 0.15em;
-  }
+    .nav-logo-text {
+        font-size: 15px !important;
+    }
 
-  .menu-toggle {
-    display: flex;
-  }
+    .nav-logo-img {
+        height: 32px !important;
+    }
 
-  .nav-cta {
-    display: none;
-  }
+    .nav-cta {
+        display: none !important;
+    }
 
-  .menu-toggle.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-  }
+    .theme-toggle-slider {
+        flex-shrink: 0;
+    }
 
-  .menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
+    .menu-toggle {
+        display: flex;
+        flex-shrink: 0;
+    }
 
-  .menu-toggle.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-  }
+    .nav-menu {
+        position: fixed;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 90px);
+        background: var(--bg-dark-2, #ffffff);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 1.2s cubic-bezier(0.85, 0, 0.15, 1);
+        border-top: 1px solid var(--border-color, rgba(180, 130, 60, 0.13));
+        z-index: 99;
+    }
+
+    .navbar.scrolled .nav-menu {
+        top: 70px;
+        height: calc(100vh - 70px);
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0 15px !important;
+    }
+
+    .nav-logo {
+        gap: 8px;
+    }
+
+    .nav-logo-text {
+        font-size: 13px !important;
+        letter-spacing: 0;
+    }
+
+    .theme-toggle-slider {
+        width: 56px !important;
+        height: 30px !important;
+    }
+
+    .slider-thumb {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    .dark-mode .theme-toggle-slider .slider-thumb {
+        transform: translateX(26px) !important;
+    }
 }
 
 /* ========== STAT ITEM ========== */
@@ -933,126 +1044,9 @@
     padding: 24px;
   }
 
+
   .stat-item:last-child {
     border-bottom: none;
-  }
-
-  .navbar {
-    width: calc(100% - 32px);
-    top: 16px;
-  }
-}
-
-/* =============================================
-   THEME TOGGLE SWITCH & DARK MODE DESIGN SYSTEM
-   ============================================= */
-
-.theme-toggle-slider {
-  background: rgba(180, 130, 60, 0.08);
-  border: none !important;
-  border-radius: 30px;
-  width: 64px;
-  height: 34px;
-  display: flex;
-  align-items: center;
-  cursor: pointer !important;
-  position: relative;
-  padding: 0 3px;
-  transition: var(--transition-base, all 0.3s ease);
-  overflow: hidden;
-  box-shadow: inset 0 2px 6px rgba(100, 60, 10, 0.06);
-  flex-shrink: 0;
-  pointer-events: auto !important;
-  z-index: 1001;
-}
-
-.theme-toggle-slider * {
-  pointer-events: none !important;
-}
-
-.theme-toggle-slider:hover {
-  background: rgba(245, 145, 40, 0.15);
-  transform: scale(1.06);
-}
-
-.slider-track {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.slider-thumb {
-  width: 26px;
-  height: 26px;
-  background: #ffffff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  left: 0;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.35s, box-shadow 0.35s;
-  box-shadow: 0 3px 8px rgba(100, 60, 10, 0.18);
-}
-
-.slider-thumb i {
-  font-size: 0.8rem;
-  position: absolute;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
-}
-
-/* Light mode: moon visible, sun hidden and rotated */
-html:not(.dark-mode) .sun-icon,
-body:not(.dark-mode) .sun-icon {
-  transform: rotate(-180deg);
-  opacity: 0;
-}
-
-html:not(.dark-mode) .moon-icon,
-body:not(.dark-mode) .moon-icon {
-  transform: rotate(0deg);
-  opacity: 1;
-  color: var(--text-dark-sub, #57534e);
-}
-
-/* Dark mode: sun visible, moon hidden, thumb translated to the right */
-.dark-mode .theme-toggle-slider .slider-thumb {
-  transform: translateX(30px);
-  background: var(--accent, #f59128);
-  box-shadow: 0 0 12px rgba(245, 145, 40, 0.5);
-}
-
-.dark-mode .sun-icon {
-  transform: rotate(0deg);
-  opacity: 1;
-  color: #ffffff;
-}
-
-.dark-mode .moon-icon {
-  transform: rotate(180deg);
-  opacity: 0;
-}
-
-.dark-mode .theme-toggle-slider {
-  background: rgba(245, 145, 40, 0.12);
-  border-color: rgba(245, 145, 40, 0.3);
-}
-
-@media (max-width: 480px) {
-  .theme-toggle-slider {
-    width: 56px;
-    height: 30px;
-  }
-
-  .slider-thumb {
-    width: 24px;
-    height: 24px;
-  }
-
-  .dark-mode .theme-toggle-slider .slider-thumb {
-    transform: translateX(26px);
   }
 }
 
@@ -1287,16 +1281,28 @@ body.dark-mode {
 .dark-mode .form-textarea,
 .dark-mode .form-select {
   background: rgba(28, 24, 19, 0.95) !important;
-  border: none !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.22) !important;
   color: #ffffff !important;
   box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark-mode .form-input:hover,
+.dark-mode .form-textarea:hover,
+.dark-mode .form-select:hover {
+  border: 1.5px solid rgba(245, 145, 40, 0.6) !important;
 }
 
 .dark-mode .form-input:focus,
 .dark-mode .form-textarea:focus,
 .dark-mode .form-select:focus {
-  border: none !important;
+  border: 1.5px solid var(--accent, #f59128) !important;
   box-shadow: 0 0 20px rgba(245, 145, 40, 0.35) !important;
+}
+
+.dark-mode .floating-label-group .form-input:focus~.form-label,
+.dark-mode .floating-label-group .form-input:not(:placeholder-shown)~.form-label {
+  background: rgba(22, 19, 15, 0.95) !important;
+  color: var(--accent, #f59128) !important;
 }
 
 .dark-mode .form-label {

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | PRIZMABRIXX — Virtual Simulation Company</title>
-  <meta name="description" content="Learn about PRIZMABRIXX — Hyderabad's premier Virtual Simulation Company, established in 2018. Our mission, vision, journey, and the team behind the immersive magic." />
+  <meta name="description"
+    content="Learn about PRIZMABRIXX — Hyderabad's premier Virtual Simulation Company, established in 2018. Our mission, vision, journey, and the team behind the immersive magic." />
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/components.css" />
@@ -16,7 +18,7 @@
       const savedTheme = localStorage.getItem('theme-preference') || 'light';
       if (savedTheme === 'dark') {
         document.documentElement.classList.add('dark-mode');
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
           if (document.body) document.body.classList.add('dark-mode');
         });
       }
@@ -28,7 +30,7 @@
       localStorage.setItem('theme-preference', isDark ? 'dark' : 'light');
 
       const btns = document.querySelectorAll('#themeToggleBtn');
-      btns.forEach(function(btn) {
+      btns.forEach(function (btn) {
         const activeIcon = btn.querySelector(isDark ? '.sun-icon' : '.moon-icon');
         if (activeIcon && typeof gsap !== 'undefined') {
           gsap.fromTo(activeIcon, { scale: 0.6, rotate: -45 }, { scale: 1, rotate: 0, duration: 0.45, ease: "back.out(1.8)" });
@@ -41,38 +43,40 @@
   <link rel="icon" type="image/png" href="assets/images/logo.png" />
   <link rel="apple-touch-icon" href="assets/images/logo.png" />
 </head>
+
 <body>
   <div class="mesh-bg"></div>
 
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <a href="index.html" class="nav-logo">
-        <img src="assets/images/logo.png" alt="PRIZMABRIXX" class="nav-logo-img">
-        <span class="nav-logo-text">PRIZMA<span>BRIXX</span></span>
+      <img src="assets/images/logo.png" alt="PRIZMABRIXX" class="nav-logo-img">
+      <span class="nav-logo-text">PRIZMA<span>BRIXX</span></span>
     </a>
     <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
-        <li><a href="about.html" class="nav-link active" id="nav-about">About Us</a></li>
+      <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
+      <li><a href="about.html" class="nav-link active" id="nav-about">About Us</a></li>
 
-        <li><a href="Portfolio-page/index.html" class="nav-link" id="nav-portfolio">Portfolio</a></li>
-        <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
+      <li><a href="Portfolio-page/index.html" class="nav-link" id="nav-portfolio">Portfolio</a></li>
+      <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
     </ul>
     <div class="nav-right">
-        <a href="contact.html" class="nav-cta">Get a Quote</a>
-        <!-- Theme Toggle Switch -->
-        <button id="themeToggleBtn" class="theme-toggle-slider magnetic" aria-label="Toggle theme" onclick="toggleTheme()">
-            <span class="slider-track">
-                <span class="slider-thumb">
-                    <i class="fa-solid fa-moon moon-icon"></i>
-                    <i class="fa-solid fa-sun sun-icon"></i>
-                </span>
-            </span>
-        </button>
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+      <a href="contact.html" class="nav-cta">Get a Quote</a>
+      <!-- Theme Toggle Switch -->
+      <button id="themeToggleBtn" class="theme-toggle-slider magnetic" aria-label="Toggle theme"
+        onclick="toggleTheme()">
+        <span class="slider-track">
+          <span class="slider-thumb">
+            <i class="fa-solid fa-moon moon-icon"></i>
+            <i class="fa-solid fa-sun sun-icon"></i>
+          </span>
+        </span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
@@ -81,9 +85,10 @@
     <div class="page-hero-particles" aria-hidden="true"></div>
     <div class="hero-glow-blob" id="about-hero-blob"></div>
     <div class="container">
-      <div class="page-hero-content reveal" id="about-hero-content" style="transform-origin: center center;">
+      <div class="page-hero-content" id="about-hero-content" style="transform-origin: center center;">
         <span class="section-badge">Who We Are</span>
-        <h1 class="display-heading" style="color:var(--text-dark); margin:16px 0;">Our <span class="gradient-text">Story</span></h1>
+        <h1 class="display-heading" style="color:var(--text-dark); margin:16px 0;">Our <span
+            class="gradient-text">Story</span></h1>
         <p class="body-lg" style="color:var(--text-dark-sub); max-width:560px;">
           From a bold idea in 2018 to Hyderabad's most trusted Virtual Simulation Company — this is PRIZMABRIXX.
         </p>
@@ -100,46 +105,67 @@
       <div class="about-split">
         <div class="about-split-text reveal">
           <span class="section-badge section-badge--light">PRIZMABRIXX</span>
-          <h2 class="section-heading" style="margin:12px 0 20px;">Crafting Experiences That <span class="gradient-text">Transcend Reality</span></h2>
+          <h2 class="section-heading" style="margin:12px 0 20px;">Crafting Experiences That <span
+              class="gradient-text">Transcend Reality</span></h2>
           <div class="divider divider--left"></div>
           <p class="body-lg text-muted-light" style="margin-top:20px;">
-            PRIZMABRIXX was founded with a singular mission: to bridge the gap between imagination and reality. We combine the most advanced virtual, augmented and mixed reality technologies with bold creative vision to build experiences that captivate, convert, and inspire.
+            PRIZMABRIXX was founded with a singular mission: to bridge the gap between imagination and reality. We
+            combine the most advanced virtual, augmented and mixed reality technologies with bold creative vision to
+            build experiences that captivate, convert, and inspire.
           </p>
           <p class="body-base text-muted-light" style="margin-top:16px;">
-            Based in Hyderabad, India, we serve real estate developers, enterprise brands, and creative agencies who want to give their audiences something they've never seen before. Our team of engineers, designers, and storytellers work together to make the impossible feel real.
+            Based in Hyderabad, India, we serve real estate developers, enterprise brands, and creative agencies who
+            want to give their audiences something they've never seen before. Our team of engineers, designers, and
+            storytellers work together to make the impossible feel real.
           </p>
-          
-          <div class="about-pillars-grid reveal reveal-delay-2" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; margin-top:24px;">
+
+          <div class="about-pillars-grid reveal reveal-delay-2"
+            style="display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; margin-top:24px;">
             <div class="glass-card" style="padding:20px;">
-              <h4 style="color:var(--accent); font-size:14px; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:6px;">✦ Innovation First</h4>
-              <p style="font-size:13px; color:var(--text-dark-sub);">Pushing the boundaries of WebXR, Unreal Engine 5 & 3D real-time visual technology.</p>
+              <h4
+                style="color:var(--accent); font-size:14px; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:6px;">
+                ✦ Innovation First</h4>
+              <p style="font-size:13px; color:var(--text-dark-sub);">Pushing the boundaries of WebXR, Unreal Engine 5 &
+                3D real-time visual technology.</p>
             </div>
             <div class="glass-card" style="padding:20px;">
-              <h4 style="color:var(--accent); font-size:14px; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:6px;">✦ 1:1 Scale Precision</h4>
-              <p style="font-size:13px; color:var(--text-dark-sub);">Architectural accuracy ensuring what you experience virtually matches reality.</p>
+              <h4
+                style="color:var(--accent); font-size:14px; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:6px;">
+                ✦ 1:1 Scale Precision</h4>
+              <p style="font-size:13px; color:var(--text-dark-sub);">Architectural accuracy ensuring what you experience
+                virtually matches reality.</p>
             </div>
             <div class="glass-card" style="padding:20px;">
-              <h4 style="color:var(--accent); font-size:14px; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:6px;">✦ Enterprise Scale</h4>
-              <p style="font-size:13px; color:var(--text-dark-sub);">Cross-platform solutions designed to handle high concurrency & multi-location deployments.</p>
+              <h4
+                style="color:var(--accent); font-size:14px; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:6px;">
+                ✦ Enterprise Scale</h4>
+              <p style="font-size:13px; color:var(--text-dark-sub);">Cross-platform solutions designed to handle high
+                concurrency & multi-location deployments.</p>
             </div>
             <div class="glass-card" style="padding:20px;">
-              <h4 style="color:var(--accent); font-size:14px; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:6px;">✦ End-to-End SLA</h4>
-              <p style="font-size:13px; color:var(--text-dark-sub);">From initial strategy to ongoing maintenance, dedicated technical support at every step.</p>
+              <h4
+                style="color:var(--accent); font-size:14px; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:6px;">
+                ✦ End-to-End SLA</h4>
+              <p style="font-size:13px; color:var(--text-dark-sub);">From initial strategy to ongoing maintenance,
+                dedicated technical support at every step.</p>
             </div>
           </div>
         </div>
         <div class="about-split-visual reveal reveal-delay-2">
           <div class="about-image-mosaic">
             <div class="mosaic-img mosaic-img--large img-reveal">
-              <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=600&q=80" alt="VR Experience" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=600&q=80" alt="VR Experience"
+                loading="lazy" />
               <div class="img-reveal-overlay"></div>
             </div>
             <div class="mosaic-img mosaic-img--small img-reveal">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Interior Design" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Interior Design"
+                loading="lazy" />
               <div class="img-reveal-overlay"></div>
             </div>
             <div class="mosaic-img mosaic-img--small img-reveal">
-              <img src="https://images.unsplash.com/photo-1506947411487-a56738267384?w=400&q=80" alt="Aerial View" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1506947411487-a56738267384?w=400&q=80" alt="Aerial View"
+                loading="lazy" />
               <div class="img-reveal-overlay"></div>
             </div>
             <div class="mosaic-floating-badge float-element">
@@ -157,23 +183,27 @@
     <div class="container">
       <div class="text-center" style="margin-bottom:56px;">
         <span class="section-badge reveal">Our Foundation</span>
-        <h2 class="section-heading reveal reveal-delay-1" style="margin-top:12px;">Mission, Vision <span class="gradient-text">&amp; Values</span></h2>
+        <h2 class="section-heading reveal reveal-delay-1" style="margin-top:12px;">Mission, Vision <span
+            class="gradient-text">&amp; Values</span></h2>
       </div>
       <div class="mvv-grid">
         <div class="glass-card mvv-card reveal" id="mvv-mission">
           <div class="mvv-icon">🎯</div>
           <h3 class="mvv-title">Mission</h3>
-          <p class="mvv-text">To democratize immersive technology by making world-class VR, AR, and 3D experiences accessible to businesses of all sizes — helping them visualize, communicate, and sell more effectively.</p>
+          <p class="mvv-text">To democratize immersive technology by making world-class VR, AR, and 3D experiences
+            accessible to businesses of all sizes — helping them visualize, communicate, and sell more effectively.</p>
         </div>
         <div class="glass-card mvv-card reveal reveal-delay-1" id="mvv-vision">
           <div class="mvv-icon">🚀</div>
           <h3 class="mvv-title">Vision</h3>
-          <p class="mvv-text">To become the most innovative immersive technology company in South Asia, driving the next era of how humans interact with digital content — in every industry, at every scale.</p>
+          <p class="mvv-text">To become the most innovative immersive technology company in South Asia, driving the next
+            era of how humans interact with digital content — in every industry, at every scale.</p>
         </div>
         <div class="glass-card mvv-card reveal reveal-delay-2" id="mvv-values">
           <div class="mvv-icon">💎</div>
           <h3 class="mvv-title">Values</h3>
-          <p class="mvv-text">Innovation without limits. Integrity in every project. Client success as our north star. We believe the best technology is the kind that disappears — leaving only wonder.</p>
+          <p class="mvv-text">Innovation without limits. Integrity in every project. Client success as our north star.
+            We believe the best technology is the kind that disappears — leaving only wonder.</p>
         </div>
       </div>
     </div>
@@ -184,7 +214,8 @@
     <div class="container">
       <div class="text-center" style="margin-bottom:56px;">
         <span class="section-badge section-badge--light reveal">Our Progress</span>
-        <h2 class="section-heading reveal reveal-delay-1" style="margin-top:12px;">Key <span class="gradient-text">Milestones</span></h2>
+        <h2 class="section-heading reveal reveal-delay-1" style="margin-top:12px;">Key <span
+            class="gradient-text">Milestones</span></h2>
       </div>
       <div class="timeline">
         <div class="timeline-item reveal" id="m-2018">
@@ -228,12 +259,14 @@
     <div class="container">
       <div class="text-center" style="margin-bottom:56px;">
         <span class="section-badge reveal">The Minds Behind</span>
-        <h2 class="section-heading reveal reveal-delay-1" style="margin-top:12px;">Leadership <span class="gradient-text">Team</span></h2>
+        <h2 class="section-heading reveal reveal-delay-1" style="margin-top:12px;">Leadership <span
+            class="gradient-text">Team</span></h2>
       </div>
       <div class="grid-4">
         <div class="glass-card team-card reveal" id="t-1">
           <div class="team-img-wrap">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80" alt="Vamshi" class="team-img" />
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80" alt="Vamshi"
+              class="team-img" />
           </div>
           <h3 class="team-name">Vamshi Krishna</h3>
           <div class="team-role">Founder &amp; CEO</div>
@@ -241,7 +274,8 @@
         </div>
         <div class="glass-card team-card reveal reveal-delay-1" id="t-2">
           <div class="team-img-wrap">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Lead Engineer" class="team-img" />
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Lead Engineer"
+              class="team-img" />
           </div>
           <h3 class="team-name">Rohan Sharma</h3>
           <div class="team-role">Head of 3D &amp; VR</div>
@@ -249,7 +283,8 @@
         </div>
         <div class="glass-card team-card reveal reveal-delay-2" id="t-3">
           <div class="team-img-wrap">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Creative Director" class="team-img" />
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Creative Director"
+              class="team-img" />
           </div>
           <h3 class="team-name">Ananya Rao</h3>
           <div class="team-role">Creative Director</div>
@@ -257,7 +292,8 @@
         </div>
         <div class="glass-card team-card reveal reveal-delay-3" id="t-4">
           <div class="team-img-wrap">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="Operations" class="team-img" />
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="Operations"
+              class="team-img" />
           </div>
           <h3 class="team-name">Kiran Verma</h3>
           <div class="team-role">VP of Operations</div>
@@ -267,219 +303,332 @@
     </div>
   </section>
 
-<<<<<<< HEAD
   <!-- CLIENT GRID (Migrated from clients.html) -->
-  <section class="section section--dark" id="clients-main">
-    <div class="container">
-      <div class="text-center" style="margin-bottom:56px;">
-        <span class="section-badge reveal">Our Client Family</span>
-        <h2 class="section-heading reveal reveal-delay-1" style="margin-top:12px;">50+ <span class="gradient-text">Industry Leaders</span></h2>
+    <section class="section section--dark" id="clients-main">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:56px;">
+          <span class="section-badge reveal">Our Client Family</span>
+          <h2 class="section-heading reveal reveal-delay-1" style="margin-top:12px;">50+ <span
+              class="gradient-text">Industry Leaders</span></h2>
+        </div>
+        <div class="clients-full-grid reveal" id="clients-full-grid">
+          <div class="client-card" id="client-incor"><span class="client-card-initial">IC</span><span
+              class="client-card-name">Incor Group</span><span class="client-card-sector">Real Estate</span></div>
+          <div class="client-card" id="client-ashoka"><span class="client-card-initial">AB</span><span
+              class="client-card-name">Ashoka Builders</span><span class="client-card-sector">Real Estate</span></div>
+          <div class="client-card" id="client-ramky"><span class="client-card-initial">RG</span><span
+              class="client-card-name">Ramky Group</span><span class="client-card-sector">Real Estate</span></div>
+          <div class="client-card" id="client-ncc"><span class="client-card-initial">NC</span><span
+              class="client-card-name">NCC Urban</span><span class="client-card-sector">Construction</span></div>
+          <div class="client-card" id="client-vasavi"><span class="client-card-initial">VG</span><span
+              class="client-card-name">Vasavi Group</span><span class="client-card-sector">Real Estate</span></div>
+          <div class="client-card" id="client-navanaami"><span class="client-card-initial">NV</span><span
+              class="client-card-name">Navanaami</span><span class="client-card-sector">Real Estate</span></div>
+          <div class="client-card" id="client-hallmark"><span class="client-card-initial">HM</span><span
+              class="client-card-name">Hallmark</span><span class="client-card-sector">Real Estate</span></div>
+          <div class="client-card" id="client-slv"><span class="client-card-initial">SL</span><span
+              class="client-card-name">SLV Group</span><span class="client-card-sector">Real Estate</span></div>
+          <div class="client-card" id="client-sumadhura"><span class="client-card-initial">SM</span><span
+              class="client-card-name">Sumadhura Group</span><span class="client-card-sector">Real Estate</span></div>
+          <div class="client-card" id="client-aparna"><span class="client-card-initial">AC</span><span
+              class="client-card-name">Aparna Constructions</span><span class="client-card-sector">Real Estate</span>
+          </div>
+          <div class="client-card" id="client-provident"><span class="client-card-initial">PH</span><span
+              class="client-card-name">Provident Housing</span><span class="client-card-sector">Real Estate</span></div>
+          <div class="client-card" id="client-prestige"><span class="client-card-initial">PR</span><span
+              class="client-card-name">Prestige Group</span><span class="client-card-sector">Real Estate</span></div>
+          <div class="client-card" id="client-mantri"><span class="client-card-initial">MD</span><span
+              class="client-card-name">Mantri Developers</span><span class="client-card-sector">Real Estate</span></div>
+          <div class="client-card" id="client-my"><span class="client-card-initial">MY</span><span
+              class="client-card-name">MY Homes</span><span class="client-card-sector">Real Estate</span></div>
+          <div class="client-card" id="client-dsr"><span class="client-card-initial">DS</span><span
+              class="client-card-name">DSR Group</span><span class="client-card-sector">Real Estate</span></div>
+          <div class="client-card" id="client-more"><span class="client-card-initial">+</span><span
+              class="client-card-name">35+ More Clients</span><span class="client-card-sector">Various Industries</span>
+          </div>
+        </div>
       </div>
-      <div class="clients-full-grid reveal" id="clients-full-grid">
-        <div class="client-card" id="client-incor"><span class="client-card-initial">IC</span><span class="client-card-name">Incor Group</span><span class="client-card-sector">Real Estate</span></div>
-        <div class="client-card" id="client-ashoka"><span class="client-card-initial">AB</span><span class="client-card-name">Ashoka Builders</span><span class="client-card-sector">Real Estate</span></div>
-        <div class="client-card" id="client-ramky"><span class="client-card-initial">RG</span><span class="client-card-name">Ramky Group</span><span class="client-card-sector">Real Estate</span></div>
-        <div class="client-card" id="client-ncc"><span class="client-card-initial">NC</span><span class="client-card-name">NCC Urban</span><span class="client-card-sector">Construction</span></div>
-        <div class="client-card" id="client-vasavi"><span class="client-card-initial">VG</span><span class="client-card-name">Vasavi Group</span><span class="client-card-sector">Real Estate</span></div>
-        <div class="client-card" id="client-navanaami"><span class="client-card-initial">NV</span><span class="client-card-name">Navanaami</span><span class="client-card-sector">Real Estate</span></div>
-        <div class="client-card" id="client-hallmark"><span class="client-card-initial">HM</span><span class="client-card-name">Hallmark</span><span class="client-card-sector">Real Estate</span></div>
-        <div class="client-card" id="client-slv"><span class="client-card-initial">SL</span><span class="client-card-name">SLV Group</span><span class="client-card-sector">Real Estate</span></div>
-        <div class="client-card" id="client-sumadhura"><span class="client-card-initial">SM</span><span class="client-card-name">Sumadhura Group</span><span class="client-card-sector">Real Estate</span></div>
-        <div class="client-card" id="client-aparna"><span class="client-card-initial">AC</span><span class="client-card-name">Aparna Constructions</span><span class="client-card-sector">Real Estate</span></div>
-        <div class="client-card" id="client-provident"><span class="client-card-initial">PH</span><span class="client-card-name">Provident Housing</span><span class="client-card-sector">Real Estate</span></div>
-        <div class="client-card" id="client-prestige"><span class="client-card-initial">PR</span><span class="client-card-name">Prestige Group</span><span class="client-card-sector">Real Estate</span></div>
-        <div class="client-card" id="client-mantri"><span class="client-card-initial">MD</span><span class="client-card-name">Mantri Developers</span><span class="client-card-sector">Real Estate</span></div>
-        <div class="client-card" id="client-my"><span class="client-card-initial">MY</span><span class="client-card-name">MY Homes</span><span class="client-card-sector">Real Estate</span></div>
-        <div class="client-card" id="client-dsr"><span class="client-card-initial">DS</span><span class="client-card-name">DSR Group</span><span class="client-card-sector">Real Estate</span></div>
-        <div class="client-card" id="client-more"><span class="client-card-initial">+</span><span class="client-card-name">35+ More Clients</span><span class="client-card-sector">Various Industries</span></div>
+    </section>
+
+    <!-- INDUSTRIES (Migrated from clients.html) -->
+    <section class="section section--light" id="industries">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:56px;">
+          <span class="section-badge section-badge--light reveal">Industries</span>
+          <h2 class="section-heading reveal reveal-delay-1" style="margin-top:12px;">Sectors We <span
+              class="gradient-text">Serve</span></h2>
+        </div>
+        <div class="industry-grid">
+          <div class="industry-item reveal" id="ind-realestate">
+            <div class="industry-icon">✦</div>
+            <div class="industry-name">Real Estate</div>
+            <div class="industry-count">30+ Clients</div>
+          </div>
+          <div class="industry-item reveal reveal-delay-1" id="ind-arch">
+            <div class="industry-icon">✦</div>
+            <div class="industry-name">Architecture</div>
+            <div class="industry-count">8+ Clients</div>
+          </div>
+          <div class="industry-item reveal reveal-delay-2" id="ind-edu">
+            <div class="industry-icon">🎓</div>
+            <div class="industry-name">Education</div>
+            <div class="industry-count">5+ Clients</div>
+          </div>
+          <div class="industry-item reveal reveal-delay-3" id="ind-health">
+            <div class="industry-icon">✦</div>
+            <div class="industry-name">Healthcare</div>
+            <div class="industry-count">4+ Clients</div>
+          </div>
+          <div class="industry-item reveal" id="ind-retail">
+            <div class="industry-icon">✦</div>
+            <div class="industry-name">Retail</div>
+            <div class="industry-count">6+ Clients</div>
+          </div>
+          <div class="industry-item reveal reveal-delay-1" id="ind-event">
+            <div class="industry-icon">🎪</div>
+            <div class="industry-name">Events</div>
+            <div class="industry-count">10+ Projects</div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- INDUSTRIES (Migrated from clients.html) -->
-  <section class="section section--light" id="industries">
-    <div class="container">
-      <div class="text-center" style="margin-bottom:56px;">
-        <span class="section-badge section-badge--light reveal">Industries</span>
-        <h2 class="section-heading reveal reveal-delay-1" style="margin-top:12px;">Sectors We <span class="gradient-text">Serve</span></h2>
+    <!-- TESTIMONIALS GRID (Migrated from testimonials.html) -->
+    <section class="section section--dark" id="testimonials-main">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:56px;">
+          <span class="section-badge reveal">What Clients Say</span>
+          <h2 class="section-heading reveal reveal-delay-1" style="margin-top:12px;">In Their Own <span
+              class="gradient-text">Words</span></h2>
+        </div>
+        <div class="testimonials-masonry" id="testimonials-masonry">
+
+          <div class="testimonial-card reveal" id="t1">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"PRIZMABRIXX completely transformed how we present our properties. The VR
+              Walkthroughs they built helped us close deals 3x faster. Every buyer who experienced the VR was blown
+              away. Absolutely world-class team and technology."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">RK</div>
+              <div>
+                <div class="author-name">Rajesh Kumar</div>
+                <div class="author-company">Director, Skyline Developers · VR Walkthrough</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal reveal-delay-1" id="t2">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"The AR Experience they created for our product launch was jaw-dropping.
+              Customers couldn't stop engaging with it. We saw a 40% uplift in conversion at the event."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">PM</div>
+              <div>
+                <div class="author-name">Priya Mehra</div>
+                <div class="author-company">Marketing Head, FutureLiving Co. · AR Experience</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal reveal-delay-2" id="t3">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"From Drone Shoots to 3D-Printed Architectural Models, PRIZMABRIXX delivered
+              everything on time and beyond expectations. Our go-to partner for all things immersive."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">AS</div>
+              <div>
+                <div class="author-name">Arun Sharma</div>
+                <div class="author-company">CEO, BuildVision Architects · Multi-Service</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal" id="t4">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"We used PRIZMABRIXX'S Availability Tool for our project launch. Buyers loved
+              being able to pick their exact unit in real-time. It made the whole sales process much more transparent
+              and efficient."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">VK</div>
+              <div>
+                <div class="author-name">Vijay Kumar</div>
+                <div class="author-company">MD, Incor Group · Availability Tool</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal reveal-delay-1" id="t5">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Exceptional team. The 3D scale model of our township was so detailed and
+              perfectly finished — it became the centrepiece of our sales office and impressed every visiting investor."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">SR</div>
+              <div>
+                <div class="author-name">Suresh Rao</div>
+                <div class="author-company">Director, NCC Urban · 3D Printing</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal reveal-delay-2" id="t6">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Their drone team was professional, creative, and delivered stunning footage
+              within 48 hours. The aerial shots made our 200-acre campus look absolutely breathtaking."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">AN</div>
+              <div>
+                <div class="author-name">Anitha Nair</div>
+                <div class="author-company">CMO, Vasavi Group · Drone Shoot</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal" id="t7">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"PRIZMABRIXX built our entire marketing website and a mobile app for site
+              visits. The quality was outstanding and they delivered ahead of schedule. We've already started a second
+              project with them."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">KP</div>
+              <div>
+                <div class="author-name">Kumar Patel</div>
+                <div class="author-company">Founder, Hallmark Properties · Web &amp; App</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal reveal-delay-1" id="t8">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"The branding package they delivered gave our company a complete identity
+              overhaul. From logo to brand guidelines to social media templates — everything was premium and cohesive."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">LS</div>
+              <div>
+                <div class="author-name">Lakshmi Srinivas</div>
+                <div class="author-company">Director, Navanaami · Branding</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal reveal-delay-2" id="t9">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"I was skeptical about VR at first, but after seeing what PRIZMABRIXX created
+              for our competitors, we had to try it. The result was better than I imagined. We sold 80 units in
+              pre-launch!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">MB</div>
+              <div>
+                <div class="author-name">Mohit Bajaj</div>
+                <div class="author-company">MD, Ramky Group · VR Walkthrough</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
-      <div class="industry-grid">
-        <div class="industry-item reveal" id="ind-realestate"><div class="industry-icon">✦</div><div class="industry-name">Real Estate</div><div class="industry-count">30+ Clients</div></div>
-        <div class="industry-item reveal reveal-delay-1" id="ind-arch"><div class="industry-icon">✦</div><div class="industry-name">Architecture</div><div class="industry-count">8+ Clients</div></div>
-        <div class="industry-item reveal reveal-delay-2" id="ind-edu"><div class="industry-icon">🎓</div><div class="industry-name">Education</div><div class="industry-count">5+ Clients</div></div>
-        <div class="industry-item reveal reveal-delay-3" id="ind-health"><div class="industry-icon">✦</div><div class="industry-name">Healthcare</div><div class="industry-count">4+ Clients</div></div>
-        <div class="industry-item reveal" id="ind-retail"><div class="industry-icon">✦</div><div class="industry-name">Retail</div><div class="industry-count">6+ Clients</div></div>
-        <div class="industry-item reveal reveal-delay-1" id="ind-event"><div class="industry-icon">🎪</div><div class="industry-name">Events</div><div class="industry-count">10+ Projects</div></div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner" id="about-cta">
+      <div class="cta-banner-bg"></div>
+      <div class="container text-center reveal">
+        <h2 class="section-heading" style="color:var(--text-dark); margin-bottom:16px;">Want to Work With <span
+            class="gradient-text">PRIZMABRIXX?</span></h2>
+        <p class="body-lg" style="color:var(--text-dark-sub); margin-bottom:36px;">Let's build something extraordinary
+          together.</p>
+        <a href="contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- TESTIMONIALS GRID (Migrated from testimonials.html) -->
-  <section class="section section--dark" id="testimonials-main">
-    <div class="container">
-      <div class="text-center" style="margin-bottom:56px;">
-        <span class="section-badge reveal">What Clients Say</span>
-        <h2 class="section-heading reveal reveal-delay-1" style="margin-top:12px;">In Their Own <span class="gradient-text">Words</span></h2>
-      </div>
-      <div class="testimonials-masonry" id="testimonials-masonry">
-
-        <div class="testimonial-card reveal" id="t1">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"PRIZMABRIXX completely transformed how we present our properties. The VR Walkthroughs they built helped us close deals 3x faster. Every buyer who experienced the VR was blown away. Absolutely world-class team and technology."</p>
-          <div class="testimonial-author"><div class="author-avatar">RK</div><div><div class="author-name">Rajesh Kumar</div><div class="author-company">Director, Skyline Developers · VR Walkthrough</div></div></div>
-        </div>
-
-        <div class="testimonial-card reveal reveal-delay-1" id="t2">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"The AR Experience they created for our product launch was jaw-dropping. Customers couldn't stop engaging with it. We saw a 40% uplift in conversion at the event."</p>
-          <div class="testimonial-author"><div class="author-avatar">PM</div><div><div class="author-name">Priya Mehra</div><div class="author-company">Marketing Head, FutureLiving Co. · AR Experience</div></div></div>
-        </div>
-
-        <div class="testimonial-card reveal reveal-delay-2" id="t3">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"From Drone Shoots to 3D-Printed Architectural Models, PRIZMABRIXX delivered everything on time and beyond expectations. Our go-to partner for all things immersive."</p>
-          <div class="testimonial-author"><div class="author-avatar">AS</div><div><div class="author-name">Arun Sharma</div><div class="author-company">CEO, BuildVision Architects · Multi-Service</div></div></div>
-        </div>
-
-        <div class="testimonial-card reveal" id="t4">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"We used PRIZMABRIXX'S Availability Tool for our project launch. Buyers loved being able to pick their exact unit in real-time. It made the whole sales process much more transparent and efficient."</p>
-          <div class="testimonial-author"><div class="author-avatar">VK</div><div><div class="author-name">Vijay Kumar</div><div class="author-company">MD, Incor Group · Availability Tool</div></div></div>
-        </div>
-
-        <div class="testimonial-card reveal reveal-delay-1" id="t5">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"Exceptional team. The 3D scale model of our township was so detailed and perfectly finished — it became the centrepiece of our sales office and impressed every visiting investor."</p>
-          <div class="testimonial-author"><div class="author-avatar">SR</div><div><div class="author-name">Suresh Rao</div><div class="author-company">Director, NCC Urban · 3D Printing</div></div></div>
-        </div>
-
-        <div class="testimonial-card reveal reveal-delay-2" id="t6">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"Their drone team was professional, creative, and delivered stunning footage within 48 hours. The aerial shots made our 200-acre campus look absolutely breathtaking."</p>
-          <div class="testimonial-author"><div class="author-avatar">AN</div><div><div class="author-name">Anitha Nair</div><div class="author-company">CMO, Vasavi Group · Drone Shoot</div></div></div>
-        </div>
-
-        <div class="testimonial-card reveal" id="t7">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"PRIZMABRIXX built our entire marketing website and a mobile app for site visits. The quality was outstanding and they delivered ahead of schedule. We've already started a second project with them."</p>
-          <div class="testimonial-author"><div class="author-avatar">KP</div><div><div class="author-name">Kumar Patel</div><div class="author-company">Founder, Hallmark Properties · Web &amp; App</div></div></div>
-        </div>
-
-        <div class="testimonial-card reveal reveal-delay-1" id="t8">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"The branding package they delivered gave our company a complete identity overhaul. From logo to brand guidelines to social media templates — everything was premium and cohesive."</p>
-          <div class="testimonial-author"><div class="author-avatar">LS</div><div><div class="author-name">Lakshmi Srinivas</div><div class="author-company">Director, Navanaami · Branding</div></div></div>
-        </div>
-
-        <div class="testimonial-card reveal reveal-delay-2" id="t9">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"I was skeptical about VR at first, but after seeing what PRIZMABRIXX created for our competitors, we had to try it. The result was better than I imagined. We sold 80 units in pre-launch!"</p>
-          <div class="testimonial-author"><div class="author-avatar">MB</div><div><div class="author-name">Mohit Bajaj</div><div class="author-company">MD, Ramky Group · VR Walkthrough</div></div></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BANNER -->
-  <section class="cta-banner" id="about-cta">
-    <div class="cta-banner-bg"></div>
-    <div class="container text-center reveal">
-      <h2 class="section-heading" style="color:var(--text-dark); margin-bottom:16px;">Want to Work With <span class="gradient-text">PRIZMABRIXX?</span></h2>
-      <p class="body-lg" style="color:var(--text-dark-sub); margin-bottom:36px;">Let's build something extraordinary together.</p>
-      <a href="contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
-    </div>
-  </section>
-
-  <!-- FOOTER (shared) -->
-  <footer class="footer" id="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-        <!-- Brand -->
-        <div class="footer-brand">
-          <a href="index.html" class="navbar-logo" id="footer-logo">
-            <img src="assets/images/logo-footer.png" alt="PRIZMABRIXX" class="navbar-logo-img" />
-          </a>
-          <p>A leading Virtual Simulation Company based in Hyderabad, India. Crafting immersive VR, AR, and 3D
-            experiences since 2018.</p>
-          <div class="footer-social">
-            <a href="#" class="social-link" id="footer-instagram" aria-label="Instagram" title="Instagram">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg>
+    <!-- FOOTER (shared) -->
+    <footer class="footer" id="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <a href="index.html" class="navbar-logo" id="footer-logo">
+              <img src="assets/images/logo-footer.png" alt="PRIZMABRIXX" class="navbar-logo-img" />
             </a>
-            <a href="#" class="social-link" id="footer-linkedin" aria-label="LinkedIn" title="LinkedIn">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-              </svg>
-            </a>
-            <a href="#" class="social-link" id="footer-youtube" aria-label="YouTube" title="YouTube">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
-              </svg>
-            </a>
-            <a href="#" class="social-link" id="footer-facebook" aria-label="Facebook" title="Facebook">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-              </svg>
-            </a>
+            <p>A leading Virtual Simulation Company based in Hyderabad, India. Crafting immersive VR, AR, and 3D
+              experiences since 2018.</p>
+            <div class="footer-social">
+              <a href="https://www.instagram.com/prizmabrixx" target="_blank" rel="noopener noreferrer"
+                class="social-link" id="footer-instagram" aria-label="Instagram" title="Instagram">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/company/prizmabrixx/" target="_blank" rel="noopener noreferrer"
+                class="social-link" id="footer-linkedin" aria-label="LinkedIn" title="LinkedIn">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </a>
+              <a href="https://www.youtube.com/@PRIZMABRIXX" target="_blank" rel="noopener noreferrer"
+                class="social-link" id="footer-youtube" aria-label="YouTube" title="YouTube">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div class="footer-col">
+            <div class="footer-col-title">Company</div>
+            <ul class="footer-links">
+              <li><a href="index.html" id="footer-link-home">Home</a></li>
+              <li><a href="about.html" id="footer-link-about">About Us</a></li>
+              <li><a href="Portfolio-page/index.html" id="footer-link-portfolio">Portfolio</a></li>
+              <li><a href="index.html#award-frame" id="footer-link-award">Achievements</a></li>
+              <li><a href="contact.html" id="footer-link-contact-main">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col-title">Services</div>
+            <ul class="footer-links">
+              <li><a href="Portfolio-page/index.html" id="footer-link-vr">VR Walkthrough</a></li>
+              <li><a href="Portfolio-page/index.html" id="footer-link-ar">Augmented Reality</a></li>
+              <li><a href="Portfolio-page/index.html" id="footer-link-3d">3D Printing</a></li>
+              <li><a href="Portfolio-page/index.html" id="footer-link-drone">Drone Shoots</a></li>
+              <li><a href="Portfolio-page/index.html" id="footer-link-web">Web &amp; App Development</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col-title">Contact</div>
+            <ul class="footer-links">
+              <li><a href="mailto:info@prizmabrixx.com" id="footer-link-email">info@prizmabrixx.com</a></li>
+              <li><a href="contact.html" id="footer-link-contact">Hyderabad, India</a></li>
+              <li><a href="contact.html" id="footer-link-quote">Get a Quote</a></li>
+            </ul>
           </div>
         </div>
 
-        <!-- Links -->
-        <div class="footer-col">
-          <div class="footer-col-title">Company</div>
-          <ul class="footer-links">
-            <li><a href="index.html" id="footer-link-home">Home</a></li>
-            <li><a href="about.html" id="footer-link-about">About Us</a></li>
-            <li><a href="Portfolio-page/index.html" id="footer-link-portfolio">Portfolio</a></li>
-            <li><a href="index.html#award-frame" id="footer-link-award">Achievements</a></li>
-            <li><a href="contact.html" id="footer-link-contact-main">Contact Us</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <div class="footer-col-title">Services</div>
-          <ul class="footer-links">
-            <li><a href="Portfolio-page/index.html" id="footer-link-vr">VR Walkthrough</a></li>
-            <li><a href="Portfolio-page/index.html" id="footer-link-ar">Augmented Reality</a></li>
-            <li><a href="Portfolio-page/index.html" id="footer-link-3d">3D Printing</a></li>
-            <li><a href="Portfolio-page/index.html" id="footer-link-drone">Drone Shoots</a></li>
-            <li><a href="Portfolio-page/index.html" id="footer-link-web">Web &amp; App Development</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <div class="footer-col-title">Contact</div>
-          <ul class="footer-links">
-            <li><a href="mailto:info@prizmabrixx.com" id="footer-link-email">info@prizmabrixx.com</a></li>
-            <li><a href="contact.html" id="footer-link-contact">Hyderabad, India</a></li>
-            <li><a href="contact.html" id="footer-link-quote">Get a Quote</a></li>
-          </ul>
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+          <p>© 2026 PRIZMABRIXX. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="contact.html" id="footer-privacy">Privacy Policy</a>
+            <a href="contact.html" id="footer-terms">Terms of Service</a>
+          </div>
         </div>
       </div>
+    </footer>
 
-      <!-- Bottom Bar -->
-      <div class="footer-bottom">
-        <p>© 2026 PRIZMABRIXX. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="contact.html" id="footer-privacy">Privacy Policy</a>
-          <a href="contact.html" id="footer-terms">Terms of Service</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Animation Libraries -->
-  <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <!-- Custom Scripts -->
-  <script src="js/animations.js"></script>
-  <script src="js/main.js"></script>
+    <!-- Animation Libraries -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Custom Scripts -->
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PRIZMABRIXX  Virtual Simulation | VR, AR & 3D Experts</title>
+  <title>PRIZMABRIXX Virtual Simulation | VR, AR & 3D Experts</title>
   <meta name="description"
     content="PRIZMABRIXX is a Hyderabad-based Virtual Simulation Company specializing in VR Walkthroughs, AR Experiences, 3D Printing, Drone Shoots, and Immersive Technology since 2018." />
   <meta name="keywords"
@@ -20,7 +20,7 @@
       const savedTheme = localStorage.getItem('theme-preference') || 'light';
       if (savedTheme === 'dark') {
         document.documentElement.classList.add('dark-mode');
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
           if (document.body) document.body.classList.add('dark-mode');
         });
       }
@@ -32,7 +32,7 @@
       localStorage.setItem('theme-preference', isDark ? 'dark' : 'light');
 
       const btns = document.querySelectorAll('#themeToggleBtn');
-      btns.forEach(function(btn) {
+      btns.forEach(function (btn) {
         const activeIcon = btn.querySelector(isDark ? '.sun-icon' : '.moon-icon');
         if (activeIcon && typeof gsap !== 'undefined') {
           gsap.fromTo(activeIcon, { scale: 0.6, rotate: -45 }, { scale: 1, rotate: 0, duration: 0.45, ease: "back.out(1.8)" });
@@ -55,15 +55,15 @@
 <body class="loading">
   <!-- ── PRELOADER ── -->
   <div id="preloader">
-      <canvas id="preloader-canvas"></canvas>
-      <div class="preloader-content">
-          <img src="assets/images/logo-full.png" class="preloader-logo-img" alt="PRIZMABRIXX">
-          <div class="preloader-tagline">Building Visual Experiences Beyond Imagination</div>
-          <div class="preloader-progress-bar">
-              <div class="preloader-progress-fill"></div>
-          </div>
-          <div class="preloader-counter">0%</div>
+    <canvas id="preloader-canvas"></canvas>
+    <div class="preloader-content">
+      <img src="assets/images/logo-full.png" class="preloader-logo-img" alt="PRIZMABRIXX">
+      <div class="preloader-tagline">Building Visual Experiences Beyond Imagination</div>
+      <div class="preloader-progress-bar">
+        <div class="preloader-progress-fill"></div>
       </div>
+      <div class="preloader-counter">0%</div>
+    </div>
   </div>
 
   <div class="mesh-bg"></div>
@@ -73,32 +73,33 @@
   ============================= -->
   <nav class="navbar" id="navbar">
     <a href="index.html" class="nav-logo">
-        <img src="assets/images/logo.png" alt="PRIZMABRIXX" class="nav-logo-img">
-        <span class="nav-logo-text">PRIZMA<span>BRIXX</span></span>
+      <img src="assets/images/logo.png" alt="PRIZMABRIXX" class="nav-logo-img">
+      <span class="nav-logo-text">PRIZMA<span>BRIXX</span></span>
     </a>
     <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link active" id="nav-home">Home</a></li>
-        <li><a href="about.html" class="nav-link" id="nav-about">About Us</a></li>
+      <li><a href="index.html" class="nav-link active" id="nav-home">Home</a></li>
+      <li><a href="about.html" class="nav-link" id="nav-about">About Us</a></li>
 
-        <li><a href="Portfolio-page/index.html" class="nav-link" id="nav-portfolio">Portfolio</a></li>
-        <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
+      <li><a href="Portfolio-page/index.html" class="nav-link" id="nav-portfolio">Portfolio</a></li>
+      <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
     </ul>
     <div class="nav-right">
-        <a href="contact.html" class="nav-cta">Get a Quote</a>
-        <!-- Theme Toggle Switch -->
-        <button id="themeToggleBtn" class="theme-toggle-slider magnetic" aria-label="Toggle theme" onclick="toggleTheme()">
-            <span class="slider-track">
-                <span class="slider-thumb">
-                    <i class="fa-solid fa-moon moon-icon"></i>
-                    <i class="fa-solid fa-sun sun-icon"></i>
-                </span>
-            </span>
-        </button>
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+      <a href="contact.html" class="nav-cta">Get a Quote</a>
+      <!-- Theme Toggle Switch -->
+      <button id="themeToggleBtn" class="theme-toggle-slider magnetic" aria-label="Toggle theme"
+        onclick="toggleTheme()">
+        <span class="slider-track">
+          <span class="slider-thumb">
+            <i class="fa-solid fa-moon moon-icon"></i>
+            <i class="fa-solid fa-sun sun-icon"></i>
+          </span>
+        </span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
@@ -113,7 +114,8 @@
       <div class="hero-bg-orb orb-2"></div>
       <div class="hero-bg-orb orb-3"></div>
       <div class="hero-video-overlay"></div>
-      <canvas id="particleCanvas" style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:2;"></canvas>
+      <canvas id="particleCanvas"
+        style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:2;"></canvas>
     </div>
 
     <!-- Hero Content -->
@@ -122,7 +124,8 @@
 
         <h1 class="display-heading reveal reveal-delay-1" id="hero-heading">
           Virtual Simulation Studio,<br />
-          From Concept to <span class="gradient-text dynamic-type-text">Walkthrough</span><span class="type-cursor">|</span>
+          From Concept to <span class="gradient-text dynamic-type-text">Walkthrough</span><span
+            class="type-cursor">|</span>
         </h1>
 
         <p class="body-lg text-muted-dark reveal reveal-delay-2" id="hero-subtext">
@@ -184,7 +187,8 @@
                 <span class="sparkle">✦</span> Award Winner
               </div>
               <div class="award-img-container">
-                <img src="assets/images/award.jpg" alt="3D Virtual Simulation Excellence Award Trophy Presentation" class="award-photo" />
+                <img src="assets/images/award.jpg" alt="3D Virtual Simulation Excellence Award Trophy Presentation"
+                  class="award-photo" />
                 <div class="award-img-overlay"></div>
               </div>
               <div class="award-card-caption">
@@ -204,10 +208,13 @@
           </h2>
           <div class="divider divider--left"></div>
           <p class="body-lg text-muted-dark">
-            Congratulations to <strong>Mr. THOTLA VINEEL</strong>, Chief Executive Officer at <strong>PRIZMABRIXX</strong>, on receiving the esteemed <em>3D Virtual Simulation Excellence Award</em>.
+            Congratulations to <strong>Mr. THOTLA VINEEL</strong>, Chief Executive Officer at
+            <strong>PRIZMABRIXX</strong>, on receiving the esteemed <em>3D Virtual Simulation Excellence Award</em>.
           </p>
           <p class="body-base text-muted-dark" style="margin-top: 14px;">
-            PRIZMABRIXX continues to pioneer high-fidelity 3D Virtual Simulations, Architectural VR Walkthroughs, 3D Printed Miniatures, and Interactive Visualization Solutions for Real Estate and Enterprise Leaders Nationwide.
+            PRIZMABRIXX continues to pioneer high-fidelity 3D Virtual Simulations, Architectural VR Walkthroughs, 3D
+            Printed Miniatures, and Interactive Visualization Solutions for Real Estate and Enterprise Leaders
+            Nationwide.
           </p>
 
           <div class="award-highlights-grid">
@@ -223,18 +230,20 @@
       <!-- Humanized Event Photo Gallery Section -->
       <div class="award-gallery-strip reveal reveal-delay-3" id="award-gallery-block" style="margin-top: 60px;">
         <div class="text-center" style="margin-bottom:36px;">
-          <span class="pill-label pill-label--cyan" style="margin-bottom: 12px; background: rgba(245, 145, 40, 0.1); border-color: rgba(245, 145, 40, 0.28); color: #e07820;">
+          <span class="pill-label pill-label--cyan"
+            style="margin-bottom: 12px; background: rgba(245, 145, 40, 0.1); border-color: rgba(245, 145, 40, 0.28); color: #e07820;">
             <span class="dot" style="background:#f59128;"></span>
             Event Gallery &amp; Moments
           </span>
-          <h2 style="font-size: clamp(2rem, 3.8vw, 2.8rem); font-weight: 800; font-family: 'Outfit', sans-serif; color: var(--text-dark); margin: 10px 0 8px; letter-spacing: -0.02em;">
+          <h2
+            style="font-size: clamp(2rem, 3.8vw, 2.8rem); font-weight: 800; font-family: 'Outfit', sans-serif; color: var(--text-dark); margin: 10px 0 8px; letter-spacing: -0.02em;">
             Glimpses of <span class="gradient-text">Excellence</span>
           </h2>
           <p style="font-size: 15px; color: var(--text-dark-sub); max-width: 520px; margin: 0 auto; line-height: 1.6;">
             Snapshots from our award night, industry keynotes, and celebrations with leadership.
           </p>
         </div>
-        
+
         <div class="gallery-grid" id="lightbox-gallery-home">
           <div class="human-gallery-card reveal img-reveal">
             <span class="card-location-tag">📍 Award Ceremony Gala</span>
@@ -342,14 +351,23 @@
           <!-- Highlight Cards -->
           <div class="about-highlights">
             <div class="highlight-item" id="highlight-1">
-              <div class="highlight-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></div>
+              <div class="highlight-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+                </svg></div>
               <div>
                 <div class="highlight-title">Award-Winning</div>
                 <div class="highlight-desc">Recognized for innovation in immersive tech</div>
               </div>
             </div>
             <div class="highlight-item" id="highlight-2">
-              <div class="highlight-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+              <div class="highlight-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path
+                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg></div>
               <div>
                 <div class="highlight-title">Pan-India Reach</div>
                 <div class="highlight-desc">Serving clients across India & internationally</div>
@@ -378,7 +396,8 @@
             <!-- Core sphere -->
             <div class="sphere-core">
               <div class="sphere-inner-ring"></div>
-              <img src="Portfolio-page/logo.png" alt="PB" class="sphere-label" style="width: 100px; height: auto; object-fit: contain; z-index: 2;">
+              <img src="Portfolio-page/logo.png" alt="PB" class="sphere-label"
+                style="width: 100px; height: auto; object-fit: contain; z-index: 2;">
             </div>
             <!-- Floating particle dots revolving -->
             <div class="dots-orbit">
@@ -397,7 +416,7 @@
                 <div class="sat-badge sat-badge-1"><i class="fa-solid fa-vr-cardboard"></i> VR Walkthrough</div>
               </div>
             </div>
-            
+
             <!-- Satellite 2: Drone Shoots -->
             <div class="sat-track sat-track-2">
               <div class="sat-mover sat-mover-2">
@@ -438,32 +457,37 @@
           <div class="service-card-icon"><i class="fa-solid fa-vr-cardboard"></i></div>
           <h3 class="service-card-title">VR Walkthrough</h3>
           <p class="service-card-desc">Immersive virtual tours for real estate, architecture and enterprise spaces.</p>
-          <a href="Portfolio-page/index.html#vr-experience" class="service-card-link" id="service-link-vr">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html#vr-experience" class="service-card-link" id="service-link-vr">Explore
+            <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-1" id="service-card-2">
           <div class="service-card-icon"><i class="fa-solid fa-mobile-screen"></i></div>
           <h3 class="service-card-title">Augmented Reality</h3>
           <p class="service-card-desc">Layer digital content onto the real world for stunning product and brand
             experiences.</p>
-          <a href="Portfolio-page/index.html#portfolio" class="service-card-link" id="service-link-ar">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html#portfolio" class="service-card-link" id="service-link-ar">Explore
+            <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-2" id="service-card-3">
           <div class="service-card-icon"><i class="fa-solid fa-print"></i></div>
           <h3 class="service-card-title">3D Printing</h3>
           <p class="service-card-desc">Physical prototypes, architectural models, and custom 3D-printed solutions.</p>
-          <a href="Portfolio-page/index.html#renderings" class="service-card-link" id="service-link-3d">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html#renderings" class="service-card-link" id="service-link-3d">Explore
+            <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-3" id="service-card-4">
           <div class="service-card-icon"><i class="fa-solid fa-helicopter"></i></div>
           <h3 class="service-card-title">Drone Shoots</h3>
           <p class="service-card-desc">Cinematic Aerial Photography and videography for properties and events.</p>
-          <a href="Portfolio-page/index.html#drone-shoot" class="service-card-link" id="service-link-drone">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html#drone-shoot" class="service-card-link" id="service-link-drone">Explore
+            <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal" id="service-card-5">
           <div class="service-card-icon"><i class="fa-solid fa-code"></i></div>
           <h3 class="service-card-title">Web & App Development</h3>
           <p class="service-card-desc">Modern websites and mobile apps engineered for performance and scale.</p>
-          <a href="Portfolio-page/index.html#web-development" class="service-card-link" id="service-link-web">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html#web-development" class="service-card-link" id="service-link-web">Explore
+            <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-1" id="service-card-6">
           <div class="service-card-icon"><i class="fa-solid fa-palette"></i></div>
@@ -476,7 +500,8 @@
           <div class="service-card-icon"><i class="fa-solid fa-chart-line"></i></div>
           <h3 class="service-card-title">Digital Marketing</h3>
           <p class="service-card-desc">Data-driven campaigns that grow your brand and convert leads to customers.</p>
-          <a href="Portfolio-page/index.html#social-marketing" class="service-card-link" id="service-link-marketing">Explore
+          <a href="Portfolio-page/index.html#social-marketing" class="service-card-link"
+            id="service-link-marketing">Explore
             <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-3" id="service-card-8">
@@ -484,14 +509,16 @@
           <h3 class="service-card-title">Experience Center</h3>
           <p class="service-card-desc">Design and build captivating beyond-reality experience centres for your brand.
           </p>
-          <a href="Portfolio-page/index.html#vr-experience" class="service-card-link" id="service-link-bec">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html#vr-experience" class="service-card-link" id="service-link-bec">Explore
+            <span>→</span></a>
         </div>
         <div class="service-card glass-card reveal reveal-delay-1" id="service-card-9">
           <div class="service-card-icon"><i class="fa-solid fa-layer-group"></i></div>
           <h3 class="service-card-title">Availability Tool</h3>
           <p class="service-card-desc">Interactive unit selection tools for real estate projects and property showcases.
           </p>
-          <a href="Portfolio-page/index.html#portfolio" class="service-card-link" id="service-link-tool">Explore <span>→</span></a>
+          <a href="Portfolio-page/index.html#portfolio" class="service-card-link" id="service-link-tool">Explore
+            <span>→</span></a>
         </div>
       </div>
 
@@ -518,29 +545,34 @@
       <div class="why-grid">
         <div class="why-card reveal" id="why-1">
           <div class="why-card-img img-reveal">
-            <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600&q=80" alt="VR Innovation" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600&q=80" alt="VR Innovation"
+              loading="lazy" />
             <div class="img-reveal-overlay"></div>
           </div>
           <div class="why-card-body">
             <div class="why-number">01</div>
             <h3>Cutting-Edge Technology</h3>
-            <p>We use the latest Unreal Engine, Unity, and WebXR tools to deliver experiences that set industry benchmarks.</p>
+            <p>We use the latest Unreal Engine, Unity, and WebXR tools to deliver experiences that set industry
+              benchmarks.</p>
           </div>
         </div>
         <div class="why-card reveal reveal-delay-1" id="why-2">
           <div class="why-card-img img-reveal">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80" alt="Team collaboration" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80" alt="Team collaboration"
+              loading="lazy" />
             <div class="img-reveal-overlay"></div>
           </div>
           <div class="why-card-body">
             <div class="why-number">02</div>
             <h3>Human-Centered Design</h3>
-            <p>Every pixel, every interaction is designed with real humans in mind. No gimmicks  just experiences that feel natural.</p>
+            <p>Every pixel, every interaction is designed with real humans in mind. No gimmicks just experiences that
+              feel natural.</p>
           </div>
         </div>
         <div class="why-card reveal reveal-delay-2" id="why-3">
           <div class="why-card-img img-reveal">
-            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80" alt="Fast delivery" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80" alt="Fast delivery"
+              loading="lazy" />
             <div class="img-reveal-overlay"></div>
           </div>
           <div class="why-card-body">
@@ -576,7 +608,8 @@
           <div class="process-step-number float-element">02</div>
           <div class="process-step-line"></div>
           <h3>Design</h3>
-          <p>Our creative team crafts wireframes, storyboards, and 3D blueprints that bring your vision to life on screen.</p>
+          <p>Our creative team crafts wireframes, storyboards, and 3D blueprints that bring your vision to life on
+            screen.</p>
         </div>
         <div class="process-step reveal reveal-delay-2" id="process-3">
           <div class="process-step-number float-element">03</div>
@@ -588,7 +621,8 @@
           <div class="process-step-number float-element">04</div>
           <div class="process-step-line"></div>
           <h3>Deliver</h3>
-          <p>We deploy across VR headsets, web browsers, mobile AR, and physical spaces  wherever your audience lives.</p>
+          <p>We deploy across VR headsets, web browsers, mobile AR, and physical spaces wherever your audience lives.
+          </p>
         </div>
       </div>
     </div>
@@ -625,7 +659,7 @@
           <div class="horizontal-card-info">
             <span class="horizontal-tag">Interior Design</span>
             <h3>Photorealistic Renders</h3>
-            <p>Every texture, every light ray  crafted to perfection.</p>
+            <p>Every texture, every light ray crafted to perfection.</p>
           </div>
         </div>
       </div>
@@ -661,7 +695,7 @@
           <div class="horizontal-card-info">
             <span class="horizontal-tag">3D Printing</span>
             <h3>Physical Prototypes</h3>
-            <p>From screen to hands  tangible models for stakeholders.</p>
+            <p>From screen to hands tangible models for stakeholders.</p>
           </div>
         </div>
       </div>
@@ -799,7 +833,8 @@
         </p>
         <div class="cta-actions" id="cta-actions">
           <a href="contact.html" class="btn btn-primary btn-lg" id="cta-start-btn">Start a Project</a>
-          <a href="Portfolio-page/index.html" class="btn btn-outline-light btn-lg" id="cta-portfolio-btn">See Our Work</a>
+          <a href="Portfolio-page/index.html" class="btn btn-outline-light btn-lg" id="cta-portfolio-btn">See Our
+            Work</a>
         </div>
       </div>
     </div>
@@ -819,28 +854,25 @@
           <p>A leading Virtual Simulation Company based in Hyderabad, India. Crafting immersive VR, AR, and 3D
             experiences since 2018.</p>
           <div class="footer-social">
-            <a href="#" class="social-link" id="footer-instagram" aria-label="Instagram" title="Instagram">
+            <a href="https://www.instagram.com/prizmabrixx" target="_blank" rel="noopener noreferrer"
+              class="social-link" id="footer-instagram" aria-label="Instagram" title="Instagram">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
               </svg>
             </a>
-            <a href="#" class="social-link" id="footer-linkedin" aria-label="LinkedIn" title="LinkedIn">
+            <a href="https://www.linkedin.com/company/prizmabrixx/" target="_blank" rel="noopener noreferrer"
+              class="social-link" id="footer-linkedin" aria-label="LinkedIn" title="LinkedIn">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
               </svg>
             </a>
-            <a href="#" class="social-link" id="footer-youtube" aria-label="YouTube" title="YouTube">
+            <a href="https://www.youtube.com/@PRIZMABRIXX" target="_blank" rel="noopener noreferrer" class="social-link"
+              id="footer-youtube" aria-label="YouTube" title="YouTube">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
-              </svg>
-            </a>
-            <a href="#" class="social-link" id="footer-facebook" aria-label="Facebook" title="Facebook">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
               </svg>
             </a>
           </div>
@@ -903,15 +935,15 @@
   <script src="js/main.js"></script>
   <script>
     // ── About Section Stat Counter Animation ──
-    (function() {
+    (function () {
       const counters = document.querySelectorAll('.about-stat-number[data-target]');
       if (!counters.length) return;
       let animated = false;
-      const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
           if (entry.isIntersecting && !animated) {
             animated = true;
-            counters.forEach(function(el) {
+            counters.forEach(function (el) {
               const target = parseInt(el.getAttribute('data-target'), 10);
               const duration = 1800;
               const start = performance.now();

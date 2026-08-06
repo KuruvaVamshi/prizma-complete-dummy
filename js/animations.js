@@ -196,26 +196,26 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollTrigger: { trigger: heroContent.parentElement, start: "top top", end: "bottom top", scrub: true }
     });
 
-    // Dramatic load animation
+    // Balanced smooth load animation
     const tl = gsap.timeline();
     tl.fromTo('.reveal-word', {
-      y: '120%', rotateZ: 8, scale: 1.3, opacity: 0
+      y: '70%', opacity: 0
     }, {
-      y: '0%', rotateZ: 0, scale: 1, opacity: 1,
-      duration: 1.5, stagger: 0.06, ease: "elastic.out(1, 0.6)", delay: 0.3
+      y: '0%', opacity: 1,
+      duration: 0.75, stagger: 0.04, ease: "power3.out"
     });
     tl.fromTo('.hero-content p, .hero-content .hero-actions, .page-hero-content p, .page-hero-content .breadcrumb', {
-      y: 60, opacity: 0, scale: 0.9
+      y: 20, opacity: 0
     }, {
-      y: 0, opacity: 1, scale: 1, duration: 1.2, ease: "power4.out", stagger: 0.12
-    }, "-=1");
+      y: 0, opacity: 1, duration: 0.75, ease: "power3.out", stagger: 0.06
+    }, "<0.2");
 
-    // Stats count-up with spring
+    // Stats count-up
     tl.fromTo('.hero-stats', {
-      y: 80, opacity: 0, scale: 0.85
+      y: 25, opacity: 0
     }, {
-      y: 0, opacity: 1, scale: 1, duration: 1.4, ease: "elastic.out(1, 0.6)"
-    }, "-=0.8");
+      y: 0, opacity: 1, duration: 0.75, ease: "power3.out"
+    }, "<0.2");
   }
 
   // ---- AWARD SHOWCASE FRAME ----

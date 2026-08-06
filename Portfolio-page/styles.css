@@ -5401,21 +5401,12 @@ body:not(.dark-mode) .moon-icon {
     z-index: 100 !important;
 }
 
-/* Center-Zoom Hover State applied to the inner frame to avoid edge trigger hover loops */
-.deck-video-card.quad-tl.js-hover .rc-glass-frame {
-    transform: translate(50%, 50%) scale(1.6);
-}
-
-.deck-video-card.quad-tr.js-hover .rc-glass-frame {
-    transform: translate(-50%, 50%) scale(1.6);
-}
-
-.deck-video-card.quad-bl.js-hover .rc-glass-frame {
-    transform: translate(50%, -50%) scale(1.6);
-}
-
+/* Smooth In-Place Scale Hover State without position shifting */
+.deck-video-card.quad-tl.js-hover .rc-glass-frame,
+.deck-video-card.quad-tr.js-hover .rc-glass-frame,
+.deck-video-card.quad-bl.js-hover .rc-glass-frame,
 .deck-video-card.quad-br.js-hover .rc-glass-frame {
-    transform: translate(-50%, -50%) scale(1.6);
+    transform: scale(1.08);
 }
 
 /* Sibling Dimming & Scaling: shrink and fade non-hovered sibling videos in the deck */
