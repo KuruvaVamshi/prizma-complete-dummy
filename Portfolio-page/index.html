@@ -67,6 +67,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -2353,7 +2355,7 @@
                             <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                             <div class="contact-method-text">
                                 <h4>Email Us</h4>
-                                <a href="mailto:info@prizmabrixx.in">info@prizmabrixx.in</a>
+                                <a href="mailto:info@prizmabrixx.com">info@prizmabrixx.com</a>
                             </div>
                         </div>
 
@@ -2387,7 +2389,7 @@
                             <i class="fa-solid fa-arrow-left"></i> Send Another Message
                         </button>
                     </div>
-                    <form id="contactForm" action="https://formsubmit.co/info@prizmabrixx.in" method="POST">
+                    <form id="contactForm" action="https://formsubmit.co/info@prizmabrixx.com" method="POST">
                         <div class="form-group">
                             <label for="name">Your Name</label>
                             <input type="text" id="name" name="name" class="form-control" placeholder="John Doe"
@@ -2491,7 +2493,7 @@
                 <div class="footer-col">
                     <div class="footer-col-title">Contact</div>
                     <ul class="footer-links">
-                        <li><a href="mailto:info@prizmabrixx.in" id="footer-link-email">info@prizmabrixx.in</a></li>
+                        <li><a href="mailto:info@prizmabrixx.com" id="footer-link-email">info@prizmabrixx.com</a></li>
                         <li><a href="../contact.html" id="footer-link-contact">Hyderabad, India</a></li>
                         <li><a href="../contact.html" id="footer-link-quote">Get a Quote</a></li>
                     </ul>
@@ -3976,6 +3978,19 @@
                     closeAddLeadModal();
                     addLeadForm.reset();
                     recalculateAll();
+
+                    if (typeof Swal !== 'undefined') {
+                        Swal.fire({
+                            title: 'Lead Added!',
+                            text: `Lead "${name}" successfully added from ${source.toUpperCase()} for ${property}.`,
+                            icon: 'success',
+                            iconColor: '#00f2fe',
+                            confirmButtonText: 'Great!',
+                            confirmButtonColor: '#00f2fe',
+                            background: '#0f172a',
+                            color: '#ffffff'
+                        });
+                    }
                 });
             }
 
@@ -4038,6 +4053,19 @@
 
                         closeBookingModal();
                         recalculateAll();
+
+                        if (typeof Swal !== 'undefined') {
+                            Swal.fire({
+                                title: 'Deal Closed & Unit Booked!',
+                                text: `Unit "${unit.name}" has been successfully assigned and booked for ${lead.name}.`,
+                                icon: 'success',
+                                iconColor: '#00f2fe',
+                                confirmButtonText: 'Awesome!',
+                                confirmButtonColor: '#00f2fe',
+                                background: '#0f172a',
+                                color: '#ffffff'
+                            });
+                        }
                     }
                 });
             }
@@ -4063,6 +4091,21 @@
                         });
                         pushAuditLog(`Created task checklist item: '${title}'`);
                         titleInput.value = '';
+
+                        if (typeof Swal !== 'undefined') {
+                            Swal.fire({
+                                title: 'Task Created!',
+                                text: `Task "${title}" added to checklist.`,
+                                icon: 'success',
+                                iconColor: '#00f2fe',
+                                confirmButtonText: 'OK',
+                                confirmButtonColor: '#00f2fe',
+                                background: '#0f172a',
+                                color: '#ffffff',
+                                timer: 2000,
+                                timerProgressBar: true
+                            });
+                        }
                         renderTasks();
                     }
                 });
@@ -4737,7 +4780,7 @@
             }
         })();
 
-        // ── CONTACT FORM: Smooth Success Card Handler & Submission to info@prizmabrixx.in ──
+        // ── CONTACT FORM: Smooth Success Card Handler & Submission to info@prizmabrixx.com ──
         (() => {
             const form = document.getElementById('contactForm');
             const successCard = document.getElementById('contactSuccessCard');
@@ -4759,6 +4802,18 @@
                     formData.append('_captcha', 'false');
 
                     const handleSuccess = () => {
+                        if (typeof Swal !== 'undefined') {
+                            Swal.fire({
+                                title: 'Message Sent!',
+                                text: 'Thank you for contacting PRIZMABRIXX. We will get back to you shortly!',
+                                icon: 'success',
+                                iconColor: '#00f2fe',
+                                confirmButtonText: 'Awesome!',
+                                confirmButtonColor: '#00f2fe',
+                                background: '#0f172a',
+                                color: '#ffffff'
+                            });
+                        }
                         gsap.to(form, {
                             opacity: 0, y: -20, duration: 0.4, ease: 'power2.in',
                             onComplete: () => {
@@ -4772,7 +4827,7 @@
                         });
                     };
 
-                    fetch('https://formsubmit.co/ajax/info@prizmabrixx.in', {
+                    fetch('https://formsubmit.co/ajax/info@prizmabrixx.com', {
                         method: 'POST',
                         body: formData,
                         headers: { 'Accept': 'application/json' }
