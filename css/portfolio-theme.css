@@ -1290,17 +1290,21 @@ body.loaded .scroll-down {
     color: var(--text-muted);
 }
 
-.contact-method-text a,
-.contact-method-text p {
-    color: #111318;
+.contact-method-text p,
+.contact-method-val,
+.contact-method-val a {
+    color: var(--text-primary, #1c1917) !important;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 0 !important;
     transition: var(--transition-fast);
 }
 
-.contact-method-text a:hover {
-    color: var(--accent);
+.contact-method-text a:hover,
+.contact-method-val a:hover {
+    color: var(--accent) !important;
 }
 
 .contact-form-wrapper {
