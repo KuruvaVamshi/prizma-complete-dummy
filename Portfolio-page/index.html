@@ -746,7 +746,7 @@
                 <div class="video-deck-scene" id="videoScene">
                     <div class="video-deck-wrapper" id="videoConsole">
                         <!-- Video Card 1 (Top Left) -->
-                        <a href="https://youtu.be/XfvcvkphErw"
+                        <a href="https://youtu.be/1fUuCep0oTo"
                             target="_blank" class="deck-video-card quad-tl" style="--card-idx: 0;">
                             <div class="deck-video-float-wrap">
                                 <div class="rc-glass-frame">
@@ -760,7 +760,7 @@
                             </div>
                         </a>
                         <!-- Video Card 2 (Top Right) -->
-                        <a href="https://youtu.be/XfvcvkphErw"
+                        <a href="https://youtu.be/FVjvYT3r930"
                             target="_blank" class="deck-video-card quad-tr" style="--card-idx: 1;">
                             <div class="deck-video-float-wrap">
                                 <div class="rc-glass-frame">
@@ -774,7 +774,7 @@
                             </div>
                         </a>
                         <!-- Video Card 3 (Bottom Left) -->
-                        <a href="https://youtu.be/XfvcvkphErw"
+                        <a href="https://youtu.be/a_MbnmOAdTs"
                             target="_blank" class="deck-video-card quad-bl" style="--card-idx: 2;">
                             <div class="deck-video-float-wrap">
                                 <div class="rc-glass-frame">
@@ -788,7 +788,7 @@
                             </div>
                         </a>
                         <!-- Video Card 4 (Bottom Right) -->
-                        <a href="https://youtu.be/XfvcvkphErw"
+                        <a href="https://youtu.be/m8Ko0ivzFS8"
                             target="_blank" class="deck-video-card quad-br" style="--card-idx: 3;">
                             <div class="deck-video-float-wrap">
                                 <div class="rc-glass-frame">
@@ -2532,6 +2532,142 @@
     <script>
         // Enforce video autoplay and play state fallback
         document.addEventListener('DOMContentLoaded', () => {
+            // ── INLINE YOUTUBE VIDEO IFRAME PLAYER LOGIC ──
+            function extractYouTubeId(url) {
+                if (!url) return null;
+                const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+                const match = url.match(regExp);
+                return (match && match[2].length === 11) ? match[2] : null;
+            }
+
+            function closeAllActiveYouTubeIframes() {
+                document.querySelectorAll('.yt-inline-wrapper').forEach(wrapper => {
+                    const parent = wrapper.parentElement;
+                    if (parent) {
+                        removeYouTubeInline(parent, wrapper);
+                    }
+                });
+            }
+
+            function playYouTubeInline(container, videoId) {
+                // If this exact container is already playing, do nothing
+                if (container.querySelector('.yt-inline-wrapper')) return;
+
+                // Automatically close any previously active YouTube iframe on the page
+                closeAllActiveYouTubeIframes();
+
+                // Pause background videos in container
+                const bgVideos = container.querySelectorAll('video');
+                bgVideos.forEach(v => {
+                    try { v.pause(); } catch(e) {}
+                });
+
+                const wrapper = document.createElement('div');
+                wrapper.className = 'yt-inline-wrapper';
+
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'yt-inline-close-btn';
+                closeBtn.setAttribute('aria-label', 'Close video');
+                closeBtn.setAttribute('title', 'Close Video');
+                closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+
+                const iframe = document.createElement('iframe');
+                iframe.className = 'yt-inline-iframe';
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&enablejsapi=1&playsinline=1&vq=large`;
+                iframe.title = 'YouTube Video';
+                iframe.frameBorder = '0';
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                iframe.allowFullscreen = true;
+
+                // Send JS API command to enforce 480p quality on player load
+                iframe.addEventListener('load', () => {
+                    try {
+                        iframe.contentWindow.postMessage(JSON.stringify({
+                            event: 'command',
+                            func: 'setPlaybackQuality',
+                            args: ['large']
+                        }), '*');
+                        iframe.contentWindow.postMessage(JSON.stringify({
+                            event: 'command',
+                            func: 'setSuggestedQuality',
+                            args: ['large']
+                        }), '*');
+                    } catch(e) {}
+                });
+
+                wrapper.appendChild(iframe);
+                wrapper.appendChild(closeBtn);
+
+                const compPos = window.getComputedStyle(container).position;
+                if (compPos === 'static') {
+                    container.style.position = 'relative';
+                }
+
+                container.appendChild(wrapper);
+                container.classList.add('has-yt-playing');
+
+                const carouselTrack = container.closest('.video-carousel-track');
+                if (carouselTrack) {
+                    carouselTrack.classList.add('paused-by-video');
+                }
+
+                closeBtn.addEventListener('click', (evt) => {
+                    evt.preventDefault();
+                    evt.stopPropagation();
+                    removeYouTubeInline(container, wrapper);
+                });
+            }
+
+            function removeYouTubeInline(container, wrapper) {
+                if (wrapper && wrapper.parentNode) {
+                    wrapper.parentNode.removeChild(wrapper);
+                }
+                container.classList.remove('has-yt-playing');
+
+                const bgVideos = container.querySelectorAll('video');
+                bgVideos.forEach(v => {
+                    try { v.play().catch(() => {}); } catch(e) {}
+                });
+
+                const parentTrack = container.closest('.video-carousel-track');
+                if (parentTrack && !parentTrack.querySelector('.yt-inline-wrapper')) {
+                    parentTrack.classList.remove('paused-by-video');
+                }
+            }
+
+            document.addEventListener('click', (e) => {
+                const link = e.target.closest('a[href]');
+                if (!link) return;
+
+                const href = link.getAttribute('href');
+                const videoId = extractYouTubeId(href);
+                if (!videoId) return;
+
+                e.preventDefault();
+                e.stopPropagation();
+
+                let container = link;
+                if (link.classList.contains('fvs-overlay')) {
+                    container = link.closest('.fvs-slide') || link;
+                } else if (link.closest('.rc-glass-frame')) {
+                    container = link.closest('.rc-glass-frame') || link;
+                } else if (link.closest('.deck-video-card')) {
+                    container = link.closest('.deck-video-card') || link;
+                } else if (link.closest('.video-grid-card')) {
+                    container = link.closest('.video-grid-card') || link;
+                }
+
+                playYouTubeInline(container, videoId);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('.yt-inline-wrapper').forEach(w => {
+                        if (w.parentElement) removeYouTubeInline(w.parentElement, w);
+                    });
+                }
+            });
+
             // Hide CTA and Stats immediately to prevent flicker before animation
             if (typeof gsap !== 'undefined') {
                 // gsap.set('.hero-cta-group, .hero-stats-bar', { opacity: 0, y: 30 });
@@ -2720,10 +2856,74 @@
                     if (!isNaN(pIdx)) setWebSlide(pIdx, true);
                 });
             });
+            // ── ANIMATED ARROW POINTER SYSTEM ──
+            (function initArrowPointer() {
+                const tabBarSection = document.getElementById('web-development');
+                const tabsRow = document.getElementById('browserTabs');
+                const tabBar = tabsRow ? tabsRow.closest('.macos-tab-bar') : null;
+                if (!tabBarSection || !tabsRow || !tabBar) return;
 
-            // Start smooth auto-looping
-            restartAutoLoop();
+                let hintShown = false;
+                let hintDismissed = false;
 
+                function removeArrowBadge() {
+                    hintDismissed = true;
+                    tabBar.querySelectorAll('.tab-arrow-pointer-badge').forEach(el => {
+                        el.style.opacity = '0';
+                        setTimeout(() => el.remove(), 350);
+                    });
+                }
+
+                // Dismiss arrow pointer on any click
+                browserTabs.forEach(t => t.addEventListener('click', removeArrowBadge));
+                webProjectItems.forEach(i => i.addEventListener('click', removeArrowBadge));
+
+                function calculateTabPositions() {
+                    const tab1 = tabsRow.querySelector('.macos-tab[data-idx="1"]');
+                    const tab2 = tabsRow.querySelector('.macos-tab[data-idx="2"]');
+                    const tab3 = tabsRow.querySelector('.macos-tab[data-idx="3"]');
+                    const barRect = tabBar.getBoundingClientRect();
+
+                    if (tab1 && barRect.width > 0) {
+                        const pos1 = tab1.getBoundingClientRect().left - barRect.left + (tab1.offsetWidth / 2) - 45;
+                        tabBar.style.setProperty('--tab1-pos', `${pos1}px`);
+                    }
+                    if (tab2 && barRect.width > 0) {
+                        const pos2 = tab2.getBoundingClientRect().left - barRect.left + (tab2.offsetWidth / 2) - 45;
+                        tabBar.style.setProperty('--tab2-pos', `${pos2}px`);
+                    }
+                    if (tab3 && barRect.width > 0) {
+                        const pos3 = tab3.getBoundingClientRect().left - barRect.left + (tab3.offsetWidth / 2) - 45;
+                        tabBar.style.setProperty('--tab3-pos', `${pos3}px`);
+                    }
+                }
+
+                function showArrowPointer() {
+                    if (hintShown || hintDismissed) return;
+                    hintShown = true;
+
+                    calculateTabPositions();
+
+                    const badge = document.createElement('div');
+                    badge.className = 'tab-arrow-pointer-badge';
+                    badge.innerHTML = `
+                        <i class="fa-solid fa-arrow-pointer arrow-icon"></i>
+                        <span>Click tabs to switch</span>
+                    `;
+                    tabBar.appendChild(badge);
+                }
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !hintShown) {
+                            setTimeout(showArrowPointer, 500);
+                            observer.disconnect();
+                        }
+                    });
+                }, { threshold: 0.15 });
+
+                observer.observe(tabBarSection);
+            })();
             // ── SOCIAL MEDIA INTERACTIVE 3D HUB LOGIC ──
             const storyItems = document.querySelectorAll('.story-nav-item');
             const socialCards = document.querySelectorAll('.social-card-3d');
