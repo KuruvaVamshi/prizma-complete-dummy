@@ -793,28 +793,28 @@ body:not(.dark-mode) .moon-icon {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: var(--surface-light);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(245, 145, 40, 0.12);
+  border: 1px solid rgba(245, 145, 40, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'General Sans', sans-serif;
   font-weight: 700;
   font-size: 16px;
-  color: var(--primary);
+  color: var(--accent, #f59128);
   flex-shrink: 0;
 }
 
 .author-name {
   font-family: 'General Sans', sans-serif;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-dark, #1c1917);
   font-size: var(--text-lg);
 }
 
 .author-company {
   font-size: var(--text-sm);
-  color: var(--text-muted);
+  color: var(--text-dark-sub, #57534e);
   font-family: 'General Sans', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -1248,6 +1248,14 @@ body.dark-mode {
   border: none !important;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5) !important;
   color: #f9f7f3 !important;
+}
+
+.dark-mode .author-name {
+  color: #f9f7f3 !important;
+}
+
+.dark-mode .author-company {
+  color: #dcd7cd !important;
 }
 
 .dark-mode .glass-card:hover,
