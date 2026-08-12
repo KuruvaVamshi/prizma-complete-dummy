@@ -746,8 +746,8 @@
                 <div class="video-deck-scene" id="videoScene">
                     <div class="video-deck-wrapper" id="videoConsole">
                         <!-- Video Card 1 (Top Left) -->
-                        <a href="https://youtu.be/1fUuCep0oTo"
-                            target="_blank" class="deck-video-card quad-tl" style="--card-idx: 0;">
+                        <a href="https://youtu.be/1fUuCep0oTo" target="_blank" class="deck-video-card quad-tl"
+                            style="--card-idx: 0;">
                             <div class="deck-video-float-wrap">
                                 <div class="rc-glass-frame">
                                     <video loop muted playsinline disableRemotePlayback preload="auto" class="rc-video">
@@ -760,8 +760,8 @@
                             </div>
                         </a>
                         <!-- Video Card 2 (Top Right) -->
-                        <a href="https://youtu.be/FVjvYT3r930"
-                            target="_blank" class="deck-video-card quad-tr" style="--card-idx: 1;">
+                        <a href="https://youtu.be/FVjvYT3r930" target="_blank" class="deck-video-card quad-tr"
+                            style="--card-idx: 1;">
                             <div class="deck-video-float-wrap">
                                 <div class="rc-glass-frame">
                                     <video loop muted playsinline disableRemotePlayback preload="auto" class="rc-video">
@@ -774,8 +774,8 @@
                             </div>
                         </a>
                         <!-- Video Card 3 (Bottom Left) -->
-                        <a href="https://youtu.be/a_MbnmOAdTs"
-                            target="_blank" class="deck-video-card quad-bl" style="--card-idx: 2;">
+                        <a href="https://youtu.be/a_MbnmOAdTs" target="_blank" class="deck-video-card quad-bl"
+                            style="--card-idx: 2;">
                             <div class="deck-video-float-wrap">
                                 <div class="rc-glass-frame">
                                     <video loop muted playsinline disableRemotePlayback preload="auto" class="rc-video">
@@ -788,8 +788,8 @@
                             </div>
                         </a>
                         <!-- Video Card 4 (Bottom Right) -->
-                        <a href="https://youtu.be/m8Ko0ivzFS8"
-                            target="_blank" class="deck-video-card quad-br" style="--card-idx: 3;">
+                        <a href="https://youtu.be/m8Ko0ivzFS8" target="_blank" class="deck-video-card quad-br"
+                            style="--card-idx: 3;">
                             <div class="deck-video-float-wrap">
                                 <div class="rc-glass-frame">
                                     <video loop muted playsinline disableRemotePlayback preload="auto" class="rc-video">
@@ -1371,6 +1371,8 @@
                 <div class="creative-tagline">Digital Collaterals · Identity Design · Print</div>
                 <p>High-end corporate identity kits, print collateral designs, and digital marketing brochures
                     engineered for target conversions.</p>
+
+                    <audio id="brochureFlipSound" src="sounds/flip-soft.mp3" preload="auto"></audio>
             </div>
 
             <div class="book-container">
@@ -1405,8 +1407,8 @@
                                 <h4>Virtual Reality Walkthroughs</h4>
                                 <p>Step inside unbuilt spaces. We craft high-fidelity VR Walkthroughs that allow clients
                                     to explore architecture and real estate before construction begins.</p>
-                                <img src="../assets/Renders/Paved Walkway with Potted Lavender.jpg"
-                                    alt="Paved Walkway with Potted Lavender" class="book-page-img">
+                                <img src="images/brochure/vr_walkthrough.png" alt="Virtual Reality Walkthrough"
+                                    class="book-page-img">
                             </div>
                         </div>
                         <div class="page-back">
@@ -1414,12 +1416,8 @@
                                 <h4>Augmented Reality</h4>
                                 <p>Interactive AR experiences that superimpose digital master plans and 3D properties
                                     into the real world via mobile and tablets.</p>
-                                <ul>
-                                    <li>Interactive Property Catalogs</li>
-                                    <li>On-Site AR Projection</li>
-                                    <li>Mobile-Ready Masterplans</li>
-                                    <li>Dynamic Sales Tools</li>
-                                </ul>
+                                <img src="images/brochure/augmented_reality.png" alt="Augmented Reality Masterplan"
+                                    class="book-page-img">
                             </div>
                         </div>
                     </div>
@@ -1431,8 +1429,8 @@
                                 <h4>3D Scale Models</h4>
                                 <p>Precision 3D printed miniatures for master layouts, high-rises, and industrial
                                     projects. Bring physical tangibility to your vision.</p>
-                                <img src="images/Mvv-housing-blocks.png" alt="3D Printed Scale Model"
-                                    class="book-page-img" style="object-fit: contain; background: #f0f0f0;">
+                                <img src="images/brochure/scale_model.png" alt="3D Printed Scale Model"
+                                    class="book-page-img">
                             </div>
                         </div>
                         <div class="page-back">
@@ -1440,8 +1438,8 @@
                                 <h4>3D Rendering & Vision</h4>
                                 <p>Photorealistic 3D rendering for architectural facades, interiors, and commercial
                                     landscapes to boost your pre-sales conversions.</p>
-                                <img src="../assets/Renders/Rooftop Terrace with Pool.jpg"
-                                    alt="Rooftop Terrace with Pool" class="book-page-img">
+                                <img src="images/renders-gen/modern-villa-night.png"
+                                    alt="Photorealistic 3D Architectural Render" class="book-page-img">
                             </div>
                         </div>
                     </div>
@@ -1453,7 +1451,7 @@
                                 <h4>Drone Shoots & Aerials</h4>
                                 <p>Ultra-HD aerial photography and videography for land surveys, capturing the true
                                     essence of your project's location and surroundings.</p>
-                                <img src="../assets/images/a1.jpg" alt="Aerial Drone Shot" class="book-page-img">
+                                <img src="images/renders-gen/township-aerial.png" alt="Aerial Drone Shot" class="book-page-img">
                             </div>
                         </div>
                         <div class="page-back">
@@ -1482,12 +1480,8 @@
                                 <h4>Branding & Identity</h4>
                                 <p>Curated brand identities, logo architecture, and visual systems developed for premium
                                     real estate landmarks.</p>
-                                <ul>
-                                    <li>Logo Design</li>
-                                    <li>Brand Guidelines</li>
-                                    <li>Color Palettes</li>
-                                    <li>Typography Selection</li>
-                                </ul>
+                                <img src="images/brochure/branding_identity.png" alt="Branding & Identity Kit"
+                                    class="book-page-img">
                             </div>
                         </div>
                     </div>
@@ -1499,8 +1493,7 @@
                                 <h4>Digital Marketing</h4>
                                 <p>Data-driven marketing campaigns, SEO, and social media strategies designed to
                                     maximize lead generation and brand awareness.</p>
-                                <img src="../assets/images/a2.jpg" alt="Digital Marketing" class="book-page-img"
-                                    style="object-fit: cover;">
+                                <img src="images/brochure/digital_marketing.png" alt="Digital Marketing" class="book-page-img">
                             </div>
                         </div>
                         <div class="page-back">
@@ -1508,12 +1501,7 @@
                                 <h4>Print Collaterals</h4>
                                 <p>High-end corporate identity kits, print collateral designs, and physical marketing
                                     brochures engineered for target conversions.</p>
-                                <ul>
-                                    <li>Business Cards</li>
-                                    <li>Flyers & Hoardings</li>
-                                    <li>Physical Brochures</li>
-                                    <li>Stationery Kits</li>
-                                </ul>
+                                <img src="images/brochure/print_collaterals.png" alt="Print Collaterals" class="book-page-img">
                             </div>
                         </div>
                     </div>
@@ -1525,7 +1513,7 @@
                                 <h4>Experience Centers</h4>
                                 <p>Complete setup of state-of-the-art interactive sales lounges and experience centers
                                     equipped with VR headsets and touch displays.</p>
-                                <img src="../assets/images/a3.jpg" alt="Experience Center Setup" class="book-page-img">
+                                <img src="images/brochure/experience_center.png" alt="Experience Center Setup" class="book-page-img">
                             </div>
                         </div>
                         <div class="page-back">
@@ -1546,7 +1534,7 @@
                                 <h4>Interior Visualization</h4>
                                 <p>Hyper-realistic interior renders showcasing furniture, lighting, and textures to help
                                     buyers visualize their future homes.</p>
-                                <img src="../assets/Renders/A-Frame Glamping Cabins.jpg" alt="A-Frame Glamping Cabins"
+                                <img src="images/renders-gen/villa-interior.png" alt="Interior Visualization"
                                     class="book-page-img">
                             </div>
                         </div>
@@ -1555,11 +1543,8 @@
                                 <h4>Exterior Facades</h4>
                                 <p>Stunning architectural exterior visualizations highlighting building materials,
                                     environment integration, and structural grandeur.</p>
-                                <ul>
-                                    <li>Day & Night Views</li>
-                                    <li>Landscape Integration</li>
-                                    <li>Material Accuracy</li>
-                                </ul>
+                                <img src="images/renders-gen/tower-exterior.png" alt="Exterior Facades"
+                                    class="book-page-img">
                             </div>
                         </div>
                     </div>
@@ -1571,7 +1556,7 @@
                                 <h4>Our Network</h4>
                                 <p>Trusted by top developers across the nation, we deliver excellence in every project.
                                     Join our network of over 50+ happy clients.</p>
-                                <img src="images/Basat Sahney Hospital.jpeg" alt="Client Projects"
+                                <img src="images/brochure/our_network.png" alt="Our Developer Network"
                                     class="book-page-img">
                             </div>
                         </div>
@@ -1607,7 +1592,8 @@
                             <div class="book-cover-content">
                                 <h3 style="font-size: 1.5rem; margin-bottom: 10px;">PRIZMA<span
                                         style="color: var(--accent);">BRIXX</span></h3>
-                                <p style="font-size: 0.85rem;">© 2026 Virtual Simulation Studio<br>2nd Floor, Plot 148, Old Vasavi Nagar, Karkhana, Secunderabad, Telangana 500015</p>
+                                <p style="font-size: 0.85rem;">© 2026 Virtual Simulation Studio<br>2nd Floor, Plot 148,
+                                    Old Vasavi Nagar, Karkhana, Secunderabad, Telangana 500015</p>
                             </div>
                         </div>
                     </div>
@@ -2358,7 +2344,8 @@
                             <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                             <div class="contact-method-text">
                                 <h4>Email Us</h4>
-                                <div class="contact-method-val"><a href="mailto:info@prizmabrixx.com">info@prizmabrixx.com</a></div>
+                                <div class="contact-method-val"><a
+                                        href="mailto:info@prizmabrixx.com">info@prizmabrixx.com</a></div>
                             </div>
                         </div>
 
@@ -2366,7 +2353,8 @@
                             <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
                             <div class="contact-method-text">
                                 <h4>Phone &amp; WhatsApp</h4>
-                                <div class="contact-method-val"><a href="tel:+917386608602">+91 73866 08602</a> / <a href="tel:+919100937590">+91 91009 37590</a></div>
+                                <div class="contact-method-val"><a href="tel:+917386608602">+91 73866 08602</a> / <a
+                                        href="tel:+919100937590">+91 91009 37590</a></div>
                             </div>
                         </div>
 
@@ -2374,7 +2362,8 @@
                             <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
                             <div class="contact-method-text">
                                 <h4>Our Location</h4>
-                                <div class="contact-method-val">2nd Floor, Plot 148, Old Vasavi Nagar, Karkhana, Secunderabad, Telangana 500015</div>
+                                <div class="contact-method-val">2nd Floor, Plot 148, Old Vasavi Nagar, Karkhana,
+                                    Secunderabad, Telangana 500015</div>
                             </div>
                         </div>
                     </div>
@@ -2496,9 +2485,11 @@
                 <div class="footer-col">
                     <div class="footer-col-title">Contact</div>
                     <ul class="footer-links">
-                        <li><a href="tel:+917386608602" id="footer-link-phone">+91 73866 08602</a> / <a href="tel:+919100937590" id="footer-link-phone2">+91 91009 37590</a></li>
+                        <li><a href="tel:+917386608602" id="footer-link-phone">+91 73866 08602</a> / <a
+                                href="tel:+919100937590" id="footer-link-phone2">+91 91009 37590</a></li>
                         <li><a href="mailto:info@prizmabrixx.com" id="footer-link-email">info@prizmabrixx.com</a></li>
-                        <li><a href="../contact.html" id="footer-link-contact">2nd Floor, Plot 148, Old Vasavi Nagar, Karkhana, Secunderabad, Telangana 500015</a></li>
+                        <li><a href="../contact.html" id="footer-link-contact">2nd Floor, Plot 148, Old Vasavi Nagar,
+                                Karkhana, Secunderabad, Telangana 500015</a></li>
                         <li><a href="../contact.html" id="footer-link-quote">Get a Quote</a></li>
                     </ul>
                 </div>
@@ -2566,7 +2557,7 @@
                 // Pause background videos in container
                 const bgVideos = container.querySelectorAll('video');
                 bgVideos.forEach(v => {
-                    try { v.pause(); } catch(e) {}
+                    try { v.pause(); } catch (e) { }
                 });
 
                 const wrapper = document.createElement('div');
@@ -2599,7 +2590,7 @@
                             func: 'setSuggestedQuality',
                             args: ['large']
                         }), '*');
-                    } catch(e) {}
+                    } catch (e) { }
                 });
 
                 wrapper.appendChild(iframe);
@@ -2633,7 +2624,7 @@
 
                 const bgVideos = container.querySelectorAll('video');
                 bgVideos.forEach(v => {
-                    try { v.play().catch(() => {}); } catch(e) {}
+                    try { v.play().catch(() => { }); } catch (e) { }
                 });
 
                 const parentTrack = container.closest('.video-carousel-track');
@@ -3721,6 +3712,22 @@
         const bookPages = document.querySelectorAll('#brochureBook .page');
         const brochureBook = document.getElementById('brochureBook');
 
+        // --- Gentle Real Paper Slide Audio Controller ---
+        const flipAudio = document.getElementById('brochureFlipSound');
+
+        function playRealPaperFlipSound() {
+            if (flipAudio) {
+                try {
+                    flipAudio.currentTime = 0;
+                    flipAudio.volume = 0.85;
+                    const p = flipAudio.play();
+                    if (p !== undefined) {
+                        p.catch(() => {});
+                    }
+                } catch (err) {}
+            }
+        }
+
         function updateZIndices() {
             let anyFlipped = false;
             bookPages.forEach((page, index) => {
@@ -3755,7 +3762,6 @@
 
                 if (isFlipped) {
                     // Clicking a flipped page (left side) -> we want to unflip it.
-                    // Find the highest index page that is currently flipped (the top-most one).
                     let highestFlippedIdx = -1;
                     bookPages.forEach((p, i) => {
                         if (p.classList.contains('flipped')) {
@@ -3763,14 +3769,13 @@
                         }
                     });
 
-                    // Only allow flipping the top-most page on the left stack
                     if (idx === highestFlippedIdx) {
                         page.classList.remove('flipped');
                         updateZIndices();
+                        playRealPaperFlipSound();
                     }
                 } else {
                     // Clicking an unflipped page (right side) -> we want to flip it forward.
-                    // Find the lowest index page that is currently unflipped (the top-most one).
                     let lowestUnflippedIdx = -1;
                     for (let i = 0; i < bookPages.length; i++) {
                         if (!bookPages[i].classList.contains('flipped')) {
@@ -3779,10 +3784,10 @@
                         }
                     }
 
-                    // Only allow flipping the top-most page on the right stack
                     if (idx === lowestUnflippedIdx) {
                         page.classList.add('flipped');
                         updateZIndices();
+                        playRealPaperFlipSound();
                     }
                 }
             });
@@ -5036,12 +5041,12 @@
                         body: formData,
                         headers: { 'Accept': 'application/json' }
                     })
-                    .then(res => res.json())
-                    .then(() => handleSuccess())
-                    .catch(err => {
-                        console.error('Submission error:', err);
-                        handleSuccess();
-                    });
+                        .then(res => res.json())
+                        .then(() => handleSuccess())
+                        .catch(err => {
+                            console.error('Submission error:', err);
+                            handleSuccess();
+                        });
                 });
 
                 // Reset: show form again
